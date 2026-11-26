@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sonnfeld Energie – Photovoltaik & Wärmepumpe (Beispiel-Template)</title>
+<meta name="description" content="Beispiel-Template von Häufele Webdesign für Solarteure: Ertragsrechner, Energiefluss über den Tag, Photovoltaik, Speicher, Wallbox und Wärmepumpe. Die Firma ist erfunden.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1218">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/schriften.css">
+<link rel="stylesheet" href="assets/css/seite.css">
+<link rel="stylesheet" href="assets/css/filmplatz.css">
+<script src="assets/js/vorab.js"></script>
+</head>
+<body>
+<div class="hg-still" aria-hidden="true"></div>
+<canvas id="hg" aria-hidden="true"></canvas>
+<div class="hg-ton" id="hgton" aria-hidden="true"></div>
+<div class="hg-dunkel" aria-hidden="true"></div>
+
+<div class="demo">
+  <span>Beispiel-Template · Firma erfunden</span>
+  <a href="../../index.html#templates">← Alle Templates</a>
+  <a class="waehlen" href="../../index.html?template=pv#wunsch">Dieses Template wählen</a>
+</div>
+
+<header class="kopf" id="kopf">
+  <a class="marke" href="#top" aria-label="Sonnfeld Energie – zum Anfang"><span class="sonne" aria-hidden="true"></span><b>Sonnfeld</b><i>Energie</i></a>
+  <nav class="menue" aria-label="Hauptmenü">
+    <a href="#tag">Ein Tag</a><a href="#rechner">Ertragsrechner</a><a href="#modul">Modul</a><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a>
+  </nav>
+  <a class="knopf" href="#kontakt"><span class="lang">Dach prüfen lassen</span><span class="kurz">Anfragen</span></a>
+</header>
+
+<main id="top">
+<!-- ===== START: Platz für den eigenen Website-Film des Betriebs (20N-FIX4: kein Bilder-Film im Beispiel) ===== -->
+<section class="fp" id="kino" aria-label="Platzhalter: Hier kommt Ihr eigener Website-Film hin" style="--fp-a:#9FD3F2;--fp-h:#CFEAF9;--fp-rgb:159,211,242">
+  <div class="fp-flaeche">
+    <div class="fp-licht" aria-hidden="true"></div>
+    <div class="fp-korn" aria-hidden="true"></div>
+    <div class="fp-kante" aria-hidden="true"><i></i></div>
+    <i class="fp-ecke fp-lo" aria-hidden="true"></i><i class="fp-ecke fp-ro" aria-hidden="true"></i><i class="fp-ecke fp-lu" aria-hidden="true"></i><i class="fp-ecke fp-ru" aria-hidden="true"></i>
+    <div class="fp-zeile fp-oben" aria-hidden="true"><span><i class="fp-punkt"></i>Startfilm</span><span>läuft beim Scrollen · vor und zurück</span></div>
+    <div class="fp-mitte">
+      <span class="fp-play" aria-hidden="true"><i></i></span>
+      <p class="fp-titel" role="heading" aria-level="2"><span>Hier Ihr eigener</span> <em>Website-Film.</em></p>
+      <p class="fp-text">Individuell für Ihren Betrieb – aus Ihren eigenen Fotos: Ihre Werkstatt, Ihre Leute, Ihre Projekte.</p>
+    </div>
+    <div class="fp-zeile fp-unten" aria-hidden="true"><span>Im Beispiel bewusst frei</span><span>Darunter: so sieht Ihre Seite aus ↓</span></div>
+  </div>
+</section>
+<section class="fp-held" aria-label="Einleitung">
+  <div class="fp-held-in">
+    <p class="fp-nr">Photovoltaik · Speicher · Wallbox · Wärmepumpe</p>
+    <h1>Ihr Dach kann <em>mehr.</em></h1>
+    <p class="fp-lead">Wir planen Ihre Solaranlage nach Ihrem echten Verbrauch – nicht nach der größten Zahl. Mit Speicher, Wallbox und Wärmepumpe aus einer Hand, angemeldet beim Netzbetreiber und im Marktstammdatenregister.</p>
+    <div class="knoepfe"><a class="knopf" href="#rechner">Ertrag für mein Dach rechnen →</a><a class="knopf leer" href="#kontakt">Dach prüfen lassen</a></div>
+  </div>
+</section>
+
+<!-- ===== EIN TAG: Energiefluss in 4 Kapiteln (Scroll) ===== -->
+<section class="tag" id="tag" aria-label="Energiefluss über einen Tag">
+  <div class="buehne" id="tagbuehne">
+    <div class="klebt">
+      <div class="tagtext">
+        <p class="label">Ein Tag auf Ihrem Dach</p>
+        <div class="uhr" id="uhr">07:00</div>
+        <div class="kapitel" id="kapitel">
+          <article class="an"><h2>Morgens <em>reicht</em> das Dach fürs Frühstück.</h2><p>Die ersten Watt gehen direkt ins Haus. Der Speicher ist über Nacht leer geworden – was noch fehlt, kommt kurz aus dem Netz.</p></article>
+          <article><h2>Mittags lädt <em>alles</em> gleichzeitig.</h2><p>Haus, Wärmepumpe und E-Auto laufen auf Sonne, der Speicher wird voll – erst der Rest geht ins Netz.</p></article>
+          <article><h2>Abends <em>kocht</em> der Speicher.</h2><p>Die Sonne sinkt, der Speicher übernimmt Herd, Licht und Fernseher.</p></article>
+          <article><h2>Nachts <em>schläft</em> die Rechnung.</h2><p>Nur der Grundverbrauch läuft. Ist der Speicher leer, kommt der Rest aus dem Netz.</p></article>
+        </div>
+      </div>
+      <div class="fluss glas" id="fluss">
+        <svg viewBox="0 0 600 520" aria-hidden="true" id="flusssvg">
+          <g class="leitungen">
+            <path id="l-dach-haus" d="M300 92 L300 250"/>
+            <path id="l-dach-spei" d="M300 92 C 300 160, 130 170, 130 250"/>
+            <path id="l-spei-haus" d="M158 285 L272 285"/>
+            <path id="l-haus-auto" d="M300 318 C 300 380, 130 380, 130 440"/>
+            <path id="l-haus-wp" d="M300 318 C 300 380, 470 380, 470 440"/>
+            <path id="l-dach-netz" d="M300 92 C 300 160, 470 170, 470 250"/>
+            <path id="l-netz-haus" d="M442 285 L328 285"/>
+          </g>
+          <g class="stroeme" id="stroeme"></g>
+        </svg>
+        <div class="knoten" style="left:50%;top:13%" data-k="dach"><span class="sym">☀</span><b>Dach</b><small id="k-dach">0,0 kW</small></div>
+        <div class="knoten" style="left:21.7%;top:55%" data-k="spei"><span class="sym bat"><i id="k-batfuell"></i></span><b>Speicher</b><small id="k-spei">50 %</small></div>
+        <div class="knoten" style="left:50%;top:55%" data-k="haus"><span class="sym">⌂</span><b>Haus</b><small id="k-haus">0,0 kW</small></div>
+        <div class="knoten" style="left:78.3%;top:55%" data-k="netz"><span class="sym">⇆</span><b>Netz</b><small id="k-netz">0,0 kW</small></div>
+        <div class="knoten" style="left:21.7%;top:88%" data-k="auto"><span class="sym">⚡</span><b>Wallbox</b><small id="k-auto">0,0 kW</small></div>
+        <div class="knoten" style="left:78.3%;top:88%" data-k="wp"><span class="sym">≈</span><b>Wärmepumpe</b><small id="k-wp">0,0 kW</small></div>
+        <span class="kennz">Beispielwerte · 9,8 kWp, 10 kWh Speicher</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ERTRAGSRECHNER ===== -->
+<section id="rechner">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Ertragsrechner</p>
+      <h2>Was bringt <em>Ihr</em> Dach?</h2>
+      <p class="lead" style="margin-top:18px">Anlagengröße, Ausrichtung und Neigung einstellen – der Rechner zeigt Jahresertrag, Eigenverbrauch und Ersparnis. Mit und ohne Speicher.</p>
+    </div>
+    <div class="rechner">
+      <div class="eingabe glas auf">
+        <div class="feld"><label for="r-kwp">Anlagengröße <output id="o-kwp">10,0 kWp</output></label><input id="r-kwp" type="range" min="3" max="25" step="0.5" value="10"><small class="unter" id="o-modul">≈ 23 Module à 440 Wp · ≈ 45 m² Dachfläche</small></div>
+        <div class="feld"><label>Ausrichtung</label><div class="wahl" id="w-ausr" role="group" aria-label="Ausrichtung">
+          <button type="button" data-v="S" aria-pressed="true">Süd</button><button type="button" data-v="SO" aria-pressed="false">Südost / Südwest</button><button type="button" data-v="OW" aria-pressed="false">Ost-West</button><button type="button" data-v="N" aria-pressed="false">Nord</button></div></div>
+        <div class="feld"><label for="r-neig">Dachneigung <output id="o-neig">35°</output></label><input id="r-neig" type="range" min="0" max="60" step="5" value="35"></div>
+        <div class="feld"><label for="r-verb">Stromverbrauch im Jahr <output id="o-verb">4.500 kWh</output></label><input id="r-verb" type="range" min="1500" max="12000" step="250" value="4500"></div>
+        <div class="feld"><label>Stromspeicher</label><div class="wahl" id="w-spei" role="group" aria-label="Stromspeicher">
+          <button type="button" data-v="0" aria-pressed="false">Ohne</button><button type="button" data-v="1" aria-pressed="true">Mit Speicher (ca. 1 kWh je 1.000 kWh Verbrauch)</button></div></div>
+        <div class="dach" aria-hidden="true"><svg viewBox="0 0 320 120" id="dachsvg"><path class="fl" id="dachfl" d=""/><g id="dachmod"></g><path class="fi" d="M10 112 L310 112"/></svg></div>
+      </div>
+      <div class="ergebnis glas auf" aria-live="polite">
+        <p class="label">Ihr Ergebnis</p>
+        <div class="gross"><span id="e-ertrag">10.300</span><small>kWh im Jahr</small></div>
+        <p style="color:var(--text2)" id="e-text">entspricht ca. 1.030 kWh je kWp</p>
+        <div class="balken" aria-hidden="true"><i id="b-ev"></i><i id="b-ein"></i></div>
+        <div class="legende"><span><i class="a"></i>selbst genutzt</span><span><i class="b"></i>eingespeist</span></div>
+        <ul class="posten">
+          <li><span>Eigenverbrauch (selbst genutzt)</span><b id="e-ev">≈ 3.200 kWh</b></li>
+          <li><span>Autarkie (Anteil Ihres Bedarfs)</span><b id="e-aut">≈ 70 %</b></li>
+          <li><span>Ersparnis Strombezug (37 ct/kWh)</span><b id="e-spar">≈ 1.180 €/Jahr</b></li>
+          <li><span>Einspeisung (7,70 / 6,66 ct/kWh*)</span><b id="e-einsp">≈ 550 €/Jahr</b></li>
+        </ul>
+        <p class="hinweis">Richtwerte für den Raum Ulm (spezifischer Ertrag Süd 35° ≈ 1.050 kWh/kWp, Größenordnung nach PVGIS). Eigenverbrauch nach typischen Lastprofilen eines Haushalts. Strompreis 37 ct/kWh (BDEW-Durchschnitt Haushalte 2026). * Einspeisevergütung bei Teileinspeisung und Inbetriebnahme bis 31.12.2026: 7,70 ct/kWh für den Anteil bis 10 kWp, 6,66 ct/kWh darüber (Bundesnetzagentur). Nach dem Solarspitzengesetz gibt es für Neuanlagen keine Vergütung bei negativen Börsenstrompreisen, ohne Smart Meter wird die Einspeisung auf 60 % der Leistung begrenzt – der Einspeiseerlös kann daher etwas niedriger ausfallen. Für Anlagen ab 2027 berät der Bundestag eine EEG-Reform, die feste Vergütung für Neuanlagen soll entfallen – Stand November 2026. Die genaue Planung machen wir vor Ort mit Verschattungsanalyse.</p>
+        <a class="knopf" href="#kontakt" style="margin-top:18px;align-self:flex-start" id="r-knopf">Mit diesen Werten anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODUL: Explosionsansicht (Blender-Bildfolge, scrollgesteuert) ===== -->
+<section class="modul" id="modul" aria-label="Aufbau eines Solarmoduls">
+  <div class="buehne">
+    <div class="klebt">
+      <div class="mtext">
+        <div class="auf">
+          <p class="label">Ein Modul, zerlegt</p>
+          <h2>Sieben Bauteile. <em>Nichts</em> versteckt.</h2>
+        </div>
+        <ol class="schritte" id="schritte"></ol>
+        <p class="handytext" id="handytext"></p>
+        <dl class="mwerte-live" aria-label="Daten des gezeigten Beispielmoduls">
+          <div><dt>Format</dt><dd>1.722 × 1.134 × 30&nbsp;mm</dd></div>
+          <div><dt>Leistung</dt><dd>440 Wp</dd></div>
+          <div><dt>Wirkungsgrad</dt><dd>22,5 %</dd></div>
+          <div><dt>Zellen</dt><dd>108 Halbzellen</dd></div>
+        </dl>
+      </div>
+      <div class="film" id="film">
+        <div class="riese" aria-hidden="true">7</div>
+        <canvas id="filmcv" role="img" aria-label="3D-Explosionsansicht eines Solarmoduls: Glas, Einbettfolie, Zellen, EVA-Folie, Rückseitenfolie, Rahmen, Anschlussdosen"></canvas>
+        <div class="zaehler"><span>Lage</span><b id="znr">–</b><span>von 07</span></div>
+        <span class="kennz">3D-Darstellung · Lagen zur Ansicht vergrößert</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGEN ===== -->
+<section id="leistungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Leistungen</p>
+      <h2>Vom Dach bis zur <em>Steckdose</em>.</h2>
+    </div>
+    <div class="leist">
+      <article class="glas auf"><span class="nr">01</span><h3>Photovoltaik</h3><p>Planung nach Lastprofil, Verschattungsanalyse, Montage auf Ziegel-, Blech- und Flachdach.</p><div class="tags"><span>Aufdach</span><span>Flachdach</span><span>Ost-West</span></div></article>
+      <article class="glas auf"><span class="nr">02</span><h3>Stromspeicher</h3><p>Speicher passend zum Verbrauch ausgelegt – nicht zu groß, damit er sich auch rechnet.</p><div class="tags"><span>LFP</span><span>Notstrom optional</span></div></article>
+      <article class="glas auf"><span class="nr">03</span><h3>Wallbox</h3><p>Laden mit Sonnenstrom, Überschussladen und Anmeldung beim Netzbetreiber.</p><div class="tags"><span>11 kW</span><span>PV-Überschuss</span></div></article>
+      <article class="glas auf"><span class="nr">04</span><h3>Wärmepumpe</h3><p>Luft-Wasser-Wärmepumpe mit Heizlastberechnung, abgestimmt auf Ihre PV-Anlage.</p><div class="tags"><span>Heizlast</span><span>Förderantrag</span></div></article>
+      <article class="glas auf"><span class="nr">05</span><h3>Anmeldung & Papiere</h3><p>Netzanmeldung, Marktstammdatenregister und Übergabe aller Unterlagen – Sie unterschreiben nur.</p><div class="tags"><span>Netzbetreiber</span><span>MaStR</span></div></article>
+      <article class="glas auf"><span class="nr">06</span><h3>Service & Wartung</h3><p>Ertrag im Blick, Sichtprüfung und Fehlerdiagnose, wenn der Wechselrichter meldet.</p><div class="tags"><span>Monitoring</span><span>Wartung</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOM DACH BIS IN DEN KELLER (Leitungsweg, Fenster-Reveal) ===== -->
+<section class="weg" id="weg">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Vom Dach bis in den Keller</p>
+      <h2>Ein Weg. <em>Eine</em> Firma.</h2>
+      <p class="lead" style="margin-top:18px">Vom ersten Dachhaken bis zum letzten Kabelkanal im Technikraum – alles aus einer Hand, ohne Subunternehmer-Ping-Pong.</p>
+    </div>
+    <div class="wegliste" id="wegliste">
+      <svg class="wegline" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 10 100"><line x1="5" y1="0" x2="5" y2="100" class="grund"/><line x1="5" y1="0" x2="5" y2="100" class="voll" id="wegvoll"/></svg>
+      <article class="station">
+        <figure class="fenster" data-gross="assets/img/dach-sued.webp"><span class="ki">✦ KI</span><img src="assets/img/dach-sued.webp" width="1376" height="768" loading="lazy" alt="Einfamilienhaus mit schwarzer Photovoltaik-Anlage auf dem Süddach"></figure>
+        <div class="stext"><span class="snr">01 · DACH</span><h3>Belegung nach Verschattung, nicht nach Fläche.</h3><p>Modulreihen mit Abstand zu First, Ortgang und Traufe, Dachhaken passend zum Ziegel, Schienen statisch nachgewiesen. Volle Dächer sehen gut aus – passende Dächer rechnen sich.</p><dl><div><dt>Beispiel</dt><dd>18 × 440 Wp = 7,92 kWp</dd></div><div><dt>Ausrichtung</dt><dd>Süd · 35°</dd></div></dl></div>
+      </article>
+      <article class="station">
+        <figure class="fenster" data-gross="assets/img/montage.webp"><span class="ki">✦ KI</span><img src="assets/img/montage.webp" width="1376" height="768" loading="lazy" alt="Solarteur mit Helm legt ein Modul auf die Montageschienen, Gerüst mit Seitenschutz"></figure>
+        <div class="stext"><span class="snr">02 · MONTAGE</span><h3>Gerüst mit Seitenschutz. Immer.</h3><p>Absturzsicherung nach Arbeitsschutz-Regeln, Mittel- und Endklemmen mit Drehmoment angezogen, Kabel UV-fest und ohne Durchhang unter den Modulen geführt.</p><dl><div><dt>Montage</dt><dd>meist 1–2 Tage</dd></div><div><dt>Klemmen</dt><dd>mit Drehmoment</dd></div></dl></div>
+      </article>
+      <article class="station">
+        <figure class="fenster" data-gross="assets/img/technik.webp"><span class="ki">✦ KI</span><img src="assets/img/technik.webp" width="1376" height="768" loading="lazy" alt="Technikraum mit Wechselrichter, Batteriespeicher und Zählerschrank, Leitungen in Kabelkanälen"></figure>
+        <div class="stext"><span class="snr">03 · TECHNIKRAUM</span><h3>Wechselrichter, Speicher, Zählerschrank – aufgeräumt.</h3><p>Leitungen im Kanal, Überspannungsschutz, Zählerschrank nach den Vorgaben des Netzbetreibers. Am Ende bekommen Sie Protokoll, Schaltplan und App-Zugang.</p><dl><div><dt>Speicher</dt><dd>LFP, modular</dd></div><div><dt>Übergabe</dt><dd>mit Messprotokoll</dd></div></dl></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section id="ablauf">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Ablauf</p>
+      <h2>Vier Schritte bis zum <em>ersten</em> Sonnenstrom.</h2>
+    </div>
+    <ol class="ablauf">
+      <li class="glas auf"><div class="z">01</div><h3>Dach-Check</h3><p>Termin vor Ort: Dachzustand, Statik, Zählerschrank und Ihr Verbrauch.</p><span class="dauer">KOSTENLOS · CA. 60 MIN</span></li>
+      <li class="glas auf"><div class="z">02</div><h3>Planung & Angebot</h3><p>Modulbelegung mit Verschattung, Ertragsprognose und Festpreis.</p><span class="dauer">INNERHALB VON 7 WERKTAGEN</span></li>
+      <li class="glas auf"><div class="z">03</div><h3>Montage</h3><p>Gerüst, Montage und Elektroanschluss – meist in wenigen Tagen.</p><span class="dauer">NACH TERMIN</span></li>
+      <li class="glas auf"><div class="z">04</div><h3>Inbetriebnahme</h3><p>Anmeldung, Einweisung in die App und Übergabe aller Unterlagen.</p><span class="dauer">MIT PROTOKOLL</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== PAKETE (Beispiel) ===== -->
+<section id="pakete">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Beispiel-Pakete</p>
+      <h2>Drei Wege zu <em>eigenem</em> Strom.</h2>
+      <p class="lead" style="margin-top:18px">Beispielwerte für ein Einfamilienhaus mit Ziegeldach. Ihr echter Preis steht nach dem Dach-Check fest.</p>
+    </div>
+    <div class="pakete">
+      <div class="paket glas auf"><h3>Solar Start</h3><p class="sub">Strom fürs Haus.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>ca. 8 kWp Photovoltaik</li><li>Wechselrichter + App</li><li>Anmeldung & Unterlagen</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+      <div class="paket glas ziel auf"><span class="badge">MEIST GEWÄHLT</span><h3>Solar + Speicher</h3><p class="sub">Sonne auch am Abend.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>ca. 10 kWp Photovoltaik</li><li>10 kWh Stromspeicher</li><li>Wallbox-vorbereitet</li><li>Anmeldung, Monitoring, Einweisung</li></ul><a class="knopf" href="#kontakt">Dach prüfen lassen</a></div>
+      <div class="paket glas auf"><h3>Komplett-Energie</h3><p class="sub">Strom, Auto und Heizung.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Alles aus „Solar + Speicher“</li><li>Wallbox 11 kW</li><li>Luft-Wasser-Wärmepumpe</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEWERTUNGEN ===== -->
+<section id="bewertungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Bewertungen</p>
+      <h2>Was <em>Kunden</em> sagen.</h2>
+    </div>
+    <div class="bew">
+      <div class="glas schnitt auf"><span class="sterne" style="opacity:.35">★★★★★</span><br><b>–,–</b><p style="color:var(--text2)">Hier steht Ihr echter Google-Durchschnitt mit Datum.</p></div>
+      <div class="glas platz auf"><p class="label">Platzhalter im Beispiel-Template</p><h3>Hier erscheinen Ihre <em>echten</em> Google-Bewertungen.</h3><p>Ausgewählte Auszüge mit gekürzten Namen, dazu „Bewertung schreiben“ und „Alle lesen“ – direkt verlinkt mit Ihrem Google-Profil. Im Template stehen bewusst keine erfundenen Stimmen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Kontakt</p>
+      <h2>Ihr Dach. <em>Unser</em> Check.</h2>
+    </div>
+    <div class="gitter">
+      <div class="daten auf">
+        <div class="glas"><dl>
+          <dt>Telefon</dt><dd>0000 000000 <small style="color:var(--text3)">(Beispiel)</small></dd>
+          <dt>E-Mail</dt><dd>info@sonnfeld.example.com</dd>
+          <dt>Adresse</dt><dd>Musterweg 1, 00000 Beispielstadt</dd>
+          <dt>Erreichbar</dt><dd>Mo–Fr 7:30–17:00 Uhr</dd>
+        </dl></div>
+        <p class="hinweis">Tipp: Ein Foto von Dach und Zählerschrank plus Ihre letzte Stromabrechnung – dann bringen wir zum Dach-Check schon eine erste Planung mit.</p>
+      </div>
+      <form class="glas auf" id="kontaktform" novalidate>
+        <div class="zwei">
+          <div class="f"><label for="k-name">Name *</label><input id="k-name" name="name" autocomplete="name" maxlength="80" required></div>
+          <div class="f"><label for="k-tel">Telefon *</label><input id="k-tel" name="telefon" type="tel" autocomplete="tel" maxlength="40" required></div>
+        </div>
+        <div class="zwei">
+          <div class="f"><label for="k-mail">E-Mail</label><input id="k-mail" name="email" type="email" autocomplete="email" maxlength="120"></div>
+          <div class="f"><label for="k-thema">Worum geht es? *</label><select id="k-thema" name="thema" required>
+            <option value="">Bitte wählen</option><option>Photovoltaik</option><option>PV + Speicher</option><option>Wallbox</option><option>Wärmepumpe</option><option>Speicher nachrüsten</option><option>Service / Wartung</option><option>Etwas anderes</option></select></div>
+        </div>
+        <div class="f"><label for="k-text">Ihre Nachricht</label><textarea id="k-text" name="nachricht" maxlength="2000" placeholder="z. B. Satteldach Süd, ca. 4.500 kWh Verbrauch, E-Auto geplant"></textarea></div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check"><input type="checkbox" name="datenschutz" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+        <button class="knopf" type="submit">Anfrage senden</button>
+        <p id="formhinweis" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="marke" href="#top"><span class="sonne" aria-hidden="true"></span><b>Sonnfeld</b><i>Energie</i></a>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="bildnachweis.html">Bildnachweis</a></nav>
+    <p class="beisp">Beispiel-Template – „Sonnfeld Energie“ ist eine erfundene Firma. Konzept & Umsetzung: Häufele Webdesign – Niklas Häufele.</p>
+  </div>
+</footer>
+
+<aside class="assi" id="assi" aria-label="Fragen-Assistent">
+  <div class="ak" id="assikopf"><span class="p"></span><div><b>Fragen an Sonnfeld Energie</b><small>Antwortet sofort</small></div><button type="button" id="assizu" aria-label="Fragen-Assistent einklappen">–</button></div>
+  <div class="verlauf" id="verlauf" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="assiform"><label class="sr" for="assiein">Ihre Frage</label><input id="assiein" placeholder="Frage eingeben …" autocomplete="off" maxlength="200"><button type="submit">→</button></form>
+  <p class="fuss">Automatische Antworten aus geprüften Infos · keine KI-Anfrage an Dritte</p>
+</aside>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bild groß"><img alt=""><p>✦ KI-Beispielbild · Klicken zum Schließen</p></div>
+
+<script src="assets/js/hg-wahl.js"></script>
+<script src="assets/js/film-daten.js"></script>
+<script src="assets/js/hg-auswahl.js"></script>
+<script src="assets/js/hintergrund.js"></script>
+<script src="assets/js/lenis.min.js"></script>
+<script src="assets/js/seite.js"></script>
+</body>
+</html>

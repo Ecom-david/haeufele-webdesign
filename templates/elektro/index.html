@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Quandel Elektrotechnik – Elektroinstallation, Zählerschrank, Smart Home (Beispiel-Template)</title>
+<meta name="description" content="Beispiel-Template von Häufele Webdesign für Elektrobetriebe: erklärter Verteiler, Installationsplan mit fünf Netzen, Wallbox-Rechner. Die Firma ist erfunden.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/schriften.css">
+<link rel="stylesheet" href="assets/css/seite.css">
+<link rel="stylesheet" href="assets/css/filmplatz.css">
+<script src="assets/js/vorab.js"></script>
+</head>
+<body>
+<div class="hg-still" aria-hidden="true"></div>
+<canvas id="hg" aria-hidden="true"></canvas>
+<div class="hg-dunkel" aria-hidden="true"></div>
+
+<div class="demo">
+  <span>Beispiel-Template · Firma erfunden</span>
+  <a href="../../index.html#templates">← Alle Templates</a>
+  <a class="waehlen" href="../../index.html?template=elektro#wunsch">Dieses Template wählen</a>
+</div>
+
+<header class="kopf" id="kopf">
+  <a class="marke" href="#top" aria-label="Quandel Elektrotechnik – zum Anfang"><span class="blitz" aria-hidden="true"></span><b>QUANDEL</b><i>Elektrotechnik</i></a>
+  <nav class="menue" aria-label="Hauptmenü">
+    <a href="#verteiler">Verteiler</a><a href="#plan">Installationsplan</a><a href="#wallbox">Wallbox-Rechner</a><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a>
+  </nav>
+  <a class="knopf" href="#kontakt"><span class="lang">Termin anfragen</span><span class="kurz">Anfragen</span></a>
+</header>
+
+<main id="top">
+<!-- ===== START: Platz für den eigenen Website-Film des Betriebs (20N-FIX4: kein Bilder-Film im Beispiel) ===== -->
+<section class="fp" id="kino" aria-label="Platzhalter: Hier kommt Ihr eigener Website-Film hin" style="--fp-a:#F2C230;--fp-h:#F7DA7A;--fp-rgb:242,194,48">
+  <div class="fp-flaeche">
+    <div class="fp-licht" aria-hidden="true"></div>
+    <div class="fp-korn" aria-hidden="true"></div>
+    <div class="fp-kante" aria-hidden="true"><i></i></div>
+    <i class="fp-ecke fp-lo" aria-hidden="true"></i><i class="fp-ecke fp-ro" aria-hidden="true"></i><i class="fp-ecke fp-lu" aria-hidden="true"></i><i class="fp-ecke fp-ru" aria-hidden="true"></i>
+    <div class="fp-zeile fp-oben" aria-hidden="true"><span><i class="fp-punkt"></i>Startfilm</span><span>läuft beim Scrollen · vor und zurück</span></div>
+    <div class="fp-mitte">
+      <span class="fp-play" aria-hidden="true"><i></i></span>
+      <p class="fp-titel" role="heading" aria-level="2"><span>Hier Ihr eigener</span> <em>Website-Film.</em></p>
+      <p class="fp-text">Individuell für Ihren Betrieb – aus Ihren eigenen Fotos: Ihre Werkstatt, Ihre Leute, Ihre Projekte.</p>
+    </div>
+    <div class="fp-zeile fp-unten" aria-hidden="true"><span>Im Beispiel bewusst frei</span><span>Darunter: so sieht Ihre Seite aus ↓</span></div>
+  </div>
+</section>
+<section class="fp-held" aria-label="Einleitung">
+  <div class="fp-held-in">
+    <p class="fp-nr">Elektroinstallation · Zählerschrank · Smart Home · Wallbox</p>
+    <h1>Licht an. <em>Ohne nachzudenken.</em></h1>
+    <p class="fp-lead">Damit ein Schalter einfach funktioniert, liegt dahinter ein Plan, eine saubere Installation und ein Verteiler, den man zeigen kann. Für Neubau und Sanierung – gemessen und dokumentiert.</p>
+    <div class="knoepfe"><a class="knopf" href="#kontakt">Vor-Ort-Termin anfragen →</a><a class="knopf leer" href="#plan">Installationsplan ansehen</a></div>
+  </div>
+</section>
+
+<!-- ===== VERTEILER ERKLÄRT (Hotspots) ===== -->
+<section id="verteiler">
+  <div class="wrap vgitter">
+    <div class="vtext auf">
+      <p class="label">Der Verteiler, erklärt</p>
+      <h2>Ordnung, die man <em>sehen</em> kann.</h2>
+      <p class="lead" style="margin-top:18px">Im Stromkreisverteiler entscheidet sich, ob Ihr Haus sicher ist. Tippen Sie auf die Punkte – derselbe Verteiler wie oben in der Kamerafahrt, Bauteil für Bauteil.</p>
+      <div class="vinfo glas" id="vinfo" aria-live="polite"><small id="vi-nr">01 / 06</small><b id="vi-t">Überspannungsschutz</b><p id="vi-s"></p></div>
+    </div>
+    <figure class="vbild auf" id="vbild">
+      <span class="ki">✦ KI</span>
+      <img src="assets/img/verteiler.webp" width="928" height="1152" alt="Geöffneter, sauber verdrahteter Stromkreisverteiler mit Überspannungsschutz, FI-Schaltern, Leitungsschutzschaltern und Reihenklemmen">
+    </figure>
+  </div>
+</section>
+
+<!-- ===== INSTALLATIONSPLAN: fünf Netze ===== -->
+<section class="plan" id="plan">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Installationsplan · Erdgeschoss</p>
+      <h2>Ein Haus. <em>Fünf</em> Netze.</h2>
+      <p class="lead" style="margin-top:18px">Bevor wir einen Schlitz fräsen, steht der Plan: jede Leuchte, jede Steckdose, jede Datenleitung. Schalten Sie die Netze ein – und halten Sie den Knopf für die Abendszene gedrückt.</p>
+    </div>
+    <div class="planbox">
+      <div class="netze glas auf" role="group" aria-label="Netze ein- und ausblenden">
+        <button type="button" data-n="licht" aria-pressed="true"><i></i><span>Licht</span><small id="z-licht">0</small></button>
+        <button type="button" data-n="steck" aria-pressed="false"><i></i><span>Steckdosen</span><small id="z-steck">0</small></button>
+        <button type="button" data-n="netz" aria-pressed="false"><i></i><span>Netzwerk</span><small id="z-netz">0</small></button>
+        <button type="button" data-n="sicher" aria-pressed="false"><i></i><span>Sicherheit</span><small id="z-sicher">0</small></button>
+        <button type="button" data-n="knx" aria-pressed="false"><i></i><span>Smart Home (KNX)</span><small id="z-knx">0</small></button>
+        <button type="button" class="halten" id="abend"><span class="ring"></span>Gedrückt halten: Abendszene</button>
+        <p class="ninfo" id="ninfo"></p>
+      </div>
+      <div class="planbuehne auf" id="planbuehne">
+        <div class="kipp" id="kipp">
+          <svg id="plansvg" viewBox="-40 -40 1080 880" role="img" aria-label="Installationsplan eines Erdgeschosses mit Leuchten, Steckdosen, Netzwerk, Rauchmelder und KNX-Bus"></svg>
+        </div>
+        <span class="kennz">Beispielplan · Symbole vereinfacht nach DIN EN 60617 · „2“ = Doppelsteckdose</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WALLBOX-RECHNER ===== -->
+<section id="wallbox">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Wallbox-Rechner</p>
+      <h2>Wie schnell lädt <em>Ihr</em> Auto?</h2>
+      <p class="lead" style="margin-top:18px">Tagesstrecke und Auto einstellen – der Rechner zeigt, wie lange das Nachladen dauert und was es kostet. Mit Steckdose, 11-kW-Wallbox oder 22 kW.</p>
+    </div>
+    <div class="rechner">
+      <div class="eingabe glas auf">
+        <div class="feld"><label for="w-km">Strecke pro Tag <output id="o-km">45 km</output></label><input id="w-km" type="range" min="5" max="200" step="5" value="45"></div>
+        <div class="feld"><label for="w-verb">Verbrauch des Autos <output id="o-verb">17 kWh/100 km</output></label><input id="w-verb" type="range" min="12" max="26" step="0.5" value="17"></div>
+        <div class="feld"><label for="w-akku">Akku (netto) <output id="o-akku">64 kWh</output></label><input id="w-akku" type="range" min="30" max="110" step="1" value="64"></div>
+        <div class="feld"><label>Ladepunkt</label><div class="wahl" id="w-lp" role="group" aria-label="Ladepunkt">
+          <button type="button" data-v="2.3" aria-pressed="false">Steckdose 2,3 kW</button><button type="button" data-v="3.7" aria-pressed="false">Wallbox 1-phasig 3,7 kW</button><button type="button" data-v="11" aria-pressed="true">Wallbox 11 kW</button><button type="button" data-v="22" aria-pressed="false">Wallbox 22 kW</button></div>
+          <small class="unter">Das Auto lädt höchstens so schnell, wie sein Bordlader kann.</small></div>
+        <div class="feld"><label>Bordlader des Autos (AC)</label><div class="wahl" id="w-ob" role="group" aria-label="Bordlader">
+          <button type="button" data-v="7.4" aria-pressed="false">7,4 kW</button><button type="button" data-v="11" aria-pressed="true">11 kW</button><button type="button" data-v="22" aria-pressed="false">22 kW</button></div></div>
+      </div>
+      <div class="ergebnis glas auf" aria-live="polite">
+        <p class="label">Ihr Ergebnis</p>
+        <div class="gross"><span id="e-zeit">1 h 25 min</span><small>Nachladen für die Tagesstrecke</small></div>
+        <div class="ladebalken" aria-hidden="true"><i id="b-lade"></i><span id="b-txt"></span></div>
+        <ul class="posten">
+          <li><span>Strom pro Tag (inkl. ca. 10 % Ladeverluste)</span><b id="e-kwh">≈ 8,4 kWh</b></li>
+          <li><span>Tatsächliche Ladeleistung</span><b id="e-leist">11 kW</b></li>
+          <li><span>Akku von 10 auf 80 %</span><b id="e-voll">≈ 4 h 30 min</b></li>
+          <li><span>Kosten im Jahr (Netzstrom 37 ct/kWh)</span><b id="e-kost">≈ 1.130 €</b></li>
+        </ul>
+        <p class="hinweis" id="e-hinweis"></p>
+        <p class="hinweis">Richtwerte. Strompreis 37 ct/kWh (BDEW-Durchschnitt Haushalte 2026). Wallboxen bis 11 kW werden beim Netzbetreiber angemeldet, über 11 kW braucht es seine Zustimmung. Neue Wallboxen über 4,2 kW gelten als steuerbare Verbrauchseinrichtung nach § 14a EnWG – dafür gibt es ein reduziertes Netzentgelt.</p>
+        <a class="knopf" href="#kontakt" style="margin-top:18px;align-self:flex-start" id="w-knopf">Wallbox-Check anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGEN ===== -->
+<section id="leistungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Leistungen</p>
+      <h2>Vom Hausanschluss bis zur <em>Steckdose</em>.</h2>
+    </div>
+    <div class="leist">
+      <article class="glas auf"><span class="nr">01</span><h3>Elektroinstallation</h3><p>Neubau und Sanierung: Leitungen in den Installationszonen nach DIN 18015-3, Stromkreise sauber aufgeteilt, alles gemessen und protokolliert.</p><div class="tags"><span>Neubau</span><span>Sanierung</span><span>Altbau</span></div></article>
+      <article class="glas auf"><span class="nr">02</span><h3>Zählerschrank</h3><p>Erneuerung nach VDE-AR-N 4100 und den technischen Anschlussbedingungen Ihres Netzbetreibers – mit FI-Schutz und Überspannungsschutz.</p><div class="tags"><span>TAB</span><span>FI / RCD</span><span>Überspannung</span></div></article>
+      <article class="glas auf"><span class="nr">03</span><h3>Wallbox & PV-Anschluss</h3><p>Ladepunkt planen, Leitung dimensionieren, beim Netzbetreiber anmelden – auf Wunsch mit Überschussladen aus der PV-Anlage.</p><div class="tags"><span>11 kW</span><span>§ 14a EnWG</span></div></article>
+      <article class="glas auf"><span class="nr">04</span><h3>Smart Home</h3><p>KNX für Neubau und Kernsanierung, Funk-Lösungen für den Bestand: Licht, Jalousien, Heizung und Präsenz – bedienbar per Taster und App.</p><div class="tags"><span>KNX</span><span>Funk</span><span>Szenen</span></div></article>
+      <article class="glas auf"><span class="nr">05</span><h3>E-Check & Prüfung</h3><p>Prüfung Ihrer Anlage mit Messprotokoll. Für Betriebe die wiederkehrende Prüfung nach DGUV Vorschrift 3 – Anlagen und Geräte.</p><div class="tags"><span>E-Check</span><span>DGUV V3</span></div></article>
+      <article class="glas auf"><span class="nr">06</span><h3>Netzwerk & Kommunikation</h3><p>Netzwerkleitungen sternförmig zum Patchfeld, WLAN-Zugangspunkte an der Decke, Sprechanlage und Sat-Verteilung.</p><div class="tags"><span>LAN</span><span>WLAN</span><span>Sprechanlage</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section id="ablauf">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Ablauf</p>
+      <h2>Vier Schritte bis zum <em>Protokoll</em>.</h2>
+    </div>
+    <ol class="ablauf">
+      <li class="glas auf"><div class="z">01</div><h3>Vor-Ort-Termin</h3><p>Bestand, Zählerschrank und Ihre Wünsche – mit Blick in jeden Raum.</p><span class="dauer">KOSTENLOS · CA. 45 MIN</span></li>
+      <li class="glas auf"><div class="z">02</div><h3>Plan & Angebot</h3><p>Installationsplan mit allen Punkten und ein Festpreis-Angebot.</p><span class="dauer">INNERHALB VON 5 WERKTAGEN</span></li>
+      <li class="glas auf"><div class="z">03</div><h3>Installation</h3><p>Schlitze, Leitungen, Dosen, Verteiler – mit Staubschutz und täglicher Reinigung.</p><span class="dauer">NACH TERMIN</span></li>
+      <li class="glas auf"><div class="z">04</div><h3>Messung & Übergabe</h3><p>Erstprüfung nach DIN VDE 0100-600, Messprotokoll, Plan und Einweisung.</p><span class="dauer">MIT PROTOKOLL</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== PAKETE (Beispiel) ===== -->
+<section id="pakete">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Beispiel-Pakete</p>
+      <h2>Drei Wege zu <em>sicherem</em> Strom.</h2>
+      <p class="lead" style="margin-top:18px">Beispielwerte für ein Einfamilienhaus. Den Preis gibt es nach dem Vor-Ort-Termin.</p>
+    </div>
+    <div class="pakete">
+      <div class="paket glas auf"><h3>Zählerschrank neu</h3><p class="sub">Das Herz auf dem Stand von heute.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Zählerschrank nach TAB</li><li>FI-Schutz und Überspannungsschutz</li><li>Anmeldung beim Netzbetreiber</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+      <div class="paket glas ziel auf"><span class="badge">MEIST GEWÄHLT</span><h3>Haus-Sanierung Elektro</h3><p class="sub">Einmal alles neu – für die nächsten 40 Jahre.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Alles aus „Zählerschrank neu“</li><li>Neue Leitungen, Dosen und Schalter</li><li>Netzwerk in jeden Wohnraum</li><li>Wallbox-Vorbereitung inklusive</li></ul><a class="knopf" href="#kontakt">Termin anfragen</a></div>
+      <div class="paket glas auf"><h3>Smart-Home-Haus</h3><p class="sub">Neubau mit KNX.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Komplette Installation Neubau</li><li>KNX für Licht, Jalousien, Heizung</li><li>Szenen, Präsenz, App</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEWERTUNGEN ===== -->
+<section id="bewertungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Bewertungen</p>
+      <h2>Was <em>Kunden</em> sagen.</h2>
+    </div>
+    <div class="bew">
+      <div class="glas schnitt auf"><span class="sterne" style="opacity:.35">★★★★★</span><br><b>–,–</b><p style="color:var(--text2)">Hier steht Ihr echter Google-Durchschnitt mit Datum.</p></div>
+      <div class="glas platz auf"><p class="label">Platzhalter im Beispiel-Template</p><h3>Hier erscheinen Ihre <em>echten</em> Google-Bewertungen.</h3><p>Ausgewählte Auszüge mit gekürzten Namen, dazu „Bewertung schreiben“ und „Alle lesen“ – direkt verlinkt mit Ihrem Google-Profil. Im Template stehen bewusst keine erfundenen Stimmen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Kontakt</p>
+      <h2>Ihr Haus. <em>Unser</em> Plan.</h2>
+    </div>
+    <div class="gitter">
+      <div class="daten auf">
+        <div class="glas"><dl>
+          <dt>Telefon</dt><dd>0000 000000 <small style="color:var(--text3)">(Beispiel)</small></dd>
+          <dt>E-Mail</dt><dd>info@quandel.example.com</dd>
+          <dt>Adresse</dt><dd>Musterweg 1, 00000 Beispielstadt</dd>
+          <dt>Erreichbar</dt><dd>Mo–Fr 7:00–16:30 Uhr</dd>
+        </dl></div>
+        <p class="hinweis">Tipp: Ein Foto vom geöffneten Zählerschrank (ohne die Abdeckung zu entfernen!) hilft uns, den Termin vorzubereiten.</p>
+      </div>
+      <form class="glas auf" id="kontaktform" novalidate>
+        <div class="zwei">
+          <div class="f"><label for="k-name">Name *</label><input id="k-name" name="name" autocomplete="name" maxlength="80" required></div>
+          <div class="f"><label for="k-tel">Telefon *</label><input id="k-tel" name="telefon" type="tel" autocomplete="tel" maxlength="40" required></div>
+        </div>
+        <div class="zwei">
+          <div class="f"><label for="k-mail">E-Mail</label><input id="k-mail" name="email" type="email" autocomplete="email" maxlength="120"></div>
+          <div class="f"><label for="k-thema">Worum geht es? *</label><select id="k-thema" name="thema" required>
+            <option value="">Bitte wählen</option><option>Elektroinstallation / Sanierung</option><option>Zählerschrank</option><option>Wallbox</option><option>Smart Home</option><option>E-Check / Prüfung</option><option>Netzwerk / Sprechanlage</option><option>Etwas anderes</option></select></div>
+        </div>
+        <div class="f"><label for="k-text">Ihre Nachricht</label><textarea id="k-text" name="nachricht" maxlength="2000" placeholder="z. B. Altbau von 1975, Zählerschrank ohne FI, Wallbox geplant"></textarea></div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check"><input type="checkbox" name="datenschutz" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+        <button class="knopf" type="submit">Anfrage senden</button>
+        <p id="formhinweis" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="marke" href="#top"><span class="blitz" aria-hidden="true"></span><b>QUANDEL</b><i>Elektrotechnik</i></a>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="bildnachweis.html">Bildnachweis</a></nav>
+    <p class="beisp">Beispiel-Template – „Quandel Elektrotechnik“ ist eine erfundene Firma. Konzept & Umsetzung: Häufele Webdesign – Niklas Häufele.</p>
+  </div>
+</footer>
+
+<aside class="assi" id="assi" aria-label="Fragen-Assistent">
+  <div class="ak" id="assikopf"><span class="p"></span><div><b>Fragen an Quandel</b><small>Antwortet sofort</small></div><button type="button" id="assizu" aria-label="Fragen-Assistent einklappen">–</button></div>
+  <div class="verlauf" id="verlauf" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="assiform"><label class="sr" for="assiein">Ihre Frage</label><input id="assiein" placeholder="Frage eingeben …" autocomplete="off" maxlength="200"><button type="submit">→</button></form>
+  <p class="fuss">Automatische Antworten aus geprüften Infos · keine KI-Anfrage an Dritte</p>
+</aside>
+
+<script src="assets/js/hg-wahl.js"></script>
+<script src="assets/js/hg-auswahl.js"></script>
+<script src="assets/js/hintergrund.js"></script>
+<script src="assets/js/lenis.min.js"></script>
+<script src="assets/js/seite.js"></script>
+</body>
+</html>

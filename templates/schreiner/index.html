@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ostrander Holzwerkstatt – Möbel, Einbauschränke, Küchen nach Maß (Beispiel-Template)</title>
+<meta name="description" content="Beispiel-Template von Häufele Webdesign für Schreinereien: ein Sideboard aus Eiche entsteht in Echtzeit-3D, zerlegt sich in 31 Teile, Holzart zum Wählen, Einbauschrank-Planer. Die Firma ist erfunden.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#140f0b">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/schriften.css">
+<link rel="stylesheet" href="assets/css/basis.css">
+<link rel="stylesheet" href="assets/css/kino.css">
+<link rel="stylesheet" href="assets/css/seite.css">
+<link rel="stylesheet" href="assets/css/filmplatz.css">
+<script src="assets/js/vorab.js"></script>
+</head>
+<body>
+<div class="hg-still" aria-hidden="true"></div>
+<canvas id="hg" aria-hidden="true"></canvas>
+<div class="hg-dunkel" aria-hidden="true"></div>
+
+<div class="demo">
+  <span>Beispiel-Template · Firma erfunden</span>
+  <a href="../../index.html#templates">← Alle Templates</a>
+  <a class="waehlen" href="../../index.html?template=schreiner#wunsch">Dieses Template wählen</a>
+</div>
+
+<header class="kopf" id="kopf">
+  <a class="marke" href="#top" aria-label="Ostrander Holzwerkstatt – zum Anfang"><span class="zinke" aria-hidden="true"></span><b>OSTRANDER</b><i>Holzwerkstatt</i></a>
+  <nav class="menue" aria-label="Hauptmenü">
+    <a href="#kino">Das Möbel</a><a href="#planer">Schrank-Planer</a><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a><a href="#pakete">Pakete</a>
+  </nav>
+  <a class="knopf" href="#kontakt"><span class="lang">Aufmaß anfragen</span><span class="kurz">Anfragen</span></a>
+</header>
+
+<main id="top">
+<!-- ===== START: Platz für den eigenen Website-Film des Betriebs (20N-FIX4: kein Bilder-Film im Beispiel) ===== -->
+<section class="fp" id="fkino" aria-label="Platzhalter: Hier kommt Ihr eigener Website-Film hin" style="--fp-a:#D9A55B;--fp-h:#ECC892;--fp-rgb:217,165,91">
+  <div class="fp-flaeche">
+    <div class="fp-licht" aria-hidden="true"></div>
+    <div class="fp-korn" aria-hidden="true"></div>
+    <div class="fp-kante" aria-hidden="true"><i></i></div>
+    <i class="fp-ecke fp-lo" aria-hidden="true"></i><i class="fp-ecke fp-ro" aria-hidden="true"></i><i class="fp-ecke fp-lu" aria-hidden="true"></i><i class="fp-ecke fp-ru" aria-hidden="true"></i>
+    <div class="fp-zeile fp-oben" aria-hidden="true"><span><i class="fp-punkt"></i>Startfilm</span><span>läuft beim Scrollen · vor und zurück</span></div>
+    <div class="fp-mitte">
+      <span class="fp-play" aria-hidden="true"><i></i></span>
+      <p class="fp-titel" role="heading" aria-level="2"><span>Hier Ihr eigener</span> <em>Website-Film.</em></p>
+      <p class="fp-text">Individuell für Ihren Betrieb – aus Ihren eigenen Fotos: Ihre Werkstatt, Ihre Leute, Ihre Projekte.</p>
+    </div>
+    <div class="fp-zeile fp-unten" aria-hidden="true"><span>Im Beispiel bewusst frei</span><span>Darunter: so sieht Ihre Seite aus ↓</span></div>
+  </div>
+</section>
+<section class="fp-held" aria-label="Einleitung">
+  <div class="fp-held-in">
+    <p class="fp-nr">Schreinerei · Einbaumöbel · Küchen · Innenausbau</p>
+    <h1>Auf den Millimeter. <em>Für genau diese Wand.</em></h1>
+    <p class="fp-lead">Einbauschränke, Küchen und Möbel aus massivem Holz – aufgemessen bei Ihnen, gebaut in unserer Werkstatt, eingepasst an schiefe Wände und hängende Decken.</p>
+    <div class="knoepfe"><a class="knopf" href="#kontakt">Aufmaß-Termin anfragen →</a><a class="knopf leer" href="#planer">Schrank planen</a></div>
+  </div>
+</section>
+
+<!-- ===== KONFIGURATOR: 3D-Sideboard (KINO-Engine), früher Hero – jetzt Holzart-Konfigurator ===== -->
+<section class="kino" id="kino" aria-label="Ein Sideboard aus Eiche in 3D – vom Entstehen bis zum Zusammenbau">
+  <div class="buehne" id="buehne">
+    <div class="riese" id="riese" aria-hidden="true">HOLZ</div>
+    <div class="labels" id="labels" aria-hidden="true"></div>
+    <div class="vorhang" id="vorhang" aria-hidden="true"></div>
+
+    <div class="kap k0 an" data-a="0" data-b=".09">
+      <p class="label">Ihr Sideboard · live in 3D</p>
+      <h2>Ein Möbel. <em>Vier Hölzer.</em> Live gebaut.</h2>
+      <p class="lead">Scrollen Sie: Das Sideboard entsteht Brett für Brett als Echtzeit-3D-Modell. Am Ende wählen Sie die Holzart selbst – Eiche, Esche, Nussbaum oder Räuchereiche.</p>
+      <p class="scrollhin" aria-hidden="true"><i></i>Scrollen: das Möbel zerlegt sich</p>
+    </div>
+    <div class="kap k1" data-a=".17" data-b=".30"><p class="nr">01 · Makro</p><h2>3 mm Fuge.<br><em>Rundum.</em></h2><p>Jede Front sitzt mit derselben Luft zum Nachbarn – oben, unten, links, rechts. Das sieht man nicht. Man merkt es nur, wenn es fehlt.</p></div>
+    <div class="kap k2" data-a=".38" data-b=".55"><p class="nr">02 · Explosion</p><h2>31 Teile.<br><em>Jedes nach Maß.</em></h2><p>Korpus aus Eiche massiv, Rückwand in der Nut, Fachboden im 32-mm-Raster, Topfbänder, Vollauszüge, Stahlkufen. Nichts davon kommt aus dem Katalog.</p></div>
+    <div class="kap k3" data-a=".64" data-b=".77"><p class="nr">03 · Vollauszug</p><h2>Bis ganz hinten.<br><em>Leise zu.</em></h2><p>Schubkästen laufen auf Unterflur-Vollauszügen mit Dämpfung: Sie sehen den ganzen Inhalt, und nichts knallt beim Schließen.</p></div>
+    <div class="kap k4" data-a=".84" data-b=".93"><p class="nr">04 · Ihr Holz</p><h2>Gleiches Möbel.<br><em>Ihr Holz.</em></h2><p>Wählen Sie die Holzart – das Möbel wechselt sofort. Und halten Sie den Knopf gedrückt: Die Tür öffnet am Topfband.</p></div>
+
+    <div class="holzwahl" id="holzwahl" aria-label="Holzart wählen">
+      <div class="hw-arten">
+        <button type="button" data-art="eiche" aria-pressed="true"><i style="background:linear-gradient(135deg,#C9A16B,#80582F)"></i>Eiche natur</button>
+        <button type="button" data-art="raeucher" aria-pressed="false"><i style="background:linear-gradient(135deg,#86603F,#3A2414)"></i>Räuchereiche</button>
+        <button type="button" data-art="nuss" aria-pressed="false"><i style="background:linear-gradient(135deg,#8A6142,#3E2718)"></i>Nussbaum</button>
+        <button type="button" data-art="esche" aria-pressed="false"><i style="background:linear-gradient(135deg,#4A4540,#141210)"></i>Esche schwarz</button>
+      </div>
+      <button type="button" class="halten" id="halten"><span class="ring" aria-hidden="true"></span>Gedrückt halten: Tür öffnen</button>
+    </div>
+
+    <dl class="instr" aria-label="Live-Werte des 3D-Modells">
+      <div><dt>Teile</dt><dd>31</dd></div>
+      <div><dt>Explosion</dt><dd><b id="lv-ex">000</b> mm</dd></div>
+      <div><dt>Auszug</dt><dd><b id="lv-az">000</b> / 400 mm</dd></div>
+      <div><dt>Tür</dt><dd><b id="lv-tu">000</b> %</dd></div>
+      <div><dt>Brennweite</dt><dd><b id="lv-bw">45</b> mm</dd></div>
+      <div class="breit"><dt>Holz</dt><dd id="lv-holz">Eiche natur, geölt</dd></div>
+    </dl>
+    <nav class="schiene" aria-label="Kapitel des 3D-Möbels">
+      <button type="button" data-p="0">Start</button><button type="button" data-p=".235">Makro</button><button type="button" data-p=".47">Explosion</button><button type="button" data-p=".705">Auszug</button><button type="button" data-p=".885">Holz</button>
+    </nav>
+    <p class="hinweis3d">3D-Darstellung · Beispielmöbel 160 × 72 × 45 cm</p>
+  </div>
+</section>
+
+<!-- ===== WERTE (große Zahlen) ===== -->
+<section class="werte" aria-label="Werkstatt in Zahlen">
+  <div class="wrap">
+    <div class="zahl auf"><b data-zahl="9">9</b><span>%</span><p>Holzfeuchte, mit der wir Massivholz für beheizte Räume verarbeiten. Trockener als die Luft im Lager – damit später nichts reißt.</p></div>
+    <div class="zahl auf"><b data-zahl="0.5" data-komma="1">0,5</b><span>mm</span><p>Toleranz beim Zuschnitt. Ihre Nische ist schief? Wir messen an zwölf Punkten und bauen die Schräge mit.</p></div>
+    <div class="zahl auf"><b data-zahl="1">1</b><span>Tag</span><p>dauert die Montage eines Einbauschranks meistens. Vorbereitet wird in der Werkstatt, nicht in Ihrem Flur.</p></div>
+  </div>
+</section>
+
+<!-- ===== SCHRANK-PLANER ===== -->
+<section class="planer" id="planer">
+  <div class="wrap">
+    <div class="auf kopftext">
+      <p class="label">Einbauschrank-Planer</p>
+      <h2>Ihre Nische. <em>Ihr Schrank.</em></h2>
+      <p class="lead">Geben Sie die Maße der Nische ein – der Planer teilt die Fronten, zählt die Topfbänder und sagt, ob eine Kleiderstange quer passt.</p>
+    </div>
+    <div class="pl-gitter">
+      <div class="glas pl-ein auf">
+        <div class="feld"><label for="p-b">Breite der Nische <output id="o-b">240 cm</output></label><input type="range" id="p-b" min="60" max="420" step="1" value="240"></div>
+        <div class="feld"><label for="p-h">Höhe <output id="o-h">250 cm</output></label><input type="range" id="p-h" min="180" max="300" step="1" value="250"></div>
+        <div class="feld"><label for="p-t">Tiefe <output id="o-t">62 cm</output></label><input type="range" id="p-t" min="35" max="75" step="1" value="62"></div>
+        <div class="feld"><span class="flabel">Türen</span>
+          <div class="wahl" id="p-art"><button type="button" data-v="dreh" aria-pressed="true">Drehtüren</button><button type="button" data-v="schiebe" aria-pressed="false">Schiebetüren</button></div></div>
+        <p class="unter">Richtwerte für die Planung. Endgültig entscheidet das Aufmaß vor Ort – Wände sind selten gerade.</p>
+      </div>
+      <div class="glas pl-aus auf">
+        <svg id="p-svg" viewBox="0 0 520 380" role="img" aria-label="Ansicht des geplanten Schranks"></svg>
+        <ul class="pl-werte" id="p-werte"></ul>
+        <a class="knopf" id="p-knopf" href="#kontakt">Mit diesen Maßen anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGEN (große Liste statt Kacheln) ===== -->
+<section class="leistungen" id="leistungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Leistungen</p>
+      <h2>Was wir <em>bauen</em>.</h2>
+    </div>
+    <ol class="lliste">
+      <li class="auf"><span class="ln">01</span><h3>Einbauschränke & Dachschrägen</h3><p>Raumhoch, bis in die Schräge, um Kamin und Heizungsrohr herum. Mit Innenleben, das zu Ihren Sachen passt: Auszüge, Schuhfächer, Licht.</p><span class="lt">Drehtür · Schiebetür · grifflos</span></li>
+      <li class="auf"><span class="ln">02</span><h3>Küchen nach Maß</h3><p>Geplant mit Ihnen in 3D, Korpusse und Fronten aus der eigenen Werkstatt, Geräte aller Hersteller. Den Elektroanschluss übernimmt unser Partner-Elektriker.</p><span class="lt">Massivholz · Furnier · Schichtstoff</span></li>
+      <li class="auf"><span class="ln">03</span><h3>Möbel & Tische</h3><p>Sideboards, Regale, Esstische aus einem Stamm. Massivholzplatten bekommen Konstruktionen, die das Holz arbeiten lassen – damit nichts reißt oder sich wölbt.</p><span class="lt">Eiche · Nussbaum · Esche</span></li>
+      <li class="auf"><span class="ln">04</span><h3>Innentüren <h3>Innentüren & Haustür-Innenseite</h3> Wohnungstüren</h3><p>Zimmertüren mit Zarge, Schiebetüren in der Wand, Wohnungseingangstüren mit geprüftem Einbruchschutz nach DIN EN 1627.</p><span class="lt">Zarge · Schallschutz · RC 2</span></li>
+      <li class="auf"><span class="ln">05</span><h3>Reparatur & Aufarbeitung</h3><p>Fronten tauschen, Scharniere nachstellen, geölte Oberflächen auffrischen. Lieber ein Möbel retten als ein neues kaufen.</p><span class="lt">Ölen · Nachstellen · Ersatzteile</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section id="ablauf">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Ablauf</p>
+      <h2>Vom Zollstock zum <em>Möbel</em>.</h2>
+    </div>
+    <ol class="ablauf">
+      <li class="glas auf"><div class="z">01</div><h3>Aufmaß</h3><p>Wir kommen vorbei, messen mit Laser und Zollstock und hören zu, was in den Schrank soll.</p><span class="dauer">KOSTENLOS · CA. 45 MIN</span></li>
+      <li class="glas auf"><div class="z">02</div><h3>Entwurf in 3D</h3><p>Sie sehen Ihr Möbel, bevor ein Brett gesägt ist – mit Holzmustern zum Anfassen.</p><span class="dauer">INNERHALB VON 10 WERKTAGEN</span></li>
+      <li class="glas auf"><div class="z">03</div><h3>Werkstatt</h3><p>Zuschnitt, Kanten, Oberfläche – maschinell genau, von Hand geölt und geprüft.</p><span class="dauer">MEIST 4–8 WOCHEN</span></li>
+      <li class="glas auf"><div class="z">04</div><h3>Montage</h3><p>Aufgebaut, ausgerichtet, Fronten justiert, Staub weggesaugt. Fertig.</p><span class="dauer">MEIST AN EINEM TAG</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== PAKETE (Beispiel) ===== -->
+<section id="pakete">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Beispiel-Pakete</p>
+      <h2>Drei Wege zu <em>Ihrem</em> Möbel.</h2>
+      <p class="lead" style="margin-top:18px">Beispielwerte. Ihr echter Preis steht nach dem Aufmaß fest – als Festpreis.</p>
+    </div>
+    <div class="pakete">
+      <div class="paket glas auf"><h3>Einzelstück</h3><p class="sub">Ein Sideboard, ein Regal, ein Tisch.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Eiche massiv, geölt</li><li>Entwurf in 3D</li><li>Lieferung & Aufstellung</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+      <div class="paket glas ziel auf"><span class="badge">MEIST GEWÄHLT</span><h3>Einbauschrank komplett</h3><p class="sub">Raumhoch, wandbündig, für immer.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Aufmaß & 3D-Entwurf</li><li>Fronten in Ihrer Holzart</li><li>Innenleben nach Ihren Sachen</li><li>Montage meist an einem Tag</li><li>Geschenkt: Nachstellen & Pflege-Set nach einem Jahr</li></ul><a class="knopf" href="#kontakt">Aufmaß anfragen</a></div>
+      <div class="paket glas auf"><h3>Küche nach Maß</h3><p class="sub">Komplett aus der Werkstatt.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Alles aus „Einbauschrank komplett“</li><li>Geräte aller Hersteller</li><li>Arbeitsplatte nach Wahl</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEWERTUNGEN ===== -->
+<section id="bewertungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Bewertungen</p>
+      <h2>Was <em>Kunden</em> sagen.</h2>
+    </div>
+    <div class="bew">
+      <div class="glas schnitt2 auf"><span class="sterne" style="opacity:.35">★★★★★</span><br><b>–,–</b><p style="color:var(--text2)">Hier steht Ihr echter Google-Durchschnitt mit Datum.</p></div>
+      <div class="glas platz auf"><p class="label">Platzhalter im Beispiel-Template</p><h3>Hier erscheinen Ihre <em>echten</em> Google-Bewertungen.</h3><p>Ausgewählte Auszüge mit gekürzten Namen, dazu „Bewertung schreiben“ und „Alle lesen“ – direkt verlinkt mit Ihrem Google-Profil. Im Template stehen bewusst keine erfundenen Stimmen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Kontakt</p>
+      <h2>Messen wir <em>nach</em>.</h2>
+    </div>
+    <div class="gitter">
+      <div class="daten auf">
+        <div class="glas"><dl>
+          <dt>Telefon</dt><dd>0000 000000 <small style="color:var(--text3)">(Beispiel)</small></dd>
+          <dt>E-Mail</dt><dd>info@ostrander.example.com</dd>
+          <dt>Werkstatt</dt><dd>Musterweg 1, 00000 Beispielstadt</dd>
+          <dt>Erreichbar</dt><dd>Mo–Fr 7:30–16:30 Uhr</dd>
+        </dl></div>
+        <p class="hinweis">Tipp: Ein Handyfoto der Nische mit Zollstock im Bild und die ungefähren Maße helfen uns, das Aufmaß vorzubereiten.</p>
+      </div>
+      <form class="glas auf" id="kontaktform" novalidate>
+        <div class="zwei">
+          <div class="f"><label for="k-name">Name *</label><input id="k-name" name="name" autocomplete="name" maxlength="80" required></div>
+          <div class="f"><label for="k-tel">Telefon *</label><input id="k-tel" name="telefon" type="tel" autocomplete="tel" maxlength="40" required></div>
+        </div>
+        <div class="zwei">
+          <div class="f"><label for="k-mail">E-Mail</label><input id="k-mail" name="email" type="email" autocomplete="email" maxlength="120"></div>
+          <div class="f"><label for="k-thema">Worum geht es? *</label><select id="k-thema" name="thema" required>
+            <option value="">Bitte wählen</option><option>Einbauschrank / Dachschräge</option><option>Küche nach Maß</option><option>Möbel / Tisch</option><option>Innentüren</option><option>Reparatur / Aufarbeitung</option><option>Etwas anderes</option></select></div>
+        </div>
+        <div class="f"><label for="k-text">Ihre Nachricht</label><textarea id="k-text" name="nachricht" maxlength="2000" placeholder="z. B. Nische im Flur, 2,40 m breit, 2,50 m hoch, Fronten Eiche"></textarea></div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check"><input type="checkbox" name="datenschutz" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+        <button class="knopf" type="submit">Anfrage senden</button>
+        <p id="formhinweis" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="marke" href="#top"><span class="zinke" aria-hidden="true"></span><b>OSTRANDER</b><i>Holzwerkstatt</i></a>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="bildnachweis.html">Bildnachweis</a></nav>
+    <p class="beisp">Beispiel-Template – „Ostrander Holzwerkstatt“ ist eine erfundene Firma. Das Möbel ist eine 3D-Darstellung in Echtzeit, keine Fotografie. Konzept & Umsetzung: Häufele Webdesign – Niklas Häufele.</p>
+  </div>
+</footer>
+
+<aside class="assi" id="assi" aria-label="Fragen-Assistent">
+  <div class="ak" id="assikopf"><span class="p"></span><div><b>Fragen an Ostrander</b><small>Antwortet sofort</small></div><button type="button" id="assizu" aria-label="Fragen-Assistent einklappen">–</button></div>
+  <div class="verlauf" id="verlauf" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="assiform"><label class="sr" for="assiein">Ihre Frage</label><input id="assiein" placeholder="Frage eingeben …" autocomplete="off" maxlength="200"><button type="submit" aria-label="Frage senden">→</button></form>
+  <p class="fuss">Automatische Antworten aus geprüften Infos · keine KI-Anfrage an Dritte</p>
+</aside>
+
+<!-- Hintergrund: „Glut & Kohle“ – gebranntes Holz (Shou-Sugi-Ban): Krakelee-Zellen mit seidigem Kohleglanz, Glut atmet in den Rissen. Kein Brett, keine Latte – die Atmosphäre einer Werkstatt. -->
+<script src="assets/js/hg-wahl.js"></script>
+<script src="assets/js/hg-auswahl.js"></script>
+<script src="assets/js/hintergrund.js"></script>
+<script src="assets/js/lenis.min.js"></script>
+<script src="assets/js/kino.js"></script>
+<script src="assets/js/holz-textur.js"></script>
+<script src="assets/js/held.js"></script>
+<script src="assets/js/seite.js"></script>
+</body>
+</html>

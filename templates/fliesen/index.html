@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kachelwerk Brandl – Fliesen & Bad (Beispiel-Template)</title>
+<meta name="description" content="Beispiel-Template von Häufele Webdesign für Fliesenleger: bodengleiche Duschen, Großformat, Fliesenrechner. Die Firma ist erfunden.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16130f">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/schriften.css">
+<link rel="stylesheet" href="assets/css/kino.css">
+<link rel="stylesheet" href="assets/css/seite.css">
+<link rel="stylesheet" href="assets/css/filmplatz.css">
+<script src="assets/js/vorab.js"></script>
+</head>
+<body>
+<div class="hg-still" aria-hidden="true"></div>
+<canvas id="hg" aria-hidden="true"></canvas>
+<div class="hg-dunkel" aria-hidden="true"></div>
+
+<div class="demo">
+  <span>Beispiel-Template · Firma erfunden</span>
+  <a href="../../index.html#templates">← Alle Templates</a>
+  <a class="waehlen" href="../../index.html?template=fliesen#wunsch">Dieses Template wählen</a>
+</div>
+
+<header class="kopf" id="kopf">
+  <a class="marke" href="#top" aria-label="Kachelwerk Brandl – zum Anfang"><b>KACHELWERK</b><i>Brandl</i></a>
+  <nav class="menue" aria-label="Hauptmenü">
+    <a href="#kino">Die Dusche</a><a href="#aufbau">Aufbau</a><a href="#rechner">Fliesenrechner</a><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a>
+  </nav>
+  <a class="knopf" href="#kontakt"><span class="lang">Aufmaß anfragen</span><span class="kurz">Anfragen</span></a>
+</header>
+
+<main id="top">
+<!-- ===== START: Platz für den eigenen Website-Film des Betriebs (20N-FIX4: kein Bilder-Film im Beispiel) ===== -->
+<section class="fp" id="fkino" aria-label="Platzhalter: Hier kommt Ihr eigener Website-Film hin" style="--fp-a:#C9895B;--fp-h:#E3B48C;--fp-rgb:201,137,91">
+  <div class="fp-flaeche">
+    <div class="fp-licht" aria-hidden="true"></div>
+    <div class="fp-korn" aria-hidden="true"></div>
+    <div class="fp-kante" aria-hidden="true"><i></i></div>
+    <i class="fp-ecke fp-lo" aria-hidden="true"></i><i class="fp-ecke fp-ro" aria-hidden="true"></i><i class="fp-ecke fp-lu" aria-hidden="true"></i><i class="fp-ecke fp-ru" aria-hidden="true"></i>
+    <div class="fp-zeile fp-oben" aria-hidden="true"><span><i class="fp-punkt"></i>Startfilm</span><span>läuft beim Scrollen · vor und zurück</span></div>
+    <div class="fp-mitte">
+      <span class="fp-play" aria-hidden="true"><i></i></span>
+      <p class="fp-titel" role="heading" aria-level="2"><span>Hier Ihr eigener</span> <em>Website-Film.</em></p>
+      <p class="fp-text">Individuell für Ihren Betrieb – aus Ihren eigenen Fotos: Ihre Werkstatt, Ihre Leute, Ihre Projekte.</p>
+    </div>
+    <div class="fp-zeile fp-unten" aria-hidden="true"><span>Im Beispiel bewusst frei</span><span>Darunter: so sieht Ihre Seite aus ↓</span></div>
+  </div>
+</section>
+<section class="fp-held" aria-label="Einleitung">
+  <div class="fp-held-in">
+    <p class="fp-nr">Fliesen &amp; Bad · Meister im Fliesenlegerhandwerk</p>
+    <h1>Bäder, die <em>dicht</em> halten. Fugen, die <em>sitzen.</em></h1>
+    <p class="fp-lead">Bodengleiche Duschen, Großformat bis 120 × 120 cm und komplette Badsanierung – abgedichtet nach DIN 18534, mit festem Ansprechpartner von der ersten Fliese bis zur letzten Silikonfuge.</p>
+    <div class="knoepfe"><a class="knopf" href="#kontakt">Kostenloses Aufmaß →</a><a class="knopf leer" href="#rechner">Fliesen berechnen</a></div>
+  </div>
+</section>
+
+<!-- ===== KONFIGURATOR: 3D-Duschecke (KINO-Engine), früher Hero – jetzt „Ihr Bad“ zum Ausprobieren ===== -->
+<section class="kino" id="kino" aria-label="Eine bodengleiche Dusche in 3D – vom Rohbau bis zur letzten Fuge">
+  <div class="buehne" id="buehne">
+    <div class="riese" id="riese" aria-hidden="true">FUGE</div>
+    <div class="labels" id="labels" aria-hidden="true"></div>
+    <div class="vorhang" id="vorhang" aria-hidden="true"></div>
+
+    <div class="kap k0 an" data-a="0" data-b=".08">
+      <p class="label">Ihre Duschecke · live in 3D</p>
+      <h2>Ihr Format. <em>Ihre Fuge.</em> Live gebaut.</h2>
+      <p class="lead">Dieselbe bodengleiche Dusche als Echtzeit-3D-Modell: Scrollen Sie, und sie entsteht neu – vom Rohbau bis zur letzten Fuge. Am Ende wählen Sie Format, Steinfarbe und Fugenfarbe selbst.</p>
+      <p class="scrollhin" aria-hidden="true"><i></i>Scrollen: die Dusche entsteht neu</p>
+    </div>
+    <div class="kap k1" data-a=".15" data-b=".24"><p class="nr">01 · Rohbau</p><h2>Tag 1.<br><em>Nur Wand.</em></h2><p>Bevor eine Fliese klebt, muss der Untergrund stimmen: eben, tragfähig, trocken. Was hier schiefgeht, sieht man in fünf Jahren – an der Wand der Nachbarn.</p></div>
+    <div class="kap k2" data-a=".29" data-b=".39"><p class="nr">02 · Abdichtung</p><h2>Zwei Lagen.<br><em>Jede Ecke.</em></h2><p>Verbundabdichtung in zwei Lagen nach DIN 18534, Dichtband in jeder Innenecke und an jedem Übergang, die Rinne mit Dichtmanschette eingebunden. Unsichtbar – und das Wichtigste am ganzen Bad.</p></div>
+    <div class="kap k3" data-a=".45" data-b=".63"><p class="nr">03 · Fliese für Fliese</p><h2><span id="k-anzahl">27</span> Fliesen.<br><em>3 mm Fuge.</em></h2><p>Großformat im Dünnbett, Fugen in einer Flucht über Boden und Wände. Am Boden 2 % Gefälle zur Rinne – deshalb geht Großformat in der Dusche nur mit Gefälle in eine Richtung.</p></div>
+    <div class="kap k4" data-a=".69" data-b=".78"><p class="nr">04 · Makro</p><h2>Silikon ist eine<br><em>Wartungsfuge.</em></h2><p>In Ecken und Anschlüssen gehört elastisches Silikon, keine Zementfuge – und es wird alle paar Jahre erneuert. Wir sagen Ihnen das vorher, nicht hinterher.</p></div>
+    <div class="kap k5" data-a=".84" data-b=".93"><p class="nr">05 · Ihr Bad</p><h2>Ihr Format.<br><em>Ihre Fuge.</em></h2><p>Wählen Sie Format und Fugenfarbe – die Dusche wird neu verlegt. Und halten Sie den Knopf gedrückt: Wasser an.</p></div>
+
+    <div class="holzwahl" id="formwahl" aria-label="Format und Fugenfarbe wählen">
+      <div class="hw-arten">
+        <button type="button" data-fmt="f3060" aria-pressed="false">30 × 60</button><button type="button" data-fmt="f6060" aria-pressed="false">60 × 60</button><button type="button" data-fmt="f60120" aria-pressed="true">60 × 120</button><button type="button" data-fmt="f120" aria-pressed="false">120 × 120</button>
+      </div>
+      <div class="hw-arten">
+        <button type="button" data-stein="hell" aria-pressed="true"><i style="background:linear-gradient(135deg,#E9E2D7,#8A8076)"></i>Stein hell</button><button type="button" data-stein="nero" aria-pressed="false"><i style="background:linear-gradient(135deg,#5a5652,#1d1c1b)"></i>Stein dunkel</button>
+      </div>
+      <div class="hw-arten">
+        <button type="button" data-fuge="hell" aria-pressed="false"><i style="background:#B9B3AA"></i>Fuge hell</button><button type="button" data-fuge="grau" aria-pressed="true"><i style="background:#6E6A64"></i>Fuge grau</button><button type="button" data-fuge="anthrazit" aria-pressed="false"><i style="background:#2E2C2A"></i>Fuge anthrazit</button>
+      </div>
+      <button type="button" class="halten" id="halten"><span class="ring" aria-hidden="true"></span>Gedrückt halten: Wasser an</button>
+    </div>
+
+    <dl class="instr" aria-label="Live-Werte des 3D-Modells">
+      <div><dt>Fliesen gelegt</dt><dd><b id="lv-n">000</b></dd></div>
+      <div><dt>Format</dt><dd id="lv-f">60 × 120</dd></div>
+      <div><dt>Abdichtung</dt><dd><b id="lv-ab">100</b> %</dd></div>
+      <div><dt>Gefälle</dt><dd><b>2,0</b> %</dd></div>
+      <div><dt>Fuge</dt><dd><b>3</b> mm</dd></div>
+      <div class="breit"><dt>Wasser</dt><dd><b id="lv-wa">0,0</b> l/min</dd></div>
+    </dl>
+    <nav class="schiene" aria-label="Kapitel der 3D-Dusche">
+      <button type="button" data-p="0">Start</button><button type="button" data-p=".195">Rohbau</button><button type="button" data-p=".34">Abdichtung</button><button type="button" data-p=".6">Fliesen</button><button type="button" data-p=".735">Makro</button><button type="button" data-p=".885">Ihr Bad</button>
+    </nav>
+    <p class="hinweis3d">3D-Darstellung · Beispiel-Duschecke 140 × 140 cm</p>
+  </div>
+</section>
+
+<!-- ===== AUFBAU (Scroll-Film aus echtem 3D) ===== -->
+<section class="aufbau" id="aufbau" aria-label="Aufbau einer bodengleichen Dusche">
+  <div class="buehne">
+    <div class="klebt">
+      <div>
+        <div class="kopfzeile auf">
+          <p class="label">Schicht für Schicht</p>
+          <h2>Vom Rohbau zur <em>dichten</em> Dusche.</h2>
+        </div>
+        <ol class="schritte" id="schritte"></ol>
+        <p class="handytext" id="handytext"></p>
+      </div>
+      <div class="film" id="film">
+        <canvas id="filmcv" aria-hidden="true"></canvas>
+        <div class="zaehler"><span id="zlabel">Schicht</span><b id="znr">01</b>von 09</div>
+        <span class="kennz">3D-Darstellung · schematisch</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FLIESENRECHNER ===== -->
+<section id="rechner">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Fliesenrechner</p>
+      <h2>Wie viel <em>Fliese</em> brauchen Sie?</h2>
+      <p class="lead" style="margin-top:18px">Fläche, Format und Verlegeart einstellen – der Rechner zeigt Fliesen inklusive Verschnitt, Kleber und Fugenmörtel.</p>
+    </div>
+    <div class="rechner">
+      <div class="eingabe glas auf">
+        <div class="feld"><label for="r-l">Länge <output id="o-l">4,0 m</output></label><input id="r-l" type="range" min="1" max="12" step="0.1" value="4"></div>
+        <div class="feld"><label for="r-b">Breite <output id="o-b">3,0 m</output></label><input id="r-b" type="range" min="1" max="10" step="0.1" value="3"></div>
+        <div class="feld"><label>Fliesenformat</label><div class="wahl" id="w-format" role="group" aria-label="Fliesenformat">
+          <button type="button" data-v="30x60" aria-pressed="false">30 × 60</button><button type="button" data-v="60x60" aria-pressed="false">60 × 60</button><button type="button" data-v="60x120" aria-pressed="true">60 × 120</button><button type="button" data-v="120x120" aria-pressed="false">120 × 120</button></div></div>
+        <div class="feld"><label>Verlegeart</label><div class="wahl" id="w-art" role="group" aria-label="Verlegeart">
+          <button type="button" data-v="gerade" aria-pressed="true">Gerade</button><button type="button" data-v="halb" aria-pressed="false">Halbverband</button><button type="button" data-v="drittel" aria-pressed="false">Drittelverband</button><button type="button" data-v="diagonal" aria-pressed="false">Diagonal</button></div></div>
+        <div class="feld"><label>Fugenbreite</label><div class="wahl" id="w-fuge" role="group" aria-label="Fugenbreite">
+          <button type="button" data-v="2" aria-pressed="false">2 mm</button><button type="button" data-v="3" aria-pressed="true">3 mm</button><button type="button" data-v="5" aria-pressed="false">5 mm</button></div></div>
+        <div class="fliesbild" id="fliesbild" aria-hidden="true"></div>
+      </div>
+      <div class="ergebnis glas auf" aria-live="polite">
+        <p class="label">Ihr Ergebnis</p>
+        <div class="gross"><span id="e-stk">40</span><small>Fliesen</small></div>
+        <p style="color:var(--text2)" id="e-text">für 12,0 m² inklusive 10 % Verschnitt</p>
+        <ul class="posten">
+          <li><span>Zu bestellen inkl. Verschnitt</span><b id="e-flaeche">13,2 m²</b></li>
+          <li><span>Fliesenkleber C2 (Kammbett + Buttering)</span><b id="e-kleber">≈ 54 kg</b></li>
+          <li><span>Fugenmörtel</span><b id="e-fuge">≈ 3 kg</b></li>
+          <li><span>Empfohlene Zahnung</span><b id="e-zahn">10 mm</b></li>
+        </ul>
+        <p class="hinweis">Richtwerte zur Planung. Verschnitt: gerade ca. 10 %, Halb-/Drittelverband ca. 12 %, diagonal ca. 15 %. Kleber- und Fugenmengen hängen vom Produkt und Untergrund ab – die genaue Menge berechnen wir beim kostenlosen Aufmaß.</p>
+        <a class="knopf" href="#kontakt" style="margin-top:18px;align-self:flex-start" id="r-knopf">Mit diesen Maßen anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGEN ===== -->
+<section id="leistungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Leistungen</p>
+      <h2>Alles, was <em>Fliese</em> ist.</h2>
+    </div>
+    <div class="leist">
+      <article class="glas auf"><span class="nr">01</span><h3>Bodengleiche Duschen</h3><p>Ohne Stufe, mit Rinne oder Punktablauf, Gefälle im Estrich und Verbundabdichtung nach DIN 18534.</p><div class="tags"><span>W2-I</span><span>Rinne</span><span>Nischen</span></div></article>
+      <article class="glas auf"><span class="nr">02</span><h3>Badsanierung komplett</h3><p>Rückbau, Fliesen, Abdichtung – Sanitär- und Elektroarbeiten über feste Partnerbetriebe, abgestimmt in einem Zeitplan.</p><div class="tags"><span>Ein Ansprechpartner</span><span>Zeitplan</span></div></article>
+      <article class="glas auf"><span class="nr">03</span><h3>Großformat</h3><p>Platten bis 120 × 120 cm mit Ebenheitsprüfung, Kleber im kombinierten Verfahren und Nivelliersystem.</p><div class="tags"><span>60 × 120</span><span>120 × 120</span></div></article>
+      <article class="glas auf"><span class="nr">04</span><h3>Wohnräume & Küche</h3><p>Durchgehende Böden auf Fußbodenheizung, Küchenrückwände und Treppen mit passenden Stufenkanten.</p><div class="tags"><span>Fußbodenheizung</span><span>Treppen</span></div></article>
+      <article class="glas auf"><span class="nr">05</span><h3>Terrasse & Balkon</h3><p>2-cm-Feinsteinzeug auf Stelzlagern oder im Splittbett – frostsicher und mit sauberem Wasserablauf.</p><div class="tags"><span>Stelzlager</span><span>Frostsicher</span></div></article>
+      <article class="glas auf"><span class="nr">06</span><h3>Reparatur & Fugen</h3><p>Einzelne Fliesen tauschen, Fugen erneuern, Silikon-Wartungsfugen fachgerecht neu ziehen.</p><div class="tags"><span>Wartungsfuge</span><span>Schnell</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REFERENZEN ===== -->
+<section id="referenzen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Referenzen</p>
+      <h2>Fertig ist es erst, wenn das <em>Fugenbild</em> stimmt.</h2>
+    </div>
+    <div class="ref" id="ref">
+      <figure class="auf" data-gross="assets/img/ref-bad.webp"><span class="ki">✦ KI</span><img src="assets/img/ref-bad.webp" width="928" height="1152" loading="lazy" alt="Bad mit freistehender Wanne vor Großformatfliesen in Kalkstein-Optik und beleuchteter Nische"><figcaption><small>BEISPIELPROJEKT · BAD</small><b>Kalkstein-Optik, raumhohe Nische</b>60 × 120 cm hochkant, Fugen im Lot</figcaption></figure>
+      <figure class="auf" data-gross="assets/img/ref-terrasse.webp"><span class="ki">✦ KI</span><img src="assets/img/ref-terrasse.webp" width="1376" height="768" loading="lazy" alt="Terrasse mit großformatigen Feinsteinzeugplatten"><figcaption><small>BEISPIELPROJEKT · TERRASSE</small><b>2 cm Feinsteinzeug auf Stelzlagern</b></figcaption></figure>
+      <figure class="auf" data-gross="assets/img/ref-wohnen.webp"><span class="ki">✦ KI</span><img src="assets/img/ref-wohnen.webp" width="1376" height="768" loading="lazy" alt="Wohnküche mit durchgehendem Großformatboden"><figcaption><small>BEISPIELPROJEKT · WOHNEN</small><b>120 × 120 cm auf Fußbodenheizung</b></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section id="ablauf">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Ablauf</p>
+      <h2>Vier Schritte. <em>Ein</em> Ansprechpartner.</h2>
+    </div>
+    <ol class="ablauf">
+      <li class="glas auf"><div class="z">01</div><h3>Aufmaß vor Ort</h3><p>Wir messen, prüfen den Untergrund und hören zu, wie Sie Ihr Bad nutzen.</p><span class="dauer">KOSTENLOS · CA. 45 MIN</span></li>
+      <li class="glas auf"><div class="z">02</div><h3>Angebot mit Muster</h3><p>Festes Angebot mit Positionen, dazu echte Fliesenmuster zum Anfassen.</p><span class="dauer">INNERHALB VON 5 WERKTAGEN</span></li>
+      <li class="glas auf"><div class="z">03</div><h3>Ausführung</h3><p>Fester Zeitplan, staubarmer Rückbau, abgedeckte Wege und täglich besenrein.</p><span class="dauer">NACH ZEITPLAN</span></li>
+      <li class="glas auf"><div class="z">04</div><h3>Abnahme</h3><p>Gemeinsame Begehung, Pflegehinweise und Dokumentation der Abdichtung mit Fotos.</p><span class="dauer">MIT PROTOKOLL</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== PAKETE (Beispiel) ===== -->
+<section id="pakete">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Beispiel-Pakete</p>
+      <h2>Drei Wege zum <em>neuen</em> Bad.</h2>
+      <p class="lead" style="margin-top:18px">Beispielwerte für ein Bad mit ca. 7 m² Boden. Ihr echter Preis steht nach dem Aufmaß fest.</p>
+    </div>
+    <div class="pakete">
+      <div class="paket glas auf"><h3>Duschbereich neu</h3><p style="color:var(--text2);font-size:15px">Nur die Dusche – alles andere bleibt.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Rückbau Duschtasse</li><li>Bodengleiche Dusche mit Rinne</li><li>Abdichtung + Fliesen Dusche</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+      <div class="paket glas ziel auf"><span class="badge">MEIST GEWÄHLT</span><h3>Bad komplett</h3><p style="color:var(--text2);font-size:15px">Ein Ansprechpartner für das ganze Bad.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Rückbau bis auf den Rohbau</li><li>Bodengleiche Dusche + Großformat</li><li>Sanitär & Elektro über Partner</li><li>Fester Zeitplan + Abnahmeprotokoll</li></ul><a class="knopf" href="#kontakt">Aufmaß anfragen</a></div>
+      <div class="paket glas auf"><h3>Bad komplett + Planung</h3><p style="color:var(--text2);font-size:15px">Mit Badplanung vorab.</p><div class="preis">Preis nach Vor-Ort-Termin</div><ul><li>Alles aus „Bad komplett“</li><li>Badplanung mit Grundriss</li><li>Licht- und Nischenkonzept</li></ul><a class="knopf leer" href="#kontakt">Anfragen</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEWERTUNGEN ===== -->
+<section id="bewertungen">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Bewertungen</p>
+      <h2>Was <em>Kunden</em> sagen.</h2>
+    </div>
+    <div class="bew">
+      <div class="glas schnitt auf"><span class="sterne" style="opacity:.35">★★★★★</span><br><b>–,–</b><p style="color:var(--text2)">Hier steht Ihr echter Google-Durchschnitt mit Datum.</p></div>
+      <div class="glas platz auf"><p class="label">Platzhalter im Beispiel-Template</p><h3>Hier erscheinen Ihre <em>echten</em> Google-Bewertungen.</h3><p>Ausgewählte Auszüge mit gekürzten Namen, dazu „Bewertung schreiben“ und „Alle lesen“ – direkt verlinkt mit Ihrem Google-Profil. Im Template stehen bewusst keine erfundenen Stimmen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="auf">
+      <p class="label">Kontakt</p>
+      <h2>Ihr Bad. <em>Unser</em> Aufmaß.</h2>
+    </div>
+    <div class="gitter">
+      <div class="daten auf">
+        <div class="glas"><dl>
+          <dt>Telefon</dt><dd>0000 000000 <small style="color:var(--text3)">(Beispiel)</small></dd>
+          <dt>E-Mail</dt><dd>info@kachelwerk.example.com</dd>
+          <dt>Adresse</dt><dd>Musterweg 1, 00000 Beispielstadt</dd>
+          <dt>Erreichbar</dt><dd>Mo–Fr 7:00–17:00 Uhr</dd>
+        </dl></div>
+        <p class="hinweis">Tipp: Schicken Sie uns ein Foto vom jetzigen Bad und die Raummaße – dann bringen wir zum Aufmaß schon passende Fliesenmuster mit.</p>
+      </div>
+      <form class="glas auf" id="kontaktform" novalidate>
+        <div class="zwei">
+          <div class="f"><label for="k-name">Name *</label><input id="k-name" name="name" autocomplete="name" required></div>
+          <div class="f"><label for="k-tel">Telefon *</label><input id="k-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="zwei">
+          <div class="f"><label for="k-mail">E-Mail</label><input id="k-mail" name="email" type="email" autocomplete="email"></div>
+          <div class="f"><label for="k-thema">Worum geht es? *</label><select id="k-thema" name="thema" required>
+            <option value="">Bitte wählen</option><option>Bad komplett</option><option>Bodengleiche Dusche</option><option>Boden / Wohnräume</option><option>Terrasse / Balkon</option><option>Reparatur / Fugen</option><option>Etwas anderes</option></select></div>
+        </div>
+        <div class="f"><label for="k-text">Ihre Nachricht</label><textarea id="k-text" name="nachricht" placeholder="z. B. Bad ca. 7 m², Duschtasse soll raus, Wunschtermin ab März"></textarea></div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check"><input type="checkbox" name="datenschutz" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+        <button class="knopf" type="submit">Anfrage senden</button>
+        <p id="formhinweis" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="marke" href="#top"><b>KACHELWERK</b><i>Brandl</i></a>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="bildnachweis.html">Bildnachweis</a></nav>
+    <p class="beisp">Beispiel-Template – „Kachelwerk Brandl“ ist eine erfundene Firma. Konzept & Umsetzung: Häufele Webdesign – Niklas Häufele.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bild groß"><img alt=""><p>✦ KI-Beispielbild · Klicken zum Schließen</p></div>
+
+<aside class="assi" id="assi" aria-label="Fragen-Assistent">
+  <div class="ak" id="assikopf"><span class="p"></span><div><b>Fragen an Kachelwerk Brandl</b><small>Antwortet sofort</small></div><button type="button" id="assizu" aria-label="Fragen-Assistent einklappen">–</button></div>
+  <div class="verlauf" id="verlauf" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="assiform"><label class="sr" for="assiein">Ihre Frage</label><input id="assiein" placeholder="Frage eingeben …" autocomplete="off"><button type="submit">→</button></form>
+  <p class="fuss">Automatische Antworten aus geprüften Infos · keine KI-Anfrage an Dritte</p>
+</aside>
+
+<script src="assets/js/hg-wahl.js"></script>
+<script src="assets/js/bg-daten.js"></script>
+<script src="assets/js/hg-auswahl.js"></script>
+<script src="assets/js/hintergrund.js"></script>
+<script src="assets/js/film-daten.js"></script>
+<script src="assets/js/lenis.min.js"></script>
+<script src="assets/js/kino.js"></script>
+<script src="assets/js/stein-textur.js"></script>
+<script src="assets/js/held.js"></script>
+<script src="assets/js/seite.js"></script>
+</body>
+</html>

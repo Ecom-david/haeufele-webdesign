@@ -1,0 +1,70 @@
+/* Platzhalter „Hier Ihr eigener Website-Film“ (Häufele Webdesign, 20N-FIX4, 17.11.2026)
+   Kein Bilder-Film im Beispiel: ruhige Kinofläche im Farbton des Templates. Bewegt wird nur, was der Grafikchip
+   ohne Neuzeichnen schafft (transform/opacity): umlaufende Lichtkante, Filmkorn, atmender Ring am Play-Symbol. */
+.fp{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;
+  min-height:calc(100svh - 74px);padding:clamp(14px,2.4vw,34px) clamp(12px,3vw,40px) clamp(10px,2vw,24px)}
+.fp-flaeche{position:relative;isolation:isolate;overflow:hidden;display:grid;place-items:center;
+  width:min(1520px,100%,calc((100svh - 196px) * 16 / 9));aspect-ratio:16/9;border-radius:clamp(14px,1.6vw,26px);
+  background:
+    radial-gradient(70% 55% at 50% 118%,rgba(var(--fp-rgb),.20),transparent 70%),
+    radial-gradient(55% 45% at 50% 42%,rgba(255,255,255,.045),transparent 72%),
+    linear-gradient(180deg,rgba(10,10,10,.90),rgba(3,3,3,.96));
+  box-shadow:0 50px 140px -50px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.07) inset,0 1px 0 rgba(255,255,255,.08) inset}
+/* weiches Licht, das langsam durch die Fläche wandert */
+.fp-licht{position:absolute;left:50%;top:55%;width:70%;aspect-ratio:1;margin:-35% 0 0 -35%;border-radius:50%;z-index:-1;
+  background:radial-gradient(closest-side,rgba(var(--fp-rgb),.16),rgba(var(--fp-rgb),.05) 55%,transparent);
+  animation:fpLicht 16s ease-in-out infinite alternate;will-change:transform}
+@keyframes fpLicht{0%{transform:translate3d(-18%,6%,0)}100%{transform:translate3d(18%,-6%,0)}}
+/* Filmkorn */
+.fp-korn{position:absolute;inset:-60%;z-index:3;pointer-events:none;opacity:.075;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:fpKorn .9s steps(6) infinite;will-change:transform}
+@keyframes fpKorn{0%{transform:translate3d(0,0,0)}17%{transform:translate3d(-6%,4%,0)}33%{transform:translate3d(5%,-7%,0)}50%{transform:translate3d(-9%,-3%,0)}67%{transform:translate3d(8%,6%,0)}83%{transform:translate3d(-3%,8%,0)}100%{transform:translate3d(0,0,0)}}
+/* umlaufende Lichtkante: feste Ring-Maske, darin dreht sich ein Lichtkegel (nur transform) */
+.fp-kante{position:absolute;inset:0;z-index:4;border-radius:inherit;padding:1.5px;pointer-events:none;overflow:hidden;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.fp-kante i{position:absolute;left:50%;top:50%;width:200%;aspect-ratio:1;margin:-100% 0 0 -100%;
+  background:conic-gradient(from 0deg,transparent 0 62%,rgba(var(--fp-rgb),.0) 64%,rgba(var(--fp-rgb),.75) 74%,#fff 76.5%,rgba(var(--fp-rgb),.75) 79%,transparent 90%,transparent);
+  animation:fpDreh 11s linear infinite;will-change:transform}
+@keyframes fpDreh{to{transform:rotate(360deg)}}
+/* Kinoecken */
+.fp-ecke{position:absolute;z-index:5;width:clamp(14px,1.6vw,24px);height:clamp(14px,1.6vw,24px);border:0 solid rgba(255,255,255,.42)}
+.fp-lo{left:clamp(12px,1.6vw,24px);top:clamp(12px,1.6vw,24px);border-left-width:1.5px;border-top-width:1.5px}
+.fp-ro{right:clamp(12px,1.6vw,24px);top:clamp(12px,1.6vw,24px);border-right-width:1.5px;border-top-width:1.5px}
+.fp-lu{left:clamp(12px,1.6vw,24px);bottom:clamp(12px,1.6vw,24px);border-left-width:1.5px;border-bottom-width:1.5px}
+.fp-ru{right:clamp(12px,1.6vw,24px);bottom:clamp(12px,1.6vw,24px);border-right-width:1.5px;border-bottom-width:1.5px}
+.fp-zeile{position:absolute;z-index:5;left:clamp(34px,4vw,62px);right:clamp(34px,4vw,62px);display:flex;justify-content:space-between;gap:16px;
+  font:500 clamp(10px,.82vw,12.5px)/1.3 var(--mono,ui-monospace,monospace);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+.fp-oben{top:clamp(14px,1.9vw,30px)}.fp-unten{bottom:clamp(14px,1.9vw,30px)}
+.fp-punkt{display:inline-block;width:7px;height:7px;margin-right:10px;border-radius:50%;background:var(--fp-a);box-shadow:0 0 12px var(--fp-a);vertical-align:1px;animation:fpPunkt 2.4s ease-in-out infinite}
+@keyframes fpPunkt{50%{opacity:.25}}
+/* Mitte */
+.fp-mitte{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 clamp(18px,6vw,120px)}
+.fp-play{position:relative;display:grid;place-items:center;width:clamp(58px,6vw,92px);aspect-ratio:1;border-radius:50%;margin-bottom:clamp(18px,2.6vw,38px);
+  border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.04);box-shadow:0 0 50px rgba(var(--fp-rgb),.18)}
+.fp-play i{width:30%;aspect-ratio:1;margin-left:9%;background:var(--fp-h);clip-path:polygon(0 0,100% 50%,0 100%)}
+.fp-play::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid rgba(var(--fp-rgb),.7);animation:fpRing 3.2s cubic-bezier(.2,.6,.3,1) infinite;will-change:transform,opacity}
+@keyframes fpRing{0%{transform:scale(1);opacity:.85}80%,100%{transform:scale(1.75);opacity:0}}
+.fp-titel{margin:0;font-size:clamp(38px,7vw,128px);line-height:.94;letter-spacing:-.04em;font-weight:700;color:#F4F2EE;text-wrap:balance}
+.fp-titel span{display:inline}
+.fp-titel em{font-family:var(--serif,Georgia,serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--fp-h)}
+.fp-text{max-width:34em;margin:clamp(14px,1.8vw,26px) 0 0;font-size:clamp(14px,1.25vw,19px);line-height:1.5;color:rgba(255,255,255,.72)}
+/* Einleitung des Templates darunter */
+.fp-held{position:relative;z-index:2;padding:clamp(56px,8vw,120px) clamp(16px,4vw,48px) clamp(30px,5vw,70px)}
+.fp-held-in{max-width:1180px;margin:0 auto}
+.fp-nr{font:500 13px/1.4 var(--mono,ui-monospace,monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-h,#ddd);margin:0 0 18px}
+.fp-held h1{font-size:clamp(42px,6.2vw,96px);max-width:14em}
+.fp-lead{max-width:40em;margin:22px 0 30px;font-size:clamp(17px,1.4vw,21px);line-height:1.55;color:var(--text2,rgba(255,255,255,.74))}
+.fp-held .knoepfe{display:flex;gap:12px;flex-wrap:wrap}
+/* Handy: hochkant */
+@media (max-width:700px){
+  .fp{min-height:auto;padding-top:14px}
+  .fp-flaeche{width:100%;aspect-ratio:4/5}
+  .fp-zeile{left:30px;right:30px;font-size:9.5px;letter-spacing:.1em}
+  .fp-oben span+span,.fp-unten span:first-child{display:none}
+  .fp-unten{justify-content:flex-end}
+  .fp-titel{font-size:clamp(36px,11.5vw,54px)}
+  .fp-titel span{display:block}
+}
+@media (prefers-reduced-motion:reduce){.fp-licht,.fp-korn,.fp-kante i,.fp-play::after,.fp-punkt{animation:none}}

@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Häufele Webdesign – Websites &amp; KI fürs Handwerk</title>
+<meta name="description" content="Websites, Fragen-Assistent und KI-Telefon für Handwerksbetriebe in Ulm, Neu-Ulm, Senden und Illertissen. Fertige Templates ansehen, eins auswählen, Wünsche schicken.">
+<meta name="theme-color" content="#030303">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/krass.css">
+<link rel="stylesheet" href="assets/css/film.css">
+<script src="assets/js/takt.js"></script>
+<link rel="stylesheet" href="assets/css/ich.css">
+<link rel="stylesheet" href="assets/css/folie3d.css">
+<link rel="stylesheet" href="assets/css/ring-buehne.css">
+<link rel="stylesheet" href="assets/css/app-vorschau.css">
+<link rel="stylesheet" href="assets/css/ki-chat.css">
+<link rel="stylesheet" href="assets/css/ki-telefon.css">
+<link rel="stylesheet" href="assets/css/nfc.css">
+<link rel="stylesheet" href="assets/css/studio.css">
+<link rel="stylesheet" href="assets/css/stempel.css">
+<link rel="stylesheet" href="assets/css/stabil.css">
+<link rel="stylesheet" href="assets/css/farben.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="bg" aria-hidden="true"></div>
+<canvas id="folie" aria-hidden="true"></canvas>
+<div class="schleier" aria-hidden="true"></div>
+
+<header class="kopf" id="kopf">
+  <div class="wrap">
+    <a class="marke" href="#top" aria-label="Häufele Webdesign – zum Seitenanfang"><img src="assets/img/logo-wort-weiss.png" alt="Häufele Webdesign" width="1398" height="201"></a>
+    <nav aria-label="Hauptmenü">
+      <a href="#leistungen">Angebot</a>
+      <a href="#templates">Templates</a>
+      <a href="#studio" data-studio>Design-Studio</a>
+      <a href="#stempelkarte">Stempelkarte</a>
+      <a href="#ueber">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="knopf" href="#templates">Template wählen</a>
+  </div>
+</header>
+
+<main id="inhalt">
+<!-- FILM START -->
+<section class="filmscroll" id="film" aria-label="Kurzfilm zum Scrollen: Nachts laufen über die Website drei Anfragen auf dem Handy eines Handwerksmeisters ein. Am Morgen steht er am Tisch, liest sie und lächelt. Dann fährt die Kamera in seinen Monitor – auf dem diese Website läuft. Ihre Werkstatt hat Feierabend. Ihre Website nicht.">
+  <div class="fs-buehne">
+    <picture class="fs-poster"><source media="(max-aspect-ratio: 4/5)" srcset="assets/film/m3/m-0000.webp"><img class="fs-poster" src="assets/film/d3/d-0000.webp" alt="" width="1920" height="1080" fetchpriority="high"></picture>
+    <canvas class="fs-hg" aria-hidden="true"></canvas>
+    <canvas class="fs-canvas" aria-hidden="true"></canvas>
+    <div class="fs-start" aria-hidden="true"><h2>Mehr Aufträge über Nacht.</h2><p>Sie suchen sich aus, welche Aufträge zu Ihnen passen.</p><div class="fs-scroll"><span>Nach unten scrollen</span><i></i></div></div>
+    <div class="fs-ut" aria-hidden="true">
+      <p class="gross" data-von="20" data-bis="345">Ihre Werkstatt hat Feierabend.</p>
+      <p class="zwei" data-von="372" data-bis="528">Ihre Website nicht.</p>
+      <ol>
+        <li data-von="372" data-bis="528"><small>22:34</small><b>Badsanierung</b><span>Kundin aus Neu-Ulm</span></li>
+        <li data-von="426" data-bis="528"><small>23:21</small><b>Terrasse</b><span>Kunde aus Senden</span></li>
+        <li data-von="480" data-bis="528"><small>00:12</small><b>Küchenrückwand</b><span>Kundin aus Blaubeuren</span></li>
+      </ol>
+      <p class="gross" data-von="532" data-bis="640">Es wird langsam hell.</p>
+      <p class="gross" data-von="900" data-bis="1010">3 neue Anfragen heute Nacht.</p>
+      <p class="gross" data-von="1060" data-bis="1175">Mehr Anfragen.</p>
+      <p class="zwei" data-von="1075" data-bis="1175">Nicht mehr Arbeit.</p>
+    </div>
+    <div class="fs-uhr" data-von="527" data-bis="640" aria-hidden="true"><small>Ortszeit · Donnerstag, 5. November</small><b>00:12</b></div>
+    <p class="fs-ki" aria-hidden="true">✦ KI-Film</p>
+    <p class="mono fs-hinweis" aria-hidden="true">Scrollen <i></i></p>
+    <div class="fs-leiste" aria-hidden="true"><i></i></div>
+    <button type="button" class="film-knopf fs-weiter" id="filmWeiter">Film überspringen</button>
+  </div>
+  <div class="film-ueber" id="filmUeber" hidden>
+    <video muted playsinline preload="none" poster="assets/film/poster3.jpg" aria-label="Kurzfilm Feierabend: Über Nacht kommen drei Anfragen auf das Handy eines Handwerksmeisters, am Morgen liest er sie und lächelt">
+      <source src="assets/film/feierabend3.mp4" type="video/mp4">
+      <source src="assets/film/feierabend3.webm" type="video/webm">
+    </video>
+    <button type="button" class="film-knopf film-zu" id="filmZu">Schließen</button>
+  </div>
+</section>
+<!-- FILM ENDE -->
+<section class="hero" id="top">
+  <canvas class="staub" id="staub" aria-hidden="true"></canvas>
+  <div class="wrap hero-inhalt">
+    <div class="hero-label"><p class="mono">Websites &amp; KI fürs Handwerk · Ulm · Neu-Ulm · Senden · Illertissen</p>
+    <dl class="instr mono" aria-label="Live-Werte dieser Seite">
+    <div><dt>Region</dt><dd>Ulm · 48,40° N · 9,99° O</dd></div>
+    <div><dt>Ortszeit Ulm</dt><dd id="i-zeit">--:--:--</dd></div>
+    <div><dt>Fremd-Server</dt><dd>keine</dd></div>
+    <div><dt>Bildrate</dt><dd id="i-fps">–</dd></div>
+    <div><dt>Scroll</dt><dd id="i-scroll">000 %</dd></div>
+  </dl></div>
+    <div class="logo-feld" id="logofeld">
+      <img class="logo" id="heldlogo" src="assets/img/logo-weiss.png" alt="Häufele Webdesign" width="2397" height="469">
+      <span class="speed" aria-hidden="true"></span>
+    </div>
+    <div class="hero-unten">
+      <h1>Ihre Anfragen kommen an – <em>auch wenn Sie gerade auf der Baustelle stehen.</em></h1>
+      <div>
+        <p class="lead">Websites, Fragen-Assistent und KI-Telefon für Handwerksbetriebe. Sie suchen sich ein fertiges Template aus, ich baue daraus Ihre Seite – persönlich, aus der Region.</p>
+        <div class="aktionen">
+          <a class="knopf" href="#templates">Templates ansehen</a>
+          <a class="knopf hohl" href="#kontakt">Rückruf anfordern</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p class="mono scroll-hinweis" aria-hidden="true">Scrollen <i></i></p>
+</section>
+
+<!-- ICH START (Chat Website 6) -->
+<section class="ich" id="ich" aria-label="Ihr Ansprechpartner">
+  <div class="ich-sticky">
+    <div class="ich-text">
+      <p class="mono">Ihr Ansprechpartner · Illerkirchberg bei Ulm</p>
+      <h2>Hinter jeder Seite steht<em>ein Mensch. <b>Ich.</b></em></h2>
+      <p class="lead">Ich bin Niklas Häufele. Ich baue Ihre Website selbst, erkläre Ihnen alles verständlich und komme persönlich bei Ihnen im Betrieb vorbei – kein Callcenter, keine Agentur-Warteschleife.</p>
+      <a class="ich-link" href="#ueber">Mehr über mich <span aria-hidden="true">→</span></a>
+      <dl class="ich-werte mono" aria-hidden="true">
+        <div><dt>SCAN</dt><dd id="ich-scan">000 %</dd></div>
+        <div><dt>MATERIAL</dt><dd id="ich-mat">Chrom</dd></div>
+        <div><dt>STATUS</dt><dd id="ich-stat">Bereit</dd></div>
+      </dl>
+    </div>
+    <figure class="ich-buehne">
+      <div class="ich-figur">
+        <img class="ich-chrom" src="assets/img/ich-chrom-1228.webp" srcset="assets/img/ich-chrom-720.webp 720w, assets/img/ich-chrom-1228.webp 1228w" sizes="(max-width:860px) 60vw, 640px" width="1228" height="1536" alt="" aria-hidden="true">
+        <img class="ich-echt" src="assets/img/ich-echt-1228.webp" srcset="assets/img/ich-echt-720.webp 720w, assets/img/ich-echt-1228.webp 1228w" sizes="(max-width:860px) 60vw, 640px" width="1228" height="1536" alt="Niklas Häufele in schwarzem Strickpullover mit verschränkten Armen – beim Scrollen verwandelt sich eine Chrom-Figur in ihn">
+        <span class="ich-glanz" aria-hidden="true"></span>
+      </div>
+      <span class="ich-linie" aria-hidden="true"></span>
+      <span class="ich-marke mono" aria-hidden="true">SCAN 000 %</span>
+      <span class="ki">✦ KI</span>
+      <figcaption>Niklas Häufele · Inhaber</figcaption>
+    </figure>
+  </div>
+</section>
+<!-- ICH ENDE -->
+
+<section class="kapitel" id="leistungen" aria-label="Leistungen">
+  <div class="buehne" id="buehne">
+    <div class="rw" aria-hidden="true"><span data-i="0">SEITE</span><span data-i="1">FRAGEN</span><span data-i="2">TELEFON</span><span data-i="3">WERKZEUG</span><span data-i="4">STERNE</span></div>
+    <div class="kap-spalte">
+      <h2 class="kap-titel mono">Das Angebot · 5 Bausteine</h2>
+      <article class="kap" data-i="0">
+        <p class="mono kap-name"><b>01</b> / 05 · Website</p>
+        <h2>5 Sekunden.<br><em>Dann ruft er an.</em></h2>
+        <p class="kap-text">Eine Seite, die nach Ihrem Handwerk aussieht und nicht nach Baukasten: echte Bilder Ihrer Arbeit, ein kurzer Film am Anfang, klare Leistungen, Kontakt mit einem Fingertipp. Läuft auf Handy, Tablet und Rechner.</p>
+        <p class="nutzen">Kunden sehen in wenigen Sekunden, was Sie können – und finden den Weg zu Ihnen, ohne erst zu suchen.</p>
+      </article>
+      <article class="kap" data-i="1">
+        <p class="mono kap-name"><b>02</b> / 05 · Fragen-Assistent</p>
+        <h2>24 Stunden.<br><em>Ohne dass Ihr Handy klingelt.</em></h2>
+        <p class="kap-text">Ein kleines Fenster auf Ihrer Website beantwortet die Fragen, die Sie jeden Tag am Telefon hören: Machen Sie das auch? Wie lange dauert das? Kommen Sie nach Weißenhorn? Er kennt nur Ihre Leistungen und Ihr Einzugsgebiet.</p>
+        <p class="nutzen">Weniger Unterbrechungen bei der Arbeit, und die Anfrage kommt sortiert bei Ihnen an – mit Name, Telefon und Anliegen.</p>
+      </article>
+      <article class="kap" data-i="2">
+        <p class="mono kap-name"><b>03</b> / 05 · KI-Telefon mit Terminbuchung</p>
+        <h2>Es klingelt.<br><em>Sie haben die Flex in der Hand.</em></h2>
+        <p class="kap-text">Wenn Sie nicht rangehen können, nimmt eine freundliche Stimme ab, fragt nach dem Anliegen und trägt einen Rückruf- oder Besichtigungstermin direkt in Ihren Kalender ein. Sie bekommen eine kurze Zusammenfassung aufs Handy.</p>
+        <p class="nutzen">Weniger verpasste Anrufe, nur weil gerade die Flex lief.</p>
+      </article>
+      <article class="kap" data-i="3">
+        <p class="mono kap-name"><b>04</b> / 05 · Apps &amp; Werkzeuge</p>
+        <h2>1 Foto<br><em>statt 3 Rückfragen.</em></h2>
+        <p class="kap-text">Kleine Programme für Ihren Alltag: Zeiterfassung fürs Team, Aufmaß-Rechner, Anfrageformular mit Foto-Upload, Online-Terminbuchung.</p>
+        <p class="nutzen">Weniger Zettelwirtschaft im Büro – und Ihre Kunden schicken gleich die Fotos mit, die Sie fürs Angebot brauchen.</p>
+        <a class="mono app-link" href="#app">App ausprobieren ↓</a>
+      </article>
+      <article class="kap" data-i="4">
+        <p class="mono kap-name"><b>05</b> / 05 · NFC-Bewertungskarten</p>
+        <h2>1 Tipp.<br><em>Die Bewertungsseite ist offen.</em></h2>
+        <p class="kap-text">Eine NFC-Karte im Look Ihres Betriebs – für Theke, Firmenwagen oder die Übergabe nach dem Auftrag. Kunde hält das Handy dran, tippt einmal – und Ihre Google-Bewertungsseite ist offen.</p>
+        <p class="nutzen">Bewertungen bei Google sammeln, ohne dass Sie jemanden lange darum bitten müssen.</p>
+        <a class="nfc-mehr mono" href="#nfc">So funktioniert's ↓</a>
+      </article>
+    </div>
+    <div class="szene" aria-hidden="true">
+      <div class="geraet" id="geraet">
+        <div class="g-kante"></div><div class="g-kante"></div><div class="g-kante"></div><div class="g-kante"></div><div class="g-kante"></div><div class="g-kante"></div><div class="g-kante"></div><div class="g-kante"></div>
+        <div class="g-front">
+          <div class="g-schirm">
+            <div class="g-status mono"><span id="g-uhr">07:52</span><span class="g-insel"></span><span>5G ▮▮▮</span></div>
+            <div class="sc sc0"><div class="sc0-film" id="sc0"></div><div class="sc0-ki mono">✦ KI-Bilder</div></div>
+            <div class="sc sc1"><div class="chat-kopf"><span class="punkt"></span>Fragen-Assistent<small>Muster Fliesen &amp; Bad · KI, kein Mensch</small></div><div class="chat" id="chat"></div></div>
+            <div class="sc sc2"><div class="anruf" id="anruf">
+              <div class="anruf-kopf"><small class="mono" id="anruf-status">Eingehender Anruf</small><b>Mobilnummer</b><span class="mono" id="anruf-zeit">00:00</span></div>
+              <canvas id="welle" width="520" height="140"></canvas>
+              <div class="transkript" id="transkript"></div>
+              <div class="termin" id="termin"><small class="mono">Kalender · eingetragen</small><b>Do · 16:30</b><span>Besichtigung Badsanierung, Weißenhorn</span></div>
+            </div></div>
+            <div class="sc sc3"><div id="appv-mini"></div></div>
+            <div class="sc sc4"><div class="bewerten">
+              <small class="mono">Bewertung für</small>
+              <b>Muster Fliesen &amp; Bad</b>
+              <span class="b-ort">Fliesenleger · Musterstadt</span>
+              <div class="sterne" id="sterne"><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="b-feld">Erzählen Sie von Ihrer Erfahrung …</span>
+              <span class="am-knopf">Posten</span>
+            </div></div>
+          </div>
+          <div class="g-glanz"></div>
+        </div>
+      </div>
+      <div class="aufsteller nfc-minikarte" id="aufsteller"><i class="nfc-wellen"></i><b class="mk-logo">MUSTER<small>FLIESEN &amp; BAD</small></b><span class="mk-sterne">★★★★★</span><span>Bewerten Sie uns</span></div>
+    </div>
+    <div class="kap-instr mono" id="kinstr" aria-hidden="true"></div>
+    <ol class="kap-schiene" aria-hidden="true"><li data-i="0"><button type="button" tabindex="-1">Website</button></li><li data-i="1"><button type="button" tabindex="-1">Fragen-Assistent</button></li><li data-i="2"><button type="button" tabindex="-1">KI-Telefon mit Terminbuchung</button></li><li data-i="3"><button type="button" tabindex="-1">Apps &amp; Werkzeuge</button></li><li data-i="4"><button type="button" tabindex="-1">NFC-Bewertungskarten</button></li></ol>
+    <button type="button" class="halten mono" id="halten"><i></i><span>Gedrückt halten: Anruf annehmen</span></button>
+    <p class="mono demo-hinweis" aria-hidden="true">Demo · Firma erfunden</p>
+  </div>
+</section>
+
+
+<div class="riesen" id="riesen1" aria-hidden="true"><div class="riesen-zug"><b>Mehr Anfragen</b><i>·</i><em>Weniger Büro</em><i>·</i> <b>Mehr Anfragen</b><i>·</i><em>Weniger Büro</em><i>·</i> <b>Mehr Anfragen</b><i>·</i><em>Weniger Büro</em><i>·</i> <b>Mehr Anfragen</b><i>·</i><em>Weniger Büro</em><i>·</i> </div></div>
+
+
+
+
+
+
+
+<section class="galerie" id="templates">
+  <div class="wrap kopfz auf">
+    <h2 class="display"><span class="schnitt">Suchen Sie sich</span><br>Ihre Seite aus</h2>
+    <p class="lead leise">Jedes Design ist für ein Gewerk entworfen. Drehen Sie den Ring, wählen Sie das passende – danach stellen Sie zusammen, was auf Ihre Seite soll. Gebaut wird mit Ihren Fotos, Ihren Leistungen, Ihrem Film.</p>
+  </div>
+  <div class="ring-zone" id="ringzone">
+    <div class="ring-buehne">
+      <div class="ring-rw display" id="ring-rw" aria-hidden="true"></div>
+      <div class="ring-welt"><div class="ring" id="ring"></div></div>
+      <div class="ring-info wrap">
+        <div class="ri-text" aria-live="polite"><span class="mono" id="ri-gewerk"></span><h3 id="ri-name"></h3><p id="ri-text"></p></div>
+        <div class="ri-steuer">
+          <button type="button" class="pfeil" id="ring-zurueck" aria-label="Vorheriges Template">←</button>
+          <a class="knopf" id="ri-los" href="templates/fliesen/index.html">Dieses Design ansehen</a>
+          <button type="button" class="pfeil" id="ring-vor" aria-label="Nächstes Template">→</button>
+        </div>
+      </div>
+      <p class="mono ring-hinweis" aria-hidden="true"><span id="ri-nr">01</span> / 05 · Ziehen oder scrollen · Fotos ✦ KI</p>
+    </div>
+  </div>
+  <div class="wrap"><ul class="tpl-liste" id="tplliste" aria-label="Alle Templates als Liste"></ul></div>
+  <div class="wrap" id="studio"><div class="studio-teaser auf"><div><span class="mono">Design-Studio</span><h3>Lieber selbst zusammenstellen?</h3><p class="leise">Live-3D-Hintergrund, Design-Stil, Farbe, Schrift, Text-Effekt und 3D-Effekte – klicken Sie sich Ihre Seite zusammen und sehen Sie sofort, wie sie wirkt.</p></div><button type="button" class="knopf" data-studio>Design-Studio öffnen →</button></div></div>
+</section>
+
+<section class="wunsch waechst" id="wunsch">
+  <div class="wrap">
+    <div class="auf">
+      <h2 class="display"><span class="schnitt">Ihre Seite</span><br>nach Wunsch</h2>
+      <p class="lead leise" style="margin-top:22px">Template wählen, Bausteine an- und abschalten, Farbe und Wünsche dazu – in der Zusammenfassung sehen Sie sofort, was ich daraus baue. Abschicken öffnet Ihr E-Mail-Programm mit der fertigen Zusammenfassung.</p>
+    </div>
+    <div class="wgitter">
+      <form id="wunschform" class="auf" novalidate>
+        <fieldset><legend><b>1</b>Template &amp; Hintergrund</legend>
+          <div class="reihe">
+            <label>Template<select name="template" id="w-template"></select></label>
+            <label>Hintergrund<select name="hg" id="w-hg"><option value="">Wie im Template</option><option value="funken">Funken</option><option value="wasser">Tiefes Wasser</option><option value="tiefe">Polierte Tiefe</option><option value="ringe">Lichtringe</option><option value="dampf">Dampf</option><option value="prisma">Prisma</option><option value="netz4">Raumzeit-Gitter</option><option value="punkt4">Punktwelle</option><option value="orbit4">Orbit-Nebel</option><option value="kaustik4">Kaustik-Tiefe</option><option value="prismapro">Lichtprisma</option><option value="neonpro">Lichtstrom</option><option value="wellenpro">Ringwellen</option><option value="metallpro">Flüssiges Metall</option><option value="portalpro">Lichttür im Nebel</option><option value="glasstudio">Glas-Studio</option><option value="sonnepro">Sonne</option><option value="facettenpro">Glas-Facetten</option><option value="seidepro">Seide</option><option value="funkenpro">Funken in drei Tiefen</option><option value="chrompro">Chrom-Bänder</option><option value="lack">Indigo-Lack</option><option value="lackfarbe">Schwarzlack</option><option value="kristall">Glas-Blitz</option><option value="kristallfarbe">Glas-Blitz in Ihrer Farbe</option><option value="edelstein">Glas-Kristall</option><option value="polarlicht">Polarlicht</option><option value="lichtfall">Lichtfall</option><option value="rauch">Rauchfäden</option><option value="leiterbahn">Leiterbahnen</option><option value="strom">Glasstrom</option><option value="indigo">Indigo-Strom</option><option value="chrom">Flüssiges Chrom</option><option value="seide">Seidenfalten</option><option value="material">Material (4K)</option></select></label>
+          </div>
+                    <button type="button" class="vorschaulink studio-link" data-studio>Hintergrund, Stil, Schrift &amp; Effekte im Design-Studio wählen →</button>
+        </fieldset>
+        <fieldset><legend><b>2</b>Ihr Betrieb</legend>
+          <div class="reihe">
+            <label>Firmenname<input name="firma" id="w-firma" autocomplete="organization" maxlength="80" placeholder="z. B. Muster Elektro GmbH"></label>
+            <label>Gewerk<input name="gewerk" id="w-gewerk" maxlength="60" placeholder="z. B. Elektro"></label>
+          </div>
+          <div class="reihe">
+            <label>Ort<input name="ort" id="w-ort" autocomplete="address-level2" maxlength="60" placeholder="z. B. Senden"></label>
+            <label>Bestehende Website<input name="alt" id="w-alt" maxlength="120" placeholder="falls vorhanden"></label>
+          </div>
+        </fieldset>
+        <fieldset><legend><b>3</b>Bausteine</legend>
+          <div class="chips" id="w-bausteine" role="group" aria-label="Bausteine an- und abschalten"></div>
+        </fieldset>
+        <fieldset><legend><b>4</b>Farbe &amp; Wünsche</legend>
+          <div class="reihe farbreihe">
+            <label class="farbe">Akzentfarbe<span><input type="color" name="farbe" id="w-farbe" value="#c9895b"><output id="w-farbwert">#C9895B</output></span></label>
+            <label class="check"><input type="checkbox" name="logo" id="w-logo"><span>Farben aus meinem Logo übernehmen</span></label>
+          </div>
+          <label>Was ist Ihnen wichtig?<textarea name="wuensche" id="w-wuensche" maxlength="1500" placeholder="z. B. mehr Anfragen für Badsanierung, Stellenanzeigen, eigene Fotos statt KI-Bildern"></textarea></label>
+          <div class="upload-feld">
+            <label class="upload-knopf" for="w-dateien"><span>+ Logo &amp; Fotos wählen</span><small>Sie sehen sie sofort in der Vorschau rechts</small></label>
+            <input type="file" id="w-dateien" accept="image/*" multiple class="nur-sr">
+            <div class="upload-bilder" id="w-bilder" aria-live="polite"></div>
+          </div>
+          <p class="upload">Ihre Bilder bleiben auf Ihrem Gerät – hier wird nichts hochgeladen. Tippen Sie ein Foto an, um es als Titelbild zu sehen. Nach dem Absenden hängen Sie die Bilder einfach an die E-Mail an (die Dateinamen stehen schon drin).</p>
+        </fieldset>
+        <div class="reihe">
+          <label>Ihr Name<input name="name" id="w-name" autocomplete="name" maxlength="80" required></label>
+          <label>Telefon<input name="telefon" id="w-tel" type="tel" autocomplete="tel" maxlength="40" required></label>
+        </div>
+        <label class="honig" aria-hidden="true">Bitte leer lassen<input name="website" tabindex="-1" autocomplete="off"></label>
+        <label class="check"><input type="checkbox" name="datenschutz" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+        <button class="knopf" type="submit">Wunsch abschicken</button>
+        <p class="hinweis" id="w-hinweis" role="status"></p>
+      </form>
+      <aside class="zusammen auf" id="zusammen" aria-live="polite">
+        <div class="mini" id="mini" aria-hidden="true">
+          <div class="mini-leiste"><i></i><i></i><i></i><span id="mini-url">ihr-betrieb.de</span></div>
+          <div class="mini-seite">
+            <div class="mini-kopf"><b id="mini-name">Ihr Betrieb</b><span>Leistungen · Kontakt</span></div>
+            <div class="mini-hero" id="mini-hero"><small id="mini-gewerk">Ihr Gewerk · Ihr Ort</small><strong id="mini-wort">Ihr Handwerk</strong><span class="mini-knopf">Anfrage</span></div>
+            <div class="mini-bloecke" id="mini-bloecke"></div>
+          </div>
+        </div>
+        <div class="zkopf"><span class="zfarbe" id="z-farbe"></span><div><small>Ihre Seite</small><b id="z-name">Ihr Betrieb</b></div></div>
+        <dl>
+          <div><dt>Template</dt><dd id="z-template">–</dd></div>
+          <div><dt>Hintergrund</dt><dd id="z-hg">wie im Template</dd></div>
+          <div><dt>Gewerk · Ort</dt><dd id="z-ort">–</dd></div>
+        </dl>
+        <p class="zlabel">Bausteine <span id="z-zahl">0</span></p>
+        <ul id="z-liste"></ul>
+        <p class="zfuss">Nach Ihrer Nachricht baue ich eine Demo mit Ihrem Namen. Sie sehen sie, bevor Sie sich entscheiden.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+<div class="mini-mobil" id="minimobil" hidden><span class="zfarbe" id="mm-farbe"></span><span><small>Ihre Seite</small><b id="mm-text">0 Bausteine</b></span><a href="#zusammen">Vorschau</a></div>
+
+<!-- KI-TELEFON START (Chat W10-B) -->
+<section class="kitel" id="ki-telefon" aria-labelledby="kitel-h">
+  <div class="wrap">
+    <div class="kitel-kopf">
+      <p class="mono kitel-mono"><i class="kitel-dot" aria-hidden="true"></i>KI-Telefon · Live zum Ausprobieren</p>
+      <h2 class="display" id="kitel-h">Rufen Sie an.<br><span class="kitel-zeile2">Auch wenn keiner rangeht.</span></h2>
+      <p class="lead leise">Testen Sie es selbst, am besten mit Ton: Sie rufen beim Muster-Betrieb an, der Chef steht auf der Baustelle. Sprechen Sie einfach los oder schreiben Sie: Nach dem Klingeln nimmt die KI ab, beantwortet Ihre Fragen und trägt selbst einen freien Termin ein – passt keiner, sucht sie weiter, bis einer passt. Gleichzeitig sehen Sie, was beim Chef ankommt.</p>
+    </div>
+    <div class="kitel-buehne">
+      <div class="kt-geraet">
+        <div class="kt-schirm" role="group" aria-label="Telefon-Demo: Anruf beim Muster-Betrieb">
+          <div class="kt-top"><span class="kt-zeit mono" aria-label="Gesprächsdauer"></span><span class="kt-insel" aria-hidden="true"></span><span class="kt-top-r"><button class="kt-stimme" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Stimme der KI wählen"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17.5 6.5a4 4 0 0 1 0 5M20 4.5a7 7 0 0 1 0 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Stimme</span></button><button class="kt-ton" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Ton an</span></button></span></div>
+          <div class="kt-anrufer">
+            <div class="kt-logo" aria-hidden="true"><span>F&amp;B</span><i></i><i></i><i></i></div>
+            <b>Fliesen &amp; Bad Muster</b>
+            <small class="mono">0000 000000 · Firma erfunden</small>
+            <span class="kt-status" role="status"></span>
+          </div>
+          <canvas class="kt-welle" aria-hidden="true"></canvas>
+          <div class="kt-log" aria-live="polite"></div>
+          <div class="kt-kal" hidden></div>
+          <div class="kt-sms" hidden><small class="mono">SMS · gerade eben</small><p></p></div>
+          <div class="kt-chips"></div>
+          <div class="kt-stimmen-pop" hidden role="dialog" aria-label="Stimme der KI wählen"><b>Stimme der KI</b><div class="kt-stimmen-l" role="radiogroup" aria-label="Stimmen"></div><p>Gilt ab dem nächsten Satz. Das Gespräch läuft weiter.</p></div>
+          <div class="kt-wahl" hidden role="group" aria-label="Wie möchten Sie antworten?">
+            <b class="kt-wahl-t">Wie möchten Sie antworten?</b>
+            <div class="kt-wahl-k">
+              <button type="button" data-m="sprechen"><i><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></i><span>Sprechen</span><small>freihändig, wie am Telefon</small></button>
+              <button type="button" data-m="schreiben"><i><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M6 13.5h.01M18 10h.01M18 13.5h.01M8.5 14.5h7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></i><span>Schreiben</span><small>tippen oder antippen</small></button>
+            </div>
+            <div class="kt-stimmen"><b class="kt-stimmen-t">Stimme der KI · antippen zum Anhören</b><div class="kt-stimmen-l" role="radiogroup" aria-label="Stimme der KI"></div></div>
+            <p class="kt-wahl-h">Beim Sprechen wird Ihre Stimme vom Browser-Hersteller in Text umgewandelt. Ich bekomme davon nichts. <a href="datenschutz.html#assistent">Datenschutz</a></p>
+          </div>
+          <form class="kt-in" hidden autocomplete="off"><button type="button" class="kt-mod" aria-label="Zum Sprechen wechseln" title="Sprechen"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input aria-label="Ihre Antwort an den KI-Assistenten" maxlength="120" enterkeyhint="send" placeholder="Ihre Antwort …"><button type="submit" class="kt-senden" aria-label="Senden"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button><div class="kt-hoer"><span class="kt-mic" aria-hidden="true"><i></i><i></i><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="kt-hoer-t" aria-live="polite">Ich höre zu …</span><button type="button" class="kt-tast" aria-label="Zum Schreiben wechseln" title="Schreiben"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M6 13.5h.01M18 10h.01M18 13.5h.01M8.5 14.5h7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button></div></form>
+          <div class="kt-tasten">
+            <button class="kt-start" type="button"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg><span>Anrufen</span></button>
+            <button class="kt-auflegen" type="button" aria-label="Auflegen"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1a1 1 0 0 1-.56.9 11.5 11.5 0 0 0-2.66 1.85 1 1 0 0 1-1.4 0L.29 13.08a1 1 0 0 1 0-1.41A16.9 16.9 0 0 1 12 7c4.5 0 8.6 1.75 11.7 4.67a1 1 0 0 1 0 1.41l-2.48 2.49a1 1 0 0 1-1.4 0 11.3 11.3 0 0 0-2.67-1.85 1 1 0 0 1-.56-.9v-3.1A15 15 0 0 0 12 9z" fill="currentColor"/></svg></button>
+            <div class="kt-ende" hidden><button class="kt-neu" type="button">Noch einmal anrufen</button></div>
+          </div>
+        </div>
+      </div>
+      <aside class="kt-chef" aria-label="Was beim Chef ankommt">
+        <div class="kt-chef-kopf"><small class="mono">Handy des Chefs</small><span class="kt-chef-st"></span></div>
+        <b class="kt-chef-t">Neuer Anruf · KI-Assistent</b>
+        <div class="kt-felder"></div>
+        <p class="kt-foto" hidden>Fotos angefragt – der Link ging per SMS an den Kunden.</p>
+        <p class="kt-chef-fuss">So landet jeder Anruf sortiert bei Ihnen – auch wenn Sie gerade die Flex in der Hand haben.</p>
+      </aside>
+    </div>
+    <div class="kitel-ablauf">
+      <h3>So läuft es bei Ihnen ab</h3>
+      <ol class="kitel-schritte">
+        <li><b>Rufumleitung</b><span>Klingelt es zu lange oder ist Feierabend, leitet Ihr Telefon automatisch weiter. Ihre Nummer bleibt dieselbe.</span></li>
+        <li><b>KI nimmt ab</b><span>Sie sagt im ersten Satz, dass sie eine KI ist, und fragt Anliegen, Ort, Dringlichkeit und Namen ab. Bei Notfällen gibt sie Ihre Notdienstnummer weiter.</span></li>
+        <li><b>Termin im Kalender</b><span>Nur in Zeiten, die Sie freigeben. Passt keiner, fragt die KI nach und sucht weiter – Sie müssen nichts tun. Der Anrufer bekommt eine SMS zur Bestätigung mit Link für Fotos.</span></li>
+        <li><b>Zusammenfassung aufs Handy</b><span>Name, Anliegen, Ort, Dringlichkeit und Termin – kurz und sortiert, sobald aufgelegt ist.</span></li>
+      </ol>
+      <ul class="kitel-recht">
+        <li>KI-Hinweis im ersten Satz (EU-KI-Verordnung, Art. 50)</li>
+        <li>Kein Mitschnitt ohne Zustimmung (§ 201 StGB) – nur eine schriftliche Zusammenfassung</li>
+        <li>Auftragsverarbeitungsvertrag mit dem Anbieter (schließen Sie selbst ab – ich zeige Ihnen, wo)</li>
+        <li>Deutsche Rufnummer, Ihre Firmennummer bleibt</li>
+      </ul>
+      <p class="kitel-hinweis">Demo: Firma und Nummer erfunden. Die Stimmen sind vorab erzeugte KI-Stimmen (Google Cloud Text-to-Speech), die Namen sind erfunden. Was Sie hier eintippen, bleibt in Ihrem Browser. Wenn Sie „Sprechen“ wählen, wandelt die Spracherkennung Ihres Browsers (z. B. beim Browser-Hersteller) Ihre Stimme in Text um. Ich bekomme davon nichts; nur Ihre Stimmen-Auswahl bleibt auf Ihrem Gerät gespeichert. Der Kalender des Muster-Betriebs ist erfunden.</p>
+    </div>
+  </div>
+</section>
+<!-- KI-TELEFON ENDE -->
+
+<!-- APP START (Chat W10-C) -->
+
+<section class="appv" id="app" aria-label="App-Vorschau: so läuft ein Auftrag in Ihrer App">
+  <div class="wrap appv-kopf">
+    <p class="mono appv-kicker">Apps &amp; Werkzeuge · Vorführung</p>
+    <h2 class="display">Vom Foto<br>bis zur Rechnung</h2>
+    <p class="lead leise">Ein Badauftrag, komplett in einer App – auf dem Handy auf der Baustelle und auf dem Tablet im Büro, immer derselbe Stand. Scrollen Sie: Die App bedient sich selbst. Oder probieren Sie sie aus.</p>
+    <div class="appv-los"><button type="button" class="knopf" data-appv-probe>Selbst ausprobieren</button><span class="mono">Beispieldaten · nichts wird gesendet</span></div>
+  </div>
+  <div class="appv-strecke" id="appv-strecke">
+    <div class="appv-buehne">
+      <div class="appv-rw" aria-hidden="true"></div>
+      <div class="appv-text">
+        <article class="appv-kap" data-i="0"><p class="mono"><b>01</b> / 08 · Übersicht</p><h3>Jeden Morgen <br><em>ein Blick.</em></h3><p>Termine, offene Angebote, Stunden der Woche und neue Anfragen – auf Handy, Tablet und Büro-PC derselbe Stand.</p><p class="mono appv-fakt">Zahlen live aus Ihren Aufträgen</p></article>
+        <article class="appv-kap" data-i="1"><p class="mono"><b>02</b> / 08 · Anfrage</p><h3>18:42 Uhr. <br><em>Drei Fotos kommen rein.</em></h3><p>Über Ihre Website oder das KI-Telefon. Die App sortiert vor – was, wo, wie dringend – und meldet sich auf Ihrem Handy.</p><p class="mono appv-fakt">Quelle: Website-Formular · KI-Telefon</p></article>
+        <article class="appv-kap" data-i="2"><p class="mono"><b>03</b> / 08 · Termin</p><h3>Ein Tipp. <br><em>Termin steht.</em></h3><p>Freie Zeiten aus Ihrem Kalender, die Fahrzeit gleich dabei. Die Kundin bekommt die Bestätigung automatisch.</p><p class="mono appv-fakt">Bestätigung per SMS · Fahrzeit 18 min</p></article>
+        <article class="appv-kap" data-i="3"><p class="mono"><b>04</b> / 08 · Aufmaß</p><h3>Gemessen. <br><em>Gerechnet.</em></h3><p>Raum skizzieren, Maße tippen: Boden, Wand, Abzüge für Tür und Fenster, Verschnitt und Material rechnet die App sofort.</p><p class="mono appv-fakt">60 × 120 · Drittelverband · Verschnitt 15 %</p></article>
+        <article class="appv-kap" data-i="4"><p class="mono"><b>05</b> / 08 · Fotos &amp; Notizen</p><h3>Alles am Auftrag. <br><em>Nichts im Handy verloren.</em></h3><p>Vorher-Fotos, Notizen und Sprachnotizen landen direkt beim Kunden – das Büro sieht sie sofort.</p><p class="mono appv-fakt">Sprachnotiz wird zu Text</p></article>
+        <article class="appv-kap" data-i="5"><p class="mono"><b>06</b> / 08 · Angebot</p><h3>Morgens geschickt. <br><em>Abends unterschrieben.</em></h3><p>Die Positionen kommen aus dem Aufmaß. Ein Tipp schickt das Angebot, die Kundin unterschreibt am eigenen Handy.</p><p class="mono appv-fakt">Mengen aus dem Aufmaß · Unterschrift digital</p></article>
+        <article class="appv-kap" data-i="6"><p class="mono"><b>07</b> / 08 · Baustelle</p><h3>Stunden <br><em>per Tipp.</em></h3><p>Wer ist wo, seit wann: Zeiterfassung, Tagesbericht und Materialliste – das Büro schreibt nichts mehr ab.</p><p class="mono appv-fakt">Arbeitszeit aufgezeichnet · BAG 1 ABR 22/21</p></article>
+        <article class="appv-kap" data-i="7"><p class="mono"><b>08</b> / 08 · Fertig</p><h3>Rechnung raus. <br><em>Bewertung kommt.</em></h3><p>Nachher-Foto, Rechnung aus dem Angebot – und am nächsten Tag geht die Bitte um eine Google-Bewertung automatisch raus.</p><p><a class="mono appv-nfc" href="#nfc" data-appv-nfc>So kommt die Bewertung ↓</a></p></article>
+      </div>
+      <div class="appv-geraete" aria-hidden="true">
+        <div class="appv-tablet"><div class="at-rahmen"><div class="at-schirm"></div><i class="at-glanz"></i></div></div>
+        <div class="appv-funk"><i></i><i></i><i></i><span class="mono">synchron · 0,3 s</span></div>
+        <div class="appv-handy"><div class="as-rahmen"><div class="as-schirm"></div><i class="as-glanz"></i></div></div>
+      </div>
+      <ol class="appv-buero-mini mono" aria-hidden="true"><li>Anfrage</li><li>Termin</li><li>Angebot</li><li>Auftrag</li><li>Fertig</li></ol>
+      <div class="appv-werte mono" aria-hidden="true"><div><span>Schritt</span><b data-w="schritt">01 / 08</b></div><div><span>Status</span><b><i class="appv-punkt"></i>synchron</b></div><div><span>Seit Anfrage</span><b data-w="seit">—</b></div><div><span>Daten</span><b data-w="geraet">Handy · Büro</b></div></div>
+      <ol class="appv-schiene" aria-label="Schritte der Vorführung">
+        <li><button type="button">Übersicht</button></li><li><button type="button">Anfrage</button></li><li><button type="button">Termin</button></li><li><button type="button">Aufmaß</button></li><li><button type="button">Fotos</button></li><li><button type="button">Angebot</button></li><li><button type="button">Baustelle</button></li><li><button type="button">Fertig</button></li>
+      </ol>
+      <button type="button" class="appv-probe-knopf mono" data-appv-probe>Selbst ausprobieren</button>
+    </div>
+  </div>
+  <div class="wrap appv-fuss">
+    <p><b>Beispiel – so könnte Ihre App aussehen.</b> Gebaut nach Ihren Abläufen: nur die Bildschirme, die Ihr Betrieb wirklich braucht. Firma, Personen und Preise sind erfunden; Fotos ✦ KI.</p>
+    <button type="button" class="knopf hohl" data-appv-probe>Selbst ausprobieren</button>
+  </div>
+  <div class="appv-probe" id="appv-probe" role="dialog" aria-modal="true" aria-label="App selbst ausprobieren" hidden>
+    <div class="appv-probe-kopf"><p class="mono">Selbst ausprobieren · Beispieldaten · nichts wird gesendet</p><button type="button" class="appv-zu mono">Schließen ✕</button></div>
+    <div class="appv-probe-buehne">
+      <div class="appv-tablet"><div class="at-rahmen"><div class="at-schirm"></div></div><p class="mono appv-probe-label">Büro · Tablet</p></div>
+      <div class="appv-handy"><div class="as-rahmen"><div class="as-schirm"></div></div><p class="mono appv-probe-label">Handy · Baustelle</p></div>
+    </div>
+    <p class="mono appv-probe-tipp">Tippen Sie in der App: Mitteilung öffnen, Termin wählen, Maße ändern, Foto machen, unterschreiben, Zeit stoppen.</p>
+  </div>
+</section>
+<!-- APP ENDE -->
+
+<!-- NFC START (Chat W10-D) -->
+
+<section class="nfc-abschnitt" id="nfc" aria-label="NFC-Bewertungskarte – so funktioniert sie">
+  <div class="wrap nfc-kopf">
+    <p class="mono nfc-dach">NFC-Bewertungskarte · So funktioniert sie</p>
+    <h2 class="display"><span class="schnitt">Handy dran.</span><br>Fertig.</h2>
+    <p class="lead leise">Ihre Kunden sind zufrieden – aber kaum einer sucht danach noch Ihren Eintrag bei Google und schreibt etwas. Mit der Karte dauert eine Bewertung ein paar Sekunden. Scrollen Sie langsam weiter und sehen Sie, was passiert.</p>
+  </div>
+
+  <div class="nfc-strecke" id="nfcstrecke">
+    <div class="nfc-buehne" id="nfcbuehne">
+      <div class="nfc-licht" aria-hidden="true"></div>
+      <div class="nfc-theke" aria-hidden="true"></div>
+      <div class="nfc-auf" id="nfcauf" aria-hidden="true">
+        <div class="a-boden"></div>
+        <div class="a-platte">
+          <div class="a-k"></div><div class="a-k"></div><div class="a-k"></div><div class="a-k"></div>
+          <div class="a-druck">
+            <div class="a-nfc" id="nfcpunkt"><svg viewBox="0 0 48 40" fill="none" stroke="#F3F2EF" stroke-width="4" stroke-linecap="round"><path d="M6 15a26 26 0 0 1 36 0M12 22a17 17 0 0 1 24 0M18 29a8 8 0 0 1 12 0"/><circle cx="24" cy="35" r="2.6" fill="#F3F2EF" stroke="none"/></svg></div>
+            <div class="a-logo"><b>M</b><span>MUSTER<small>FLIESEN &amp; BAD</small></span></div>
+            <div class="a-sterne"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="a-frage">Bewerten Sie uns<br><span>auf Google</span></div>
+          </div>
+          <div class="a-glas"></div>
+        </div>
+      </div>
+      <div class="nfc-pschatten" id="nfcpschatten" aria-hidden="true"></div>
+      <div class="nfc-ringe" id="nfcwellen" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="nfc-handy" id="nfchandy" aria-hidden="true">
+        <div class="h-k"></div><div class="h-k"></div><div class="h-k"></div><div class="h-k"></div><div class="h-k"></div><div class="h-k"></div>
+        <div class="h-front"><div class="h-schirm">
+          <div class="h-status mono"><span>16:42</span><span class="h-insel"></span><span>5G</span></div>
+          <div class="hs hs-sperr an" id="hssperr"><b>16:42</b><span>Mittwoch, 4. November</span></div>
+          <div class="hs hs-banner" id="hsbanner"><div class="h-banner"><small>NFC · Link erkannt</small><b>Bewertung für Muster Fliesen &amp; Bad öffnen</b><span>Tippen zum Öffnen</span></div></div>
+          <div class="hs hs-form" id="hsform">
+            <small>Bewertung für</small>
+            <b>Muster Fliesen &amp; Bad</b>
+            <span class="h-ort">Fliesenleger · Musterstadt</span>
+            <div class="h-sterne"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="h-feld" id="nfcfeld"></div>
+            <span class="h-posten">Posten</span>
+          </div>
+          <div class="hs hs-danke" id="hsdanke"><div class="h-haken"></div><b>Danke!</b><span>Ihre Bewertung wurde gesendet.</span></div>
+          <div class="h-finger" id="nfcfinger"></div>
+        </div><div class="nfc-hglanz"></div></div>
+      </div>
+
+      <div class="nfc-liste" id="nfcliste" aria-hidden="true">
+        <div class="nl-kopf"><b>Fliesenleger in der Nähe</b><span class="mono">Beispiel</span></div>
+        <div class="nl-zeit mono" id="nlzeit">Heute · <em>Ihre neue Bewertung</em></div>
+        <div class="nl-reihen">
+          <div class="nl-r"><span class="nr mono">1</span><span class="nm">Fliesen-Betrieb Nord<small>Fliesenleger · 4 km</small></span><span class="wt"><b>4,6</b><i class="nl-st" style="--w:.92"></i><small>(28)</small></span></div>
+          <div class="nl-r"><span class="nr mono">2</span><span class="nm">Fliesenleger West<small>Fliesenleger · 7 km</small></span><span class="wt"><b>4,4</b><i class="nl-st" style="--w:.88"></i><small>(35)</small></span></div>
+          <div class="nl-r"><span class="nr mono">3</span><span class="nm">Bad &amp; Fliese Süd<small>Fliesenleger · 5 km</small></span><span class="wt"><b>4,5</b><i class="nl-st" style="--w:.9"></i><small>(19)</small></span></div>
+          <div class="nl-r wir"><span class="nr mono">4</span><span class="nm">Muster Fliesen &amp; Bad<small>Fliesenleger · 3 km</small></span><span class="wt"><b>4,3</b><i class="nl-st" style="--w:.86"></i><small>(9)</small></span><span class="nl-plus">+1</span></div>
+        </div>
+        <p class="nl-fuss">Vereinfachtes Beispiel. Wie weit oben ein Betrieb bei Google steht, hängt auch von Entfernung und Suchbegriff ab – Anzahl und Schnitt der Bewertungen zählen mit.</p>
+      </div>
+
+      <div class="nfc-text">
+        <div class="nt an"><p class="mono">Schritt 1 / 4</p><h3>Handy dranhalten.</h3><p>Ihr Kunde hält die Oberkante seines Handys an das Zeichen auf der Karte. Keine App, kein Suchen.</p></div>
+        <div class="nt"><p class="mono">Schritt 2 / 4</p><h3>Einmal tippen.</h3><p>Das Handy zeigt sofort den Link. Ein Tipp – und Ihre Bewertungsseite ist offen.</p></div>
+        <div class="nt"><p class="mono">Schritt 3 / 4</p><h3>Sterne. Ein Satz. Senden.</h3><p>Ihr Kunde bewertet selbst und ehrlich – in ein paar Sekunden, noch bevor Sie vom Hof sind.</p></div>
+        <div class="nt"><p class="mono">Schritt 4 / 4</p><h3>Gefunden werden.</h3><p>Jede echte Bewertung zählt mit. Wer viele gute hat, steht bei Google Maps eher weiter oben – und bekommt die Anrufe.</p></div>
+      </div>
+      <div class="nfc-werte mono" id="nfcwerte" aria-hidden="true">
+        <div><span>Abstand</span><b id="nw-ab">180 mm</b></div>
+        <div><span>Signal</span><b id="nw-sig">kein Chip</b></div>
+        <div><span>Schritt</span><b id="nw-schritt">1 / 4</b></div>
+        <div><span>Zeit ab Kontakt</span><b id="nw-zeit">0,0 s</b></div>
+      </div>
+      <ol class="nfc-schritte mono" aria-hidden="true"><li class="an">Dranhalten</li><li>Tippen</li><li>Bewerten</li><li>Gefunden</li></ol>
+      <p class="mono nfc-demo" aria-hidden="true">Demo · Firma erfunden</p>
+    </div>
+  </div>
+
+  <div class="wrap nfc-info">
+    <h3 class="zw">So funktioniert es</h3>
+    <div class="nfc-vier">
+      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-chip"><i></i><b></b></div></div><h4>Ein Chip in der Karte</h4><p>In der Karte steckt ein hauchdünner NFC-Chip. Er führt <b>direkt zu Ihrer Bewertungsseite bei Google</b> – nicht erst zu Ihrem Eintrag in Maps, wo der Kunde noch suchen müsste. Auf Wunsch kommt ein QR-Code auf die Rückseite.</p></div>
+      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-handy"></div><i></i></div><h4>Fast jedes Handy kann das</h4><p><b>iPhones ab dem XS (2018) und fast alle Android-Handys</b> lesen den Chip ohne App. Bei Android muss NFC eingeschaltet sein – meist ist es das schon. Für alle anderen: QR-Code auf der Rückseite.</p></div>
+      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-maske"><i></i><s><u></u><u></u><u></u><u></u><u></u></s></div></div><h4>Sofort die Bewertungsmaske</h4><p>Kein Suchen, keine Umwege. Ist der Kunde mit seinem Google-Konto angemeldet, kann er <b>direkt Sterne vergeben und schreiben</b>. Sonst meldet er sich einmal an.</p></div>
+      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-balken"><i></i><i></i><i></i><i></i></div></div><h4>Mehr Bewertungen, mehr Anrufe</h4><p>Bewertungen zählen mit, wenn Google entscheidet, wen es bei „Fliesenleger in der Nähe“ weiter oben zeigt. Und Kunden <b>rufen eher den an, über den viele Gutes schreiben</b>.</p></div>
+    </div>
+
+    <div class="nfc-recht">
+      <div><h3 class="zw">Gut zu wissen</h3><p class="leise">Ehrliche Bewertungen, sauber gesammelt. So bleibt Ihr Profil sicher – und die Sterne glaubt man Ihnen auch.</p></div>
+      <ul>
+        <li><b>Jeden Kunden fragen.</b><p>Google verbietet, nur zufriedene Kunden zur Bewertung zu schicken oder unzufriedene vorher abzufangen. Darum führt die Karte immer direkt zu Google – ohne Vorab-Filter.</p></li>
+        <li><b>Keine Gegenleistung.</b><p>Kein Rabatt, kein Gutschein, keine Verlosung für eine Bewertung. Das verbieten die Google-Richtlinien – und nach dem Wettbewerbsrecht (UWG) kann es teuer werden.</p></li>
+        <li><b>Nur echte Bewertungen.</b><p>Keine selbst geschriebenen oder gekauften Bewertungen. Google löscht so etwas und kann Ihr Profil einschränken.</p></li>
+        <li><b>Der Chip ist nur ein Link.</b><p>Er speichert keine Kundendaten und braucht weder Strom noch Akku. Ich sperre ihn gegen Überschreiben, damit niemand den Link austauscht. Für den Firmenwagen gibt es wetterfeste Ausführungen.</p></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap nfc-schluss">
+    <h2 class="display">Ihre zufriedenen Kunden<br>gibt es schon. <em>Jetzt sieht<br>man sie auch.</em></h2>
+    <p class="lead leise">Matt-schwarze Karten im Look Ihres Betriebs – mit Ihrem direkten Bewertungslink. Für die Theke, den Firmenwagen, den Werkzeugkoffer und die Übergabe.</p>
+    <a class="knopf" href="#kontakt" data-nfc-anfrage>Karten anfragen</a>
+  </div>
+</section>
+<!-- NFC ENDE -->
+
+<!-- STEMPELKARTE START (20N-FIX, 17.11.2026) -->
+<section class="stk" id="stempelkarte" aria-labelledby="stk-h">
+  <div class="wrap stk-kopf">
+    <p class="mono leise">Digitale Stempelkarte · fürs Handy</p>
+    <h2 class="display" id="stk-h">Zwei Stempel geschenkt.<br><em>Den Rest holen sie sich.</em></h2>
+    <p class="lead leise">Für Barbershop, Café oder Werkstatt – überall, wo Kunden wiederkommen sollen. Scrollen Sie weiter und stempeln Sie selbst.</p>
+  </div>
+  <div class="stk-strecke" id="stkstrecke">
+    <div class="stk-buehne" id="stkbuehne">
+      <div class="stk-gewerk" role="tablist" aria-label="Beispiel wählen">
+        <button type="button" role="tab" data-g="barber" aria-selected="true" aria-label="Beispiel: Barbershop"><span data-t="Barber">Barber</span></button>
+        <i aria-hidden="true">·</i>
+        <button type="button" role="tab" data-g="cafe" aria-selected="false" tabindex="-1" aria-label="Beispiel: Café und Bäckerei"><span data-t="Café">Café</span></button>
+        <i aria-hidden="true">·</i>
+        <button type="button" role="tab" data-g="kfz" aria-selected="false" tabindex="-1" aria-label="Beispiel: Kfz-Werkstatt"><span data-t="Kfz">Kfz</span></button>
+      </div>
+      <div class="stk-szene" id="stkszene">
+        <div class="stk-telefon" id="stktelefon" aria-hidden="true"><i class="stk-insel"></i><small class="mono">9:41</small></div>
+        <div class="stk-flug" id="stkflug">
+          <div class="stk-lage">
+            <div class="stk-ruck" id="stkruck">
+              <div class="stk-karte" id="stkkarte" role="img" aria-label="Digitale Stempelkarte eines erfundenen Beispiel-Betriebs">
+                <div class="stk-vorn">
+                  <header><span class="stk-logo" id="stklogo">MB</span><div><b id="stkname">Muster Barbershop</b><small>Stempelkarte · Web-App</small></div><p class="stk-rest" id="stkrest">Noch 8 bis zum <em>Gratis-Schnitt</em></p></header>
+                  <div class="stk-felder" id="stkfelder"></div>
+                  <div class="stk-fuss"><span id="stkbesuch">Pro Haarschnitt 1 Stempel</span><span>Beispiel · Betrieb erfunden</span></div>
+                </div>
+                <div class="stk-hinten">
+                  <small>Gutschein · Karte voll</small>
+                  <b id="stkgut">Gratis-Schnitt</b>
+                  <div class="stk-loch"></div>
+                  <p id="stkguttext">Einlösbar beim nächsten Termin. Einfach an der Theke zeigen.</p>
+                  <small>Nr. 0001 · Beispiel</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stk-gratis" id="stkgratis" aria-hidden="true"><span>Gratis</span></div>
+      </div>
+      <div class="stk-stand">
+        <p class="stk-zahl" aria-live="polite"><b id="stkzahl">2</b><span>/</span><span id="stkmax">10</span></p>
+        <p class="stk-status mono" id="stkstatus">noch 8 bis zur Belohnung</p>
+        <button type="button" class="knopf hohl stk-weiter" id="stkweiter">Nächsten Stempel setzen</button>
+      </div>
+      <p class="mono stk-demo" aria-hidden="true">Demo · Betriebe erfunden</p>
+    </div>
+  </div>
+  <div class="wrap stk-info">
+    <div>
+      <h3 class="zw">Warum zwei Stempel geschenkt?</h3>
+      <p>Eine leere Karte ist ein Neuanfang. Eine Karte mit zwei Stempeln ist ein Weg, der schon läuft – und den bringen Menschen lieber zu Ende. Die Karte gibt Ihrem Kunden einen Grund, wiederzukommen.</p>
+      <a class="knopf stk-anfrage" href="#kontakt" data-stempel-anfrage>Stempelkarte anfragen</a>
+    </div>
+    <ul>
+      <li><span>Fürs Handy</span>Digitale Stempelkarte als Web-App: Ihr Kunde legt sie mit einem Tipp auf den Startbildschirm. Kein App-Store, keine Papierkarte, die verloren geht.</li>
+      <li><span>Wallet</span>Apple- und Google-Wallet auf Anfrage.</li>
+      <li><span>Belohnung</span>Bestimmen Sie selbst – Gratis-Schnitt, Kaffee, Rabatt, was zu Ihrem Betrieb passt.</li>
+      <li><span>Fair</span>Stempel gibt es für Besuche – nie für Bewertungen.</li>
+      <li><span>Dieses Beispiel</span>Speichert nichts und sendet nichts. Alle Betriebe sind erfunden.</li>
+    </ul>
+  </div>
+</section>
+<!-- STEMPELKARTE ENDE -->
+
+<section class="ablauf" id="ablauf">
+  <div class="wrap">
+    <h2 class="display auf"><span class="schnitt">So kommen Sie</span><br>zu Ihrer Seite</h2>
+    <ol class="schritte" role="list">
+      <li class="schritt auf"><h3>Template wählen</h3><p>Sie schauen sich die Beispiele an und wählen das, das zu Ihrem Betrieb passt.</p></li>
+      <li class="schritt auf"><h3>Wünsche schicken</h3><p>Sie kreuzen an, was rein soll, und schicken Logo und Fotos per Mail. Dauert zehn Minuten.</p></li>
+      <li class="schritt auf"><h3>Gespräch vor Ort</h3><p>Ich komme vorbei und zeige Ihnen Ihre Seite schon fertig – mit Ihrem Namen und Ihren Bildern.</p></li>
+      <li class="schritt auf"><h3>Seite geht live</h3><p>Nach Ihrer Freigabe geht die Seite online. Änderungen später schicken Sie mir einfach per WhatsApp.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="ueber" id="ueber">
+  <div class="wrap raster">
+    <div class="auf">
+      <h2 class="display"><span class="schnitt">Niklas</span><br>Häufele</h2>
+      <figure class="portrait" id="portrait"><span class="scan" aria-hidden="true"></span><span class="mono p-label" aria-hidden="true">S/W · 960 × 1200</span><img src="assets/img/niklas.webp" width="960" height="1200" loading="lazy" alt="Porträt von Niklas Häufele im Schulterblick, schwarzer Rollkragenpullover, Schwarz-Weiß"><span class="ki">✦ KI</span><figcaption>Niklas Häufele</figcaption></figure>
+    </div>
+    <div class="auf">
+      <p class="zitat">„Ich komme aus einer Familie mit Hof und weiß, wie wenig Zeit nach Feierabend für Büro bleibt. Deshalb mache ich die Technik – und Sie machen Ihr Handwerk.“</p>
+      <ul>
+        <li>Persönlich vor Ort in Ulm, Neu-Ulm, Senden und Illertissen – kein Callcenter.</li>
+        <li>Selbst in technischer Ausbildung (Industriemechaniker): Ich verstehe, wovon Sie auf der Baustelle reden.</li>
+        <li>Sie sehen Ihre Seite fertig, bevor Sie etwas unterschreiben.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="riesen" id="riesen2" aria-hidden="true"><div class="riesen-zug"><b>Ihr Betrieb</b><i>·</i><em>rund um die Uhr</em><i>·</i> <b>Ihr Betrieb</b><i>·</i><em>rund um die Uhr</em><i>·</i> <b>Ihr Betrieb</b><i>·</i><em>rund um die Uhr</em><i>·</i> <b>Ihr Betrieb</b><i>·</i><em>rund um die Uhr</em><i>·</i> </div></div>
+<section class="kontakt waechst" id="kontakt">
+  <div class="wrap raster">
+    <div class="auf">
+      <h2 class="display"><span class="schnitt">Rückruf</span><br>anfordern</h2>
+      <p class="lead leise" style="margin-top:22px">Schreiben Sie kurz, worum es geht. Ich melde mich so schnell wie möglich – am liebsten nach 16 Uhr, wenn Sie Feierabend haben.</p>
+      <div class="direkt">
+        <a href="tel:+491791069203">0179 1069203</a>
+        <a href="mailto:niklas@haeufele-webdesign.de">niklas@haeufele-webdesign.de</a>
+      </div>
+      <div class="haufen" id="haufen" aria-label="Animation: Anfragen fallen in Ihr Postfach und stapeln sich">
+        <canvas aria-hidden="true"></canvas>
+        <span class="haufen-hinweis mono" aria-hidden="true">Beispiel · Anfragen anschubsen</span>
+      </div>
+    </div>
+    <form id="kontaktform" class="auf" novalidate>
+      <div class="reihe">
+        <label>Ihr Name<input name="name" autocomplete="name" required></label>
+        <label>Betrieb<input name="betrieb" autocomplete="organization"></label>
+      </div>
+      <div class="reihe">
+        <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
+        <label>E-Mail<input name="email" type="email" autocomplete="email"></label>
+      </div>
+      <label>Worum geht es?
+        <select name="thema" required>
+          <option value="">Bitte auswählen</option>
+          <option>Neue Website</option>
+          <option>Bestehende Website verbessern</option>
+          <option>Fragen-Assistent</option>
+          <option>KI-Telefon mit Terminbuchung</option>
+          <option>App oder Werkzeug</option>
+          <option>NFC-Bewertungskarten</option>
+          <option>Digitale Stempelkarte</option>
+          <option>Paket aus mehreren Leistungen</option>
+          <option>Logo und Marken-Paket</option>
+          <option>Etwas anderes</option>
+        </select>
+      </label>
+      <label>Nachricht<textarea name="nachricht" placeholder="z. B. Gewerk, Ort, bestehende Website, wann ich Sie gut erreiche"></textarea></label>
+      <label class="honig" aria-hidden="true">Bitte leer lassen<input name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="check"><input type="checkbox" name="datenschutz" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+      <button class="knopf" type="submit">Rückruf anfordern</button>
+      <p class="hinweis" id="formhinweis" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <img src="assets/img/logo-weiss.png" alt="Häufele Webdesign" width="2397" height="469" loading="lazy">
+    <span class="slogan">damit sich Ihre Aufträge häufen</span>
+    <nav aria-label="Mehr und Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="bildnachweis.html">Bildnachweis</a></nav>
+  </div>
+</footer>
+
+<aside class="assi zu" id="assi" aria-label="Fragen-Assistent">
+  <header id="assikopf"><b><span class="punkt" aria-hidden="true"></span>Fragen? Der KI-Assistent antwortet.</b><button type="button" id="assizu" aria-label="Fragen-Assistent einklappen">–</button></header>
+  <div class="verlauf" id="verlauf" aria-live="polite"></div>
+  <div class="fragen" id="fragen"></div>
+</aside>
+
+<script src="assets/js/templates.js"></script>
+<script src="assets/js/logo-punkte.js"></script>
+<script src="assets/js/lenis.min.js" defer></script>
+<script src="assets/js/konfigurator.js" defer></script>
+<script src="assets/js/ki-daten.js"></script>
+<script src="assets/js/seite.js"></script>
+<script src="assets/js/ich.js" defer></script>
+<script src="assets/js/ich-daten.js" defer></script>
+<script src="assets/js/ich-partikel.js" defer></script>
+<script src="assets/js/bg-daten.js" defer></script>
+<script src="assets/js/folie3d.js" defer></script>
+<script src="assets/js/folie.js" defer></script>
+<script src="assets/js/app-vorschau.js" defer></script>
+<script src="assets/js/krass.js" defer></script>
+<script src="assets/js/ki-chat.js" defer></script>
+<script src="assets/js/ki-termine.js" defer></script>
+<script src="assets/js/ki-telefon-stimmen.js" defer></script>
+<script src="assets/js/ki-telefon-audio-lena.js" defer></script>
+<script src="assets/js/ki-telefon.js" defer></script>
+<script src="assets/js/film-telefon.js"></script>
+<script src="assets/js/film.js"></script>
+<script src="assets/js/nfc.js" defer></script>
+<script src="assets/js/studio.js" defer></script>
+<script src="assets/js/stempel.js" defer></script>
+<script src="assets/js/matter.min.js" defer></script>
+<script src="assets/js/haeufen.js" defer></script>
+<script src="assets/js/magnet.js" defer></script>
+<script src="assets/js/riesen.js" defer></script>
+<script src="assets/js/zeiger.js" defer></script>
+</body>
+</html>
