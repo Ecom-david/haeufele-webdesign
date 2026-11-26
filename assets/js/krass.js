@@ -168,7 +168,7 @@
     var trEl = $('transkript'); TR.forEach(function (t) { var p = document.createElement('p'); p.innerHTML = '<b>' + t[0] + '</b>'; p.appendChild(document.createTextNode(t[1])); trEl.appendChild(p); });
     var TP = window.TEMPLATES || [], film = $('sc0'), filmImgs = [];
     TP.filter(function (t) { return t.fertig; }).forEach(function (t) {
-      ['a', 'b'].forEach(function (s) { var im = new Image(); im.src = 'assets/img/handy-' + t.id + '-' + s + '.webp'; im.alt = ''; im.decoding = 'async'; im.width = 780; im.height = 1688; film.appendChild(im); filmImgs.push(im); });
+      ['a', 'b'].forEach(function (s) { var im = new Image(); im.loading = 'lazy'; im.src = 'assets/img/handy-' + t.id + '-' + s + '.webp'; im.alt = ''; im.decoding = 'async'; im.width = 780; im.height = 1688; film.appendChild(im); filmImgs.push(im); });
     });
     var welle = $('welle'), wx = welle.getContext('2d');
     function malWelle(t, aktiv) {

@@ -2,6 +2,9 @@
    Läuft auch per Doppelklick (lokal): Bild kommt als data-URI aus bg-*.js.
    Ohne WebGL / bei "weniger Bewegung" bleibt das ruhige Standbild (CSS). */
 (function () {
+  /* 26B3: bg-daten.js (3 MB, nur Notlösung ohne folie3d) wird nur noch bei Bedarf nachgeladen statt bei jedem Besuch */
+  if (window.FOLIE3D || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+  function folieStart() {
   var cv = document.getElementById('folie');
   if (!cv) return;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -80,4 +83,6 @@
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     requestAnimationFrame(loop);
   }
+  }
+  if (window.BG_DESKTOP) folieStart(); else { var sc = document.createElement('script'); sc.src = 'assets/js/bg-daten.js'; sc.onload = folieStart; document.head.appendChild(sc); }
 })();

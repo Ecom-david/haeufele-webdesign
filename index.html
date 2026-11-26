@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" class="film-bg">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="assets/css/krass.css">
 <link rel="stylesheet" href="assets/css/film.css">
 <script src="assets/js/takt.js"></script>
+<script src="assets/js/film-telefon.js" defer></script>
+<script src="assets/js/film.js" defer></script>
 <link rel="stylesheet" href="assets/css/ich.css">
 <link rel="stylesheet" href="assets/css/folie3d.css">
 <link rel="stylesheet" href="assets/css/ring-buehne.css">
@@ -51,7 +53,7 @@
     <picture class="fs-poster"><source media="(max-aspect-ratio: 4/5)" srcset="assets/film/m3/m-0000.webp"><img class="fs-poster" src="assets/film/d3/d-0000.webp" alt="" width="1920" height="1080" fetchpriority="high"></picture>
     <canvas class="fs-hg" aria-hidden="true"></canvas>
     <canvas class="fs-canvas" aria-hidden="true"></canvas>
-    <div class="fs-start" aria-hidden="true"><h2>Mehr Aufträge über Nacht.</h2><p>Sie suchen sich aus, welche Aufträge zu Ihnen passen.</p><div class="fs-scroll"><span>Nach unten scrollen</span><i></i></div></div>
+    <div class="fs-start" aria-hidden="true"><h2>Auch nachts erreichbar.</h2><p>Sie suchen sich aus, welche Aufträge zu Ihnen passen.</p><div class="fs-scroll"><span>Nach unten scrollen</span><i></i></div></div>
     <div class="fs-ut" aria-hidden="true">
       <p class="gross" data-von="20" data-bis="345">Ihre Werkstatt hat Feierabend.</p>
       <p class="zwei" data-von="372" data-bis="528">Ihre Website nicht.</p>
@@ -126,8 +128,8 @@
     </div>
     <figure class="ich-buehne">
       <div class="ich-figur">
-        <img class="ich-chrom" src="assets/img/ich-chrom-1228.webp" srcset="assets/img/ich-chrom-720.webp 720w, assets/img/ich-chrom-1228.webp 1228w" sizes="(max-width:860px) 60vw, 640px" width="1228" height="1536" alt="" aria-hidden="true">
-        <img class="ich-echt" src="assets/img/ich-echt-1228.webp" srcset="assets/img/ich-echt-720.webp 720w, assets/img/ich-echt-1228.webp 1228w" sizes="(max-width:860px) 60vw, 640px" width="1228" height="1536" alt="Niklas Häufele in schwarzem Strickpullover mit verschränkten Armen – beim Scrollen verwandelt sich eine Chrom-Figur in ihn">
+        <img class="ich-chrom" src="assets/img/ich-chrom-1228.webp" srcset="assets/img/ich-chrom-720.webp 720w, assets/img/ich-chrom-1228.webp 1228w" sizes="(max-width:860px) 60vw, 640px" width="1228" height="1536" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="ich-echt" src="assets/img/ich-echt-1228.webp" srcset="assets/img/ich-echt-720.webp 720w, assets/img/ich-echt-1228.webp 1228w" sizes="(max-width:860px) 60vw, 640px" width="1228" height="1536" alt="Niklas Häufele in schwarzem Strickpullover mit verschränkten Armen – beim Scrollen verwandelt sich eine Chrom-Figur in ihn" loading="lazy" decoding="async">
         <span class="ich-glanz" aria-hidden="true"></span>
       </div>
       <span class="ich-linie" aria-hidden="true"></span>
@@ -502,7 +504,7 @@
         <div class="nt an"><p class="mono">Schritt 1 / 4</p><h3>Handy dranhalten.</h3><p>Ihr Kunde hält die Oberkante seines Handys an das Zeichen auf der Karte. Keine App, kein Suchen.</p></div>
         <div class="nt"><p class="mono">Schritt 2 / 4</p><h3>Einmal tippen.</h3><p>Das Handy zeigt sofort den Link. Ein Tipp – und Ihre Bewertungsseite ist offen.</p></div>
         <div class="nt"><p class="mono">Schritt 3 / 4</p><h3>Sterne. Ein Satz. Senden.</h3><p>Ihr Kunde bewertet selbst und ehrlich – in ein paar Sekunden, noch bevor Sie vom Hof sind.</p></div>
-        <div class="nt"><p class="mono">Schritt 4 / 4</p><h3>Gefunden werden.</h3><p>Jede echte Bewertung zählt mit. Wer viele gute hat, steht bei Google Maps eher weiter oben – und bekommt die Anrufe.</p></div>
+        <div class="nt"><p class="mono">Schritt 4 / 4</p><h3>Gefunden werden.</h3><p>Echte Bewertungen helfen, gefunden zu werden: Sie können beeinflussen, wie weit oben ein Betrieb bei Google Maps erscheint. Ein Ergebnis kann ich nicht versprechen.</p></div>
       </div>
       <div class="nfc-werte mono" id="nfcwerte" aria-hidden="true">
         <div><span>Abstand</span><b id="nw-ab">180 mm</b></div>
@@ -519,15 +521,15 @@
     <h3 class="zw">So funktioniert es</h3>
     <div class="nfc-vier">
       <div class="nv"><div class="fig" aria-hidden="true"><div class="f-chip"><i></i><b></b></div></div><h4>Ein Chip in der Karte</h4><p>In der Karte steckt ein hauchdünner NFC-Chip. Er führt <b>direkt zu Ihrer Bewertungsseite bei Google</b> – nicht erst zu Ihrem Eintrag in Maps, wo der Kunde noch suchen müsste. Auf Wunsch kommt ein QR-Code auf die Rückseite.</p></div>
-      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-handy"></div><i></i></div><h4>Fast jedes Handy kann das</h4><p><b>iPhones ab dem XS (2018) und fast alle Android-Handys</b> lesen den Chip ohne App. Bei Android muss NFC eingeschaltet sein – meist ist es das schon. Für alle anderen: QR-Code auf der Rückseite.</p></div>
+      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-handy"></div><i></i></div><h4>Fast jedes Handy kann das</h4><p><b>Die meisten neueren iPhones (ab XS, 2018) und viele Android-Handys</b> lesen den Chip ohne App. Bei Android muss NFC eingeschaltet sein – meist ist es das schon. Für alle anderen: QR-Code auf der Rückseite.</p></div>
       <div class="nv"><div class="fig" aria-hidden="true"><div class="f-maske"><i></i><s><u></u><u></u><u></u><u></u><u></u></s></div></div><h4>Sofort die Bewertungsmaske</h4><p>Kein Suchen, keine Umwege. Ist der Kunde mit seinem Google-Konto angemeldet, kann er <b>direkt Sterne vergeben und schreiben</b>. Sonst meldet er sich einmal an.</p></div>
-      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-balken"><i></i><i></i><i></i><i></i></div></div><h4>Mehr Bewertungen, mehr Anrufe</h4><p>Bewertungen zählen mit, wenn Google entscheidet, wen es bei „Fliesenleger in der Nähe“ weiter oben zeigt. Und Kunden <b>rufen eher den an, über den viele Gutes schreiben</b>.</p></div>
+      <div class="nv"><div class="fig" aria-hidden="true"><div class="f-balken"><i></i><i></i><i></i><i></i></div></div><h4>Mehr Bewertungen können helfen</h4><p>Bewertungen sind einer von mehreren Faktoren, die Google bei „Fliesenleger in der Nähe“ berücksichtigt. Und viele Kunden <b>achten auf Bewertungen</b>, bevor sie anrufen.</p></div>
     </div>
 
     <div class="nfc-recht">
       <div><h3 class="zw">Gut zu wissen</h3><p class="leise">Ehrliche Bewertungen, sauber gesammelt. So bleibt Ihr Profil sicher – und die Sterne glaubt man Ihnen auch.</p></div>
       <ul>
-        <li><b>Jeden Kunden fragen.</b><p>Google verbietet, nur zufriedene Kunden zur Bewertung zu schicken oder unzufriedene vorher abzufangen. Darum führt die Karte immer direkt zu Google – ohne Vorab-Filter.</p></li>
+        <li><b>Jeden Kunden fragen.</b><p>Die Google-Richtlinien untersagen, nur zufriedene Kunden zur Bewertung zu schicken oder unzufriedene vorher abzufangen. Darum führt die Karte immer direkt zu Google – ohne Vorab-Filter.</p></li>
         <li><b>Keine Gegenleistung.</b><p>Kein Rabatt, kein Gutschein, keine Verlosung für eine Bewertung. Das verbieten die Google-Richtlinien – und nach dem Wettbewerbsrecht (UWG) kann es teuer werden.</p></li>
         <li><b>Nur echte Bewertungen.</b><p>Keine selbst geschriebenen oder gekauften Bewertungen. Google löscht so etwas und kann Ihr Profil einschränken.</p></li>
         <li><b>Der Chip ist nur ein Link.</b><p>Er speichert keine Kundendaten und braucht weder Strom noch Akku. Ich sperre ihn gegen Überschreiben, damit niemand den Link austauscht. Für den Firmenwagen gibt es wetterfeste Ausführungen.</p></li>
@@ -709,7 +711,6 @@
 <script src="assets/js/ich.js" defer></script>
 <script src="assets/js/ich-daten.js" defer></script>
 <script src="assets/js/ich-partikel.js" defer></script>
-<script src="assets/js/bg-daten.js" defer></script>
 <script src="assets/js/folie3d.js" defer></script>
 <script src="assets/js/folie.js" defer></script>
 <script src="assets/js/app-vorschau.js" defer></script>
@@ -719,8 +720,6 @@
 <script src="assets/js/ki-telefon-stimmen.js" defer></script>
 <script src="assets/js/ki-telefon-audio-lena.js" defer></script>
 <script src="assets/js/ki-telefon.js" defer></script>
-<script src="assets/js/film-telefon.js"></script>
-<script src="assets/js/film.js"></script>
 <script src="assets/js/nfc.js" defer></script>
 <script src="assets/js/studio.js" defer></script>
 <script src="assets/js/stempel.js" defer></script>

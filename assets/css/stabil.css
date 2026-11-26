@@ -12,3 +12,6 @@
   .halten { background: rgba(10,10,11,.9) }
   .mini-mobil { background: rgba(10,10,11,.97) }
 }
+
+/* 26B3: Seitenhintergrund-Bild (ca. 0,5 MB) erst laden, wenn die ersten Filmbilder da sind – der Film deckt den Bildschirm ohnehin komplett ab */
+.js.film-bg:not(.bg-an) .bg{background-image:none}
