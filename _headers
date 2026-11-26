@@ -1,0 +1,12 @@
+# Sicherheits-Header für Häufele Webdesign (Netlify / Cloudflare Pages)
+# Datei als "_headers" in den Website-Hauptordner (neben index.html) legen.
+# script-src ohne 'unsafe-inline': alle Skripte liegen als Dateien unter assets/js (Stand 17.11.2026).
+# Wenn ki-daten.js später einen KI-Endpoint (Cloudflare Worker) bekommt: dessen https://-Adresse in connect-src ergänzen.
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self' data:; connect-src 'self' data: blob:; worker-src 'self' blob:; frame-src 'self'; frame-ancestors 'none'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: microphone=(self), camera=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000
+  Cross-Origin-Opener-Policy: same-origin
