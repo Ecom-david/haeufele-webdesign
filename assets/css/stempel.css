@@ -1,0 +1,181 @@
+/* Digitale Stempelkarte – DER Moment (20N-FIX, 17.11.2026). Monochrom, kein WebGL, kein mix-blend-mode.
+   Karte löst sich vom Handy, wird bildschirmfüllend; 10 riesige Stempel schlagen scroll-gesteuert ein (vor/zurück). */
+.stk{position:relative;z-index:1}
+.stk-kopf{padding-top:clamp(70px,9vw,140px)}
+.stk-kopf h2{font-size:clamp(38px,5.6vw,88px);margin:14px 0 18px}
+.stk-kopf h2 em{font-style:italic;color:transparent;-webkit-text-stroke:1.4px var(--kreide)}
+.stk-kopf .lead{margin:0}
+.stk-strecke{position:relative;height:620vh}
+.stk-buehne{--st:min(17vh,14vw);--gp:calc(var(--st) * .14);position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr) auto;justify-items:center;align-items:center;padding:calc(64px + 1.2vh) var(--gut) 2.4vh}
+/* Gewerk-Wahl: große Wörter wie in „Alles aus einer Hand“ */
+.stk-gewerk{position:relative;z-index:3;display:flex;align-items:center;gap:clamp(10px,2vw,34px)}
+.stk-gewerk i{font-style:normal;color:var(--stahl);font-size:clamp(20px,3vh,32px)}
+.stk-gewerk button{background:none;border:0;padding:4px 2px;cursor:pointer;color:inherit}
+.stk-gewerk span{position:relative;display:block;font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:125%;text-transform:uppercase;font-size:clamp(30px,6.4vh,70px);line-height:1;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1.2px rgba(243,242,239,.5);white-space:nowrap}
+.stk-gewerk span::after{content:attr(data-t);position:absolute;left:0;top:0;color:var(--kreide);-webkit-text-stroke:0;clip-path:inset(0 100% 0 0);transition:clip-path .5s cubic-bezier(.7,0,.2,1)}
+.stk-gewerk button[aria-selected=true] span::after,.stk-gewerk button:hover span::after,.stk-gewerk button:focus-visible span::after{clip-path:inset(0 0 0 0)}
+.stk-gewerk button:hover span::after{opacity:.55}.stk-gewerk button[aria-selected=true]:hover span::after{opacity:1}
+
+/* Szene: Handy (nur am Anfang) + Karte */
+.stk-szene{position:relative;width:100%;height:100%;display:grid;place-items:center;perspective:1600px}
+.stk-szene.ruck{animation:stk-kamera .42s cubic-bezier(.2,.8,.3,1)}
+@keyframes stk-kamera{0%{transform:none}18%{transform:translate3d(0,7px,0) rotate(.35deg)}45%{transform:translate3d(0,-2px,0) rotate(-.12deg)}100%{transform:none}}
+.stk-telefon{position:absolute;left:50%;top:50%;width:calc(min(68vh,620px) * .49);height:min(68vh,620px);margin:calc(min(68vh,620px) / -2) 0 0 calc(min(68vh,620px) * -.245);border-radius:calc(min(68vh,620px) * .075);background:linear-gradient(150deg,#2c2e32,#0c0c0d 40%,#070708 70%,#25272b);box-shadow:inset 0 0 0 1px rgba(243,242,239,.18),inset 0 0 0 calc(min(68vh,620px) * .016) #0a0a0b,0 50px 110px rgba(0,0,0,.75);transform:translate3d(0,calc(var(--stk-i,0) * 6vh),0) scale(calc(1 - var(--stk-i,0) * .1));opacity:calc(1 - var(--stk-i,0) * 1.4);pointer-events:none}
+.stk-telefon .stk-insel{position:absolute;left:50%;top:3.2%;width:30%;height:3.4%;margin-left:-15%;border-radius:99px;background:#000}
+.stk-telefon small{position:absolute;left:11%;top:3.3%;font-size:calc(min(68vh,620px) * .02);color:var(--kreide)}
+.stk-flug{position:relative;z-index:2;will-change:transform;transform-style:preserve-3d}
+.stk-lage{transition:transform .9s cubic-bezier(.3,1.2,.4,1)}
+.stk-buehne.voll .stk-lage{transform:translate3d(0,-10vh,0) scale(.76)}
+.stk-ruck.ruck{animation:stk-ruck .46s cubic-bezier(.2,.8,.3,1)}
+@keyframes stk-ruck{0%{transform:none}16%{transform:translate3d(0,4px,0) scale(.992)}42%{transform:translate3d(0,-1px,0) scale(1.003)}100%{transform:none}}
+.stk-karte{position:relative;transform-style:preserve-3d;transition:transform 1.05s cubic-bezier(.3,1.3,.45,1)}
+.stk-karte.voll{transform:rotateY(180deg)}
+.stk-vorn,.stk-hinten{border-radius:calc(var(--st) * .16);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.stk-vorn{position:relative;color:#111214;padding:calc(var(--st) * .26) calc(var(--st) * .3) calc(var(--st) * .2);background:#EDEBE5;background-image:radial-gradient(120% 90% at 0% 0%,#F8F7F3 0%,#ECEAE3 55%,#DEDBD2 100%);box-shadow:0 40px 90px rgba(0,0,0,.6),0 12px 30px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.5)}
+.stk-vorn::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.5;background-image:repeating-radial-gradient(circle at 30% 20%,rgba(0,0,0,.018) 0 1px,transparent 1px 3px)}
+.stk-vorn header{position:relative;display:flex;align-items:center;gap:calc(var(--st) * .1);margin-bottom:calc(var(--st) * .2)}
+.stk-logo{width:calc(var(--st) * .34);height:calc(var(--st) * .34);border-radius:50%;background:#111214;color:#EDEBE5;display:grid;place-items:center;font:900 italic calc(var(--st) * .12)/1 "Archivo Wide",sans-serif;font-stretch:125%;flex:0 0 auto}
+.stk-vorn header b{display:block;font:800 italic calc(var(--st) * .13)/1.05 "Archivo Wide",sans-serif;font-stretch:115%;text-transform:uppercase}
+.stk-vorn header small{display:block;font:500 calc(var(--st) * .072)/1.3 "Geist Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#55565a}
+.stk-rest{margin:0 0 0 auto;text-align:right;font:900 italic calc(var(--st) * .15)/1 "Archivo Wide",sans-serif;font-stretch:118%;text-transform:uppercase;max-width:14ch}
+.stk-rest em{font-style:italic;color:#66676b}
+.stk-felder{position:relative;display:grid;grid-template-columns:repeat(5,var(--st));column-gap:var(--gp);row-gap:calc(var(--st) * .3)}
+.stk-felder.f6{grid-template-columns:repeat(3,var(--st))}
+.stk-f{position:relative;width:var(--st);height:var(--st);border-radius:50%;border:2px dashed rgba(17,18,20,.28);display:grid;place-items:center;font:600 calc(var(--st) * .13)/1 "Geist Mono",ui-monospace,monospace;color:rgba(17,18,20,.34)}
+.stk-f.ziel{border:2.5px solid rgba(17,18,20,.6);color:#111214}
+.stk-f.ziel span{font:900 italic calc(var(--st) * .13)/1 "Archivo Wide",sans-serif;font-stretch:110%;text-transform:uppercase}
+.stk-f canvas{position:absolute;left:-6%;top:-6%;width:112%;height:112%;pointer-events:none;opacity:0}
+.stk-f.an{border-color:transparent;color:transparent}
+.stk-f.an canvas{opacity:1}
+.stk-f .sch{position:absolute;inset:-18%;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.55),rgba(0,0,0,.25) 55%,transparent 72%);opacity:0;pointer-events:none}
+.stk-f .dell{position:absolute;inset:-4%;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.16),inset 0 0 18px rgba(0,0,0,.14);opacity:0;pointer-events:none}
+.stk-f.neu canvas{animation:stk-schlag .52s cubic-bezier(.3,.7,.2,1) both}
+.stk-f.neu .sch{animation:stk-schatten .52s cubic-bezier(.3,.7,.2,1) both}
+.stk-f.neu .dell{animation:stk-dell .7s cubic-bezier(.2,.8,.2,1) .22s both}
+.stk-f.weg canvas{animation:stk-weg .26s ease-in both}
+@keyframes stk-schlag{0%{opacity:0;transform:scale(1.45) rotate(10deg)}44%{opacity:0;transform:scale(1.18) rotate(4deg)}52%{opacity:1;transform:scale(.93) rotate(0)}68%{transform:scale(1.025)}100%{opacity:1;transform:none}}
+@keyframes stk-schatten{0%{opacity:0;transform:scale(2.1)}42%{opacity:.8;transform:scale(1.04)}54%{opacity:0;transform:scale(.92)}100%{opacity:0}}
+@keyframes stk-dell{0%{opacity:.75;transform:scale(.94)}100%{opacity:0;transform:scale(1.32)}}
+@keyframes stk-weg{0%{opacity:1;transform:none}100%{opacity:0;transform:scale(1.07) translateY(-3%)}}
+/* „geschenkt“ – EINE Klammer unter den ersten zwei Stempeln */
+.stk-klammer{position:absolute;height:calc(var(--st) * .2);pointer-events:none;color:#3f4044}
+.stk-klammer i{position:absolute;left:0;right:0;top:0;height:9px;border:1.5px solid currentColor;border-top:0;border-radius:0 0 6px 6px}
+.stk-klammer b{position:absolute;left:50%;top:5px;transform:translateX(-50%);padding:0 10px;background:#E6E3DC;font:600 calc(var(--st) * .072)/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.stk-fuss{position:relative;display:flex;justify-content:space-between;gap:8px;margin-top:calc(var(--st) * .26);font:500 calc(var(--st) * .072)/1.3 "Geist Mono",ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#55565a}
+.stk-hinten{position:absolute;inset:0;transform:rotateY(180deg);background:#0c0c0d;background-image:radial-gradient(130% 100% at 100% 0%,#2a2b2f 0%,#0e0e10 45%,#050506 100%);color:var(--kreide);padding:calc(var(--st) * .3);display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 40px 90px rgba(0,0,0,.65),inset 0 0 0 1px rgba(243,242,239,.2)}
+.stk-hinten small{font:500 calc(var(--st) * .08)/1.3 "Geist Mono",ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--chrom)}
+.stk-hinten b{display:block;hyphens:manual;-webkit-hyphens:manual;font:900 italic calc(var(--st) * .46)/.92 "Archivo Wide",sans-serif;font-stretch:125%;text-transform:uppercase;letter-spacing:-.015em}
+.stk-hinten p{margin:0;font-size:calc(var(--st) * .1);line-height:1.4;color:var(--chrom);max-width:44ch}
+.stk-loch{position:relative;border-top:1.5px dashed rgba(243,242,239,.3);margin:0 calc(var(--st) * -.3);height:0}
+.stk-loch::before,.stk-loch::after{content:"";position:absolute;top:calc(var(--st) * -.09);width:calc(var(--st) * .18);height:calc(var(--st) * .18);border-radius:50%;background:#030303}
+.stk-loch::before{left:calc(var(--st) * -.09)}.stk-loch::after{right:calc(var(--st) * -.09)}
+/* Gutschein-Moment: Riesenwort schlägt ein wie ein Stempel */
+.stk-gratis{position:absolute;left:0;right:0;bottom:2vh;z-index:4;text-align:center;pointer-events:none;visibility:hidden}
+.stk-gratis span{display:inline-block;font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:125%;text-transform:uppercase;font-size:min(15vw,22vh);line-height:.86;letter-spacing:-.02em;color:var(--kreide);text-shadow:0 30px 60px rgba(0,0,0,.6)}
+.stk-buehne.voll .stk-gratis{visibility:visible}
+.stk-buehne.voll .stk-gratis span{animation:stk-gratis .62s cubic-bezier(.3,.7,.2,1) .45s both}
+@keyframes stk-gratis{0%{opacity:0;transform:scale(1.7) rotate(-4deg)}55%{opacity:0;transform:scale(1.22) rotate(-1.5deg)}64%{opacity:1;transform:scale(.95) rotate(0)}80%{transform:scale(1.02)}100%{opacity:1;transform:none}}
+/* Zähler: groß und mittig */
+.stk-stand{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;transition:opacity .35s}
+.stk-buehne.voll .stk-stand{opacity:0;pointer-events:none}
+.stk-zahl{margin:0;display:flex;align-items:baseline;gap:.18em;font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:125%;line-height:.9}
+.stk-zahl b{font-size:clamp(46px,9vh,96px);min-width:1.15em;text-align:right}
+.stk-zahl span{font-size:clamp(22px,4vh,42px);color:var(--chrom)}
+.stk-zahl b.tick{animation:stk-tick .42s cubic-bezier(.2,.9,.25,1.3)}
+@keyframes stk-tick{0%{transform:translateY(.22em) scale(.84);opacity:.25}100%{transform:none;opacity:1}}
+.stk-status{margin:0;color:var(--chrom)}
+.stk-weiter{margin-top:6px;padding:10px 18px;font-size:13px}
+.stk-demo{position:absolute;left:var(--gut);bottom:18px;z-index:3;color:var(--chrom);opacity:.8}
+/* Info unter der Bühne – kurz, keine Kacheln */
+.stk-info{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);padding-top:clamp(40px,6vw,90px);padding-bottom:clamp(60px,8vw,120px)}
+.stk-info h3{margin:0 0 14px}
+.stk-info p{margin:0;color:var(--chrom);max-width:52ch}
+.stk-info ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--rand)}
+.stk-info li{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--rand);font-size:15px;line-height:1.5}
+.stk-info li span{font:500 11px/1.6 "Geist Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--chrom)}
+.stk-anfrage{margin-top:26px}
+@media (max-width:900px){
+  .stk-strecke{height:560vh}
+  .stk-buehne{--st:min(22vw,9.4vh);--gp:calc(var(--st) * .12);padding:calc(58px + 1vh) 12px 64px}
+  .stk-gewerk span{font-size:clamp(20px,6.4vw,40px);-webkit-text-stroke-width:1px}
+  .stk-gewerk{gap:6px}
+  .stk-gewerk i{font-size:16px}
+  .stk-felder{grid-template-columns:repeat(3,var(--st));row-gap:calc(var(--st) * .3)}
+  .stk-felder .stk-f.ziel.zehn{grid-column:2}
+  .stk-vorn{padding:calc(var(--st) * .22) calc(var(--st) * .2) calc(var(--st) * .18)}
+  .stk-vorn header{flex-wrap:wrap;row-gap:calc(var(--st) * .08)}
+  .stk-rest{flex:1 0 100%;text-align:left;margin:0;max-width:none;font-size:calc(var(--st) * .17)}
+  .stk-hinten b{font-size:calc(var(--st) * .42)}
+  .stk-zahl b{font-size:clamp(40px,7vh,64px)}
+  .stk-weiter{display:none}
+  .stk-info{grid-template-columns:1fr}
+  .stk-info li{grid-template-columns:1fr;gap:4px}
+  .stk-demo{display:none}
+  .stk-buehne.voll .stk-lage{transform:translate3d(0,-6vh,0) scale(.86)}
+  .stk-gratis{bottom:1vh}
+}
+@media (min-width:901px) and (max-height:780px){.stk-weiter{display:none}.stk-buehne{--st:min(16.5vh,14vw)}}
+@media (prefers-reduced-motion:reduce){.stk-karte,.stk-lage{transition:none}.stk-f.neu canvas,.stk-f.neu .sch,.stk-f.neu .dell,.stk-f.weg canvas,.stk-ruck.ruck,.stk-szene.ruck,.stk-buehne.voll .stk-gratis span{animation:none}.stk-strecke{height:auto}.stk-buehne{position:relative;height:auto;min-height:100vh}}
+
+/* ---------- 20N-FIX2 (17.11.2026): Stempelkarte – Gutschein hell + ohne Naht (alle Größen), Desktop deutlich größer ---------- */
+.stk-hinten{background:#F6F5F1;background-image:radial-gradient(130% 100% at 100% 0%,#FFFFFF 0%,#F3F1EB 50%,#E2DFD6 100%);color:#0B0B0C;box-shadow:0 40px 90px rgba(0,0,0,.6),0 12px 30px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.6)}
+.stk-hinten small{color:#3E3F43}
+.stk-hinten p{color:#2A2B2E}
+.stk-loch{display:none}
+@media (min-width:901px){
+  .stk-buehne{--st:min(19.5vh,14vw);padding:calc(60px + .8vh) 2.5vw 1.6vh}
+  .stk-vorn{width:min(90vw,calc(var(--st) * 9.6));padding:calc(var(--st) * .24) calc(var(--st) * .34) calc(var(--st) * .18)}
+  .stk-felder{grid-template-columns:repeat(5,var(--st));justify-content:space-between;column-gap:0}
+  .stk-felder.f6{grid-template-columns:repeat(3,var(--st));justify-content:space-around}
+  .stk-vorn header b{font-size:calc(var(--st) * .17)}
+  .stk-vorn header small{font-size:calc(var(--st) * .085)}
+  .stk-rest{font-size:calc(var(--st) * .19);max-width:20ch}
+  .stk-f{font-size:calc(var(--st) * .16)}
+  .stk-f.ziel span{font-size:calc(var(--st) * .16)}
+  .stk-klammer b{font-size:calc(var(--st) * .085)}
+  .stk-fuss{font-size:calc(var(--st) * .085)}
+  .stk-hinten{padding:calc(var(--st) * .36) calc(var(--st) * .42)}
+  .stk-hinten small{font-size:calc(var(--st) * .12)}
+  .stk-hinten b{font-size:calc(var(--st) * .78);line-height:.9}
+  .stk-hinten p{font-size:calc(var(--st) * .16);max-width:48ch}
+  /* Zähler kompakt in einer Zeile, damit die Karte mehr Höhe bekommt */
+  .stk-stand{flex-direction:row;align-items:center;gap:22px}
+  .stk-zahl b{font-size:clamp(40px,7vh,80px)}
+  .stk-weiter{margin-top:0}
+  .stk-buehne.voll .stk-lage{transform:translate3d(0,-8vh,0) scale(.8)}
+}
+@media (max-width:900px){
+  .stk-hinten small{font-size:max(10px,calc(var(--st) * .13))}
+  .stk-hinten p{font-size:max(13px,calc(var(--st) * .18))}
+}
+
+/* ---------- Alles aus einer Hand: Riesen-Index statt Kacheln ---------- */
+.adh{position:relative;z-index:1;padding:clamp(70px,10vw,150px) 0 clamp(60px,8vw,120px);overflow:hidden}
+.adh-kopf h2{font-size:clamp(40px,5.6vw,88px);margin:14px 0 20px}
+.adh-kopf h2 em{color:transparent;-webkit-text-stroke:1.4px var(--kreide)}
+.adh-liste{list-style:none;margin:clamp(30px,5vw,70px) 0 0;padding:0;border-top:1px solid var(--rand)}
+.adh-liste li{border-bottom:1px solid var(--rand)}
+.adh-liste a{position:relative;display:grid;grid-template-columns:70px auto 1fr;align-items:center;gap:clamp(12px,2vw,30px);padding:clamp(6px,1vw,14px) var(--gut);text-decoration:none;color:var(--kreide);transform:translate3d(var(--x,0px),0,0);will-change:transform}
+.adh-nr{color:var(--chrom)}
+.adh-wort{position:relative;font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:125%;text-transform:uppercase;font-size:clamp(40px,8.4vw,138px);line-height:.98;letter-spacing:-.015em;color:transparent;-webkit-text-stroke:1.2px rgba(243,242,239,.55);white-space:nowrap}
+.adh-wort::after{content:attr(data-t);position:absolute;left:0;top:0;color:var(--kreide);-webkit-text-stroke:0;clip-path:inset(0 100% 0 0);transition:clip-path .55s cubic-bezier(.7,0,.2,1)}
+.adh-satz{justify-self:end;text-align:right;max-width:22ch;font:600 clamp(14px,1.15vw,17px)/1.35 Montserrat,sans-serif;color:var(--chrom);opacity:.0;transform:translate3d(14px,0,0);transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.adh-liste a:hover .adh-wort::after,.adh-liste a:focus-visible .adh-wort::after{clip-path:inset(0 0 0 0)}
+.adh-liste a:hover .adh-satz,.adh-liste a:focus-visible .adh-satz{opacity:1;transform:none;color:var(--kreide)}
+.adh-liste li.an .adh-wort::after{clip-path:inset(0 0 0 0)}
+.adh-liste li.an .adh-satz{opacity:1;transform:none}
+.adh-fuss{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:clamp(30px,4vw,56px)}
+.adh-fuss p{margin:0;max-width:52ch}
+@media (max-width:900px){
+  .adh-liste a{grid-template-columns:34px 1fr;row-gap:2px;padding:12px var(--gut)}
+  .adh-wort{font-size:clamp(26px,8vw,60px);font-stretch:112%}
+  .adh-kopf h2{font-size:clamp(25px,6.5vw,48px)}
+  .adh-satz{grid-column:2;justify-self:start;text-align:left;opacity:1;transform:none;font-size:14px;max-width:none}
+}
+@media (prefers-reduced-motion:reduce){.adh-liste a{transform:none}}
+.stk-anfrage{margin-top:26px}
+
+/* 20N-FIX4: Klick auf das schon gewählte Gewerk bestätigt sich sichtbar */
+.stk-gewerk .stk-tick{animation:stkTick .45s cubic-bezier(.2,.7,.3,1)}
+@keyframes stkTick{0%{box-shadow:0 0 0 0 rgba(243,242,239,.55)}100%{box-shadow:0 0 0 9px rgba(243,242,239,0)}}
+@media (prefers-reduced-motion:reduce){.stk-gewerk .stk-tick{animation:none}}

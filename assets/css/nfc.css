@@ -1,0 +1,245 @@
+/* =========================================================
+   NFC-BEWERTUNGSAUFSTELLER (Chat W10-D) – „Handy dran. Fertig.“
+   Referenz: eigene Idee; Wissen aus Reels @nfcgobr, @ben.taprate (direkter Bewertungslink auf NFC + QR)
+   ========================================================= */
+.nfc-abschnitt{padding:clamp(80px,11vw,150px) 0 0;position:relative}
+.nfc-kopf{position:relative;z-index:2}
+.nfc-dach{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--chrom);margin-bottom:18px}
+.nfc-kopf .lead{margin-top:22px}
+
+/* ---------- Sticky-Erlebnis ---------- */
+.nfc-strecke{position:relative;height:560vh;margin-top:clamp(40px,6vw,80px)}
+.nfc-buehne{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate;perspective:1500px;perspective-origin:50% 42%;
+  background:radial-gradient(60% 55% at 56% 38%,rgba(52,54,58,.55),rgba(3,3,3,.86) 72%)}
+.nfc-licht{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(34% 46% at 50% 30%,rgba(243,242,239,.10),transparent 70%),radial-gradient(20% 26% at 50% 70%,rgba(243,242,239,.05),transparent 70%)}
+/* Theke: matter Anthrazit-Stein in Perspektive */
+.nfc-theke{position:absolute;left:-30%;right:-30%;top:71%;height:120%;transform-origin:50% 0;transform:rotateX(76deg);z-index:0;
+  background:
+   radial-gradient(28% 22% at 50% 6%,rgba(243,242,239,.16),transparent 70%),
+   var(--nfc-korn,none),
+   linear-gradient(180deg,#26272a 0%,#141517 30%,#060606 70%);
+  background-size:auto,220px 220px,auto;opacity:.95}
+.nfc-theke::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(243,242,239,.4) 30%,rgba(243,242,239,.4) 70%,transparent)}
+
+/* ---------- NFC-Karte (matt schwarz, Scheckkartenformat 54 × 85,6 mm, hochkant) ---------- */
+.nfc-auf{--h:min(52vh,460px);position:absolute;z-index:2;left:52%;top:76%;width:calc(var(--h) * .631);height:var(--h);
+  transform-style:preserve-3d;transform:translate(-50%,-100%) rotateY(-18deg) rotateX(8deg) rotateZ(-3deg);transition:opacity .4s}
+.a-platte{position:absolute;inset:0;transform-style:preserve-3d}
+.a-k{position:absolute;inset:0;border-radius:calc(var(--h) * .037);background:#2a2b2e}
+.a-k:nth-child(1){transform:translateZ(-.8px)}.a-k:nth-child(2){transform:translateZ(-1.6px)}.a-k:nth-child(3){transform:translateZ(-2.4px)}
+.a-k:nth-child(4){transform:translateZ(-3.2px);box-shadow:0 50px 80px rgba(0,0,0,.65)}
+.a-druck{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:11% 9% 10%;border-radius:calc(var(--h) * .037);
+  background:var(--nfc-korn,none),radial-gradient(130% 80% at 25% 0%,#1d1e22,#0b0b0d 62%),#0b0b0d;background-size:160px 160px,auto,auto;color:var(--kreide);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.a-nfc{position:relative;width:30%;display:grid;place-items:center;padding:4% 0}
+.a-nfc svg{width:100%;height:auto}
+.a-logo{display:flex;align-items:center;gap:7%;margin-top:12%;text-align:left}
+.a-logo b{flex:none;width:calc(var(--h) * .15);aspect-ratio:1;border-radius:50%;border:2px solid var(--kreide);display:grid;place-items:center;
+  font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:125%;font-size:calc(var(--h) * .08)}
+.a-logo span{font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:125%;font-size:max(13px,calc(var(--h) * .05));line-height:.95}
+.a-logo small{display:block;white-space:nowrap;font-family:"Geist Mono",ui-monospace,monospace;font-style:normal;font-weight:500;font-stretch:100%;font-size:max(12px,calc(var(--h) * .024));letter-spacing:.16em;margin-top:5px;color:var(--chrom)}
+.a-sterne{display:flex;gap:4%;width:62%;margin-top:auto}
+.a-sterne i{flex:1;aspect-ratio:1;background:var(--kreide);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.a-frage{font-weight:600;font-size:max(13px,calc(var(--h) * .05));line-height:1.2;margin-top:7%;white-space:nowrap}
+.a-frage span{font-weight:800}
+/* matter Glanz: wandert sanft, Kante fängt Licht */
+.a-glas{position:absolute;inset:0;border-radius:calc(var(--h) * .037);pointer-events:none;transform:translateZ(.2px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 1px 0 0 rgba(255,255,255,.08);
+  background:linear-gradient(calc(118deg + var(--nfc-gl,0) * 1deg),transparent 30%,rgba(255,255,255,.06) 44%,transparent 58%)}
+.a-boden{position:absolute;left:-10%;right:-10%;bottom:-30%;height:14%;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.8),transparent 70%);transform:translateZ(-60px);filter:blur(6px)}
+
+/* NFC-Wellen am Berührungspunkt */
+.nfc-ringe{position:absolute;z-index:3;left:0;top:0;width:0;height:0;pointer-events:none;opacity:0}
+.nfc-ringe i{position:absolute;left:-60px;top:-60px;width:120px;height:120px;border-radius:50%;border:2px solid rgba(243,242,239,.85);box-shadow:0 0 22px rgba(243,242,239,.35);opacity:0}
+.nfc-ringe.an i{animation:nfcwelle 1.3s cubic-bezier(.2,.6,.3,1) infinite}
+.nfc-ringe.an i:nth-child(2){animation-delay:.43s}.nfc-ringe.an i:nth-child(3){animation-delay:.86s}
+@keyframes nfcwelle{0%{transform:scale(.25);opacity:.95}100%{transform:scale(2.1);opacity:0}}
+
+/* ---------- Handy ---------- */
+.nfc-handy{--ph:min(56vh,500px);position:absolute;z-index:4;left:0;top:0;width:calc(var(--ph) * .49);height:var(--ph);transform-style:preserve-3d;transform-origin:50% 5%;will-change:transform,opacity}
+.h-k{position:absolute;inset:0;border-radius:calc(var(--ph) * .085);background:linear-gradient(90deg,#3c3e43,#1d1e21 30%,#2c2e32 70%,#4a4c51)}
+.h-k:nth-child(1){transform:translateZ(-1.2px)}.h-k:nth-child(2){transform:translateZ(-2.4px)}.h-k:nth-child(3){transform:translateZ(-3.6px)}
+.h-k:nth-child(4){transform:translateZ(-4.8px)}.h-k:nth-child(5){transform:translateZ(-6px)}.h-k:nth-child(6){transform:translateZ(-7.2px);box-shadow:0 40px 70px rgba(0,0,0,.7)}
+.h-front{position:absolute;inset:0;border-radius:calc(var(--ph) * .085);background:#050505;padding:calc(var(--ph) * .018);
+  box-shadow:inset 0 0 0 1.5px #5b5e64,inset 0 0 0 3px #0b0b0c}
+.h-schirm{position:relative;width:100%;height:100%;border-radius:calc(var(--ph) * .07);overflow:hidden;background:#0c0d0f;color:#f3f2ef;font-size:12px;line-height:1.35}
+.h-status{position:absolute;z-index:3;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:3.6% 9% 0;font-size:12px}
+.h-insel{width:30%;height:calc(var(--ph) * .045);background:#000;border-radius:99px}
+.hs{position:absolute;inset:0;opacity:0;transition:opacity .25s}
+.hs.an{opacity:1}
+.hs-sperr{display:flex;flex-direction:column;align-items:center;padding-top:22%;
+  background:radial-gradient(90% 60% at 30% 20%,#3a3d44,transparent 70%),radial-gradient(80% 60% at 80% 90%,#2a2420,transparent 70%),#111215}
+.hs-sperr b{font-size:calc(var(--ph) * .13);font-weight:300;letter-spacing:-.02em;line-height:1}
+.hs-sperr span{font-size:12px;color:#c9cbd0;margin-top:6px}
+.hs-banner{padding:16% 5% 0}
+.h-banner{background:rgba(243,242,239,.94);color:#101113;border-radius:16px;padding:10px 12px;box-shadow:0 12px 30px rgba(0,0,0,.45);transform:translateY(calc(var(--bn,0) * -140%))}
+.h-banner small{display:block;font-size:12px;color:#55585e}
+.h-banner b{display:block;font-size:13px;line-height:1.25;margin:2px 0}
+.h-banner span{font-size:12px;color:#33363b}
+.hs-form{display:flex;flex-direction:column;padding:20% 8% 8%;background:#f3f2ef;color:#121315}
+.hs-form small{font-size:12px;color:#5f6268;letter-spacing:.06em;text-transform:uppercase}
+.hs-form>b{font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:800;font-stretch:112%;font-size:max(13px,calc(var(--ph) * .042));line-height:1.1;margin-top:4px}
+.h-ort{font-size:12px;color:#5f6268}
+.h-sterne{display:flex;gap:4%;margin:9% 0 7%}
+.h-sterne i{flex:1;aspect-ratio:1;background:#cfd0d3;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);transition:background .15s,transform .3s cubic-bezier(.3,1.6,.5,1)}
+.h-sterne i.an{background:#121315;transform:scale(1.12)}
+.h-feld{flex:1;max-height:34%;border:1px solid #c9cacd;border-radius:10px;padding:8px 10px;font-size:12px;color:#121315;overflow:hidden}
+.h-feld:empty::before{content:"Erzählen Sie von Ihrer Erfahrung …";color:#8a8d92}
+.h-feld.tippt::after{content:"";display:inline-block;width:1.5px;height:1.05em;background:#121315;vertical-align:-2px;margin-left:1px}
+.h-posten{align-self:flex-end;margin-top:8%;background:#121315;color:#f3f2ef;font-weight:700;font-size:13px;padding:8px 20px;border-radius:99px}
+.hs-danke{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#f3f2ef;color:#121315;text-align:center;padding:0 10%}
+.hs-danke b{font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:120%;font-size:calc(var(--ph) * .07)}
+.hs-danke span{font-size:12px;color:#5f6268}
+.h-haken{width:28%;aspect-ratio:1;border-radius:50%;background:#121315;position:relative}
+.h-haken::after{content:"";position:absolute;left:32%;top:22%;width:22%;height:42%;border:solid #f3f2ef;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.h-finger{position:absolute;z-index:5;left:0;top:0;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;opacity:0;
+  background:radial-gradient(circle,rgba(255,255,255,.55),rgba(255,255,255,.18) 60%,transparent 72%);box-shadow:0 0 0 2px rgba(18,19,21,.35);pointer-events:none}
+.nfc-hglanz{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(calc(120deg + var(--nfc-hg,0) * 1deg),transparent 38%,rgba(255,255,255,.10) 46%,transparent 56%)}
+.nfc-pschatten{position:absolute;z-index:3;left:0;top:0;width:180px;height:60px;margin:-30px 0 0 -90px;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.7),transparent 70%);filter:blur(6px);opacity:0;pointer-events:none}
+
+/* ---------- Kartenliste „Fliesenleger in der Nähe“ (eigene, neutrale Gestaltung) ---------- */
+.nfc-liste{position:absolute;z-index:5;left:74%;top:50%;width:min(420px,38vw);transform:translate(-50%,-50%);opacity:0;pointer-events:none;
+  background:rgba(14,15,17,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--rand);padding:20px 20px 16px;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.nl-kopf{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:14px}
+.nl-kopf b{font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:800;font-stretch:115%;font-size:17px}
+.nl-kopf span{font-size:12px;color:var(--chrom)}
+.nl-zeit{font-size:12px;color:var(--kreide);margin-bottom:10px;min-height:1.4em}
+.nl-zeit em{font-style:normal;color:var(--chrom)}
+.nl-reihen{position:relative;height:calc(4 * 62px)}
+.nl-r{position:absolute;left:0;right:0;top:0;height:56px;display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:10px;padding:0 12px;border:1px solid rgba(243,242,239,.08);background:rgba(243,242,239,.03);will-change:transform}
+.nl-r .nr{font-size:13px;color:var(--chrom)}
+.nl-r .nm{font-weight:700;font-size:14px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nl-r .nm small{display:block;font-weight:500;font-size:12px;color:var(--chrom)}
+.nl-r .wt{text-align:right;font-size:13px;white-space:nowrap}
+.nl-r .wt b{font-size:15px}
+.nl-r .wt small{font-size:12px;color:var(--chrom)}
+.nl-st{display:inline-block;width:62px;height:11px;margin:0 6px;vertical-align:-1px;background:linear-gradient(90deg,var(--kreide) calc(var(--w,.9) * 100%),#3a3c40 0);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 11'%3E%3Cg fill='%23000'%3E%3Cpath id='s' d='M5.5 0l1.3 3.9H11L7.6 6.3l1.3 4L5.5 7.9 2.1 10.3l1.3-4L0 3.9h4.2z'/%3E%3Cuse href='%23s' x='12.75'/%3E%3Cuse href='%23s' x='25.5'/%3E%3Cuse href='%23s' x='38.25'/%3E%3Cuse href='%23s' x='51'/%3E%3C/g%3E%3C/svg%3E") 0 0/100% 100%;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 11'%3E%3Cg fill='%23000'%3E%3Cpath id='s' d='M5.5 0l1.3 3.9H11L7.6 6.3l1.3 4L5.5 7.9 2.1 10.3l1.3-4L0 3.9h4.2z'/%3E%3Cuse href='%23s' x='12.75'/%3E%3Cuse href='%23s' x='25.5'/%3E%3Cuse href='%23s' x='38.25'/%3E%3Cuse href='%23s' x='51'/%3E%3C/g%3E%3C/svg%3E") 0 0/100% 100%}
+.nl-r.wir{border-color:rgba(243,242,239,.55);background:rgba(243,242,239,.09);box-shadow:0 0 0 1px rgba(243,242,239,.15),0 18px 40px rgba(0,0,0,.45);z-index:2}
+.nl-plus{position:absolute;right:-8px;top:-10px;background:var(--kreide);color:#050505;font-size:12px;font-weight:800;padding:2px 8px;opacity:0}
+.nl-fuss{font-size:12px;color:var(--chrom);margin-top:10px;line-height:1.45}
+
+/* ---------- Texte, Werte, Schritte ---------- */
+.nfc-text{position:absolute;z-index:6;left:var(--gut);top:50%;transform:translateY(-50%);width:min(30vw,400px)}
+.nt{position:absolute;left:0;top:0;width:100%;transform:translateY(-50%);opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
+.nt.an{opacity:1;visibility:visible}
+.nt p.mono{font-size:13px;color:var(--chrom);letter-spacing:.1em}
+.nt h3{font-size:clamp(26px,2.8vw,40px);margin:10px 0 14px}
+.nt p:not(.mono){color:var(--kreide);font-size:16px;max-width:36ch}
+.nfc-werte{position:absolute;z-index:6;right:var(--gut);top:50%;transform:translateY(-50%);display:grid;gap:14px;font-size:12px;text-align:right}
+.nfc-werte span{display:block;color:var(--chrom);letter-spacing:.12em;text-transform:uppercase}
+.nfc-werte b{font-size:15px;font-weight:500;font-variant-numeric:tabular-nums}
+.nfc-schritte{position:absolute;z-index:6;left:50%;bottom:26px;transform:translateX(-50%);display:flex;gap:6px;list-style:none;font-size:12px}
+.nfc-schritte li{position:relative;width:clamp(76px,12vw,160px);padding-top:10px;color:var(--chrom);transition:color .3s}
+.nfc-schritte li::before,.nfc-schritte li::after{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:rgba(243,242,239,.18)}
+.nfc-schritte li::after{background:var(--kreide);width:calc(var(--f,0) * 100%)}
+.nfc-schritte li.an{color:var(--kreide)}
+.nfc-demo{position:absolute;z-index:6;right:var(--gut);bottom:26px;font-size:12px;color:var(--chrom)}
+
+/* ---------- So funktioniert es / Wo er steht / Gut zu wissen ---------- */
+.nfc-info{padding-top:clamp(60px,9vw,120px)}
+.nfc-info h3.zw{font-size:clamp(26px,3vw,42px);margin-bottom:clamp(24px,3vw,40px)}
+.nfc-vier{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:nv}
+.nv{position:relative;background:var(--glas);border:1px solid var(--rand);padding:22px 20px 24px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nv .fig{height:92px;margin-bottom:16px;position:relative;border-bottom:1px solid rgba(243,242,239,.08)}
+.nv h4{font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:800;font-stretch:112%;font-size:18px;line-height:1.15;margin-bottom:10px}
+.nv h4::before{counter-increment:nv;content:counter(nv,decimal-leading-zero) " ";font-family:"Geist Mono",ui-monospace,monospace;font-style:normal;font-weight:500;font-size:13px;color:var(--chrom);margin-right:4px}
+.nv p{font-size:15px;color:var(--chrom);line-height:1.55}
+.nv p b{color:var(--kreide);font-weight:600}
+/* kleine Animationen (laufen nur, wenn sichtbar) */
+.nfc-info .fig *{animation-play-state:paused}
+.nfc-info.sicht .fig *{animation-play-state:running}
+.f-chip{position:absolute;left:50%;top:46%;width:96px;height:62px;transform:translate(-50%,-50%);border:1.5px solid var(--kreide)}
+.f-chip i{position:absolute;inset:14px 30px;border:1.5px solid var(--chrom);border-radius:2px}
+.f-chip i::after{content:"";position:absolute;inset:-9px;border:1px solid rgba(243,242,239,.3);border-radius:4px;animation:fpuls 2s ease-out infinite}
+.f-chip b{position:absolute;right:-46px;top:6px;width:38px;height:38px;background:repeating-conic-gradient(var(--kreide) 0 25%,transparent 0 50%) 0 0/9.5px 9.5px;opacity:.85}
+@keyframes fpuls{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.f-handy{position:absolute;left:50%;top:10px;width:38px;height:70px;border:1.5px solid var(--kreide);border-radius:8px;transform:translateX(-50%);animation:fhin 2.6s ease-in-out infinite}
+.f-handy+i{position:absolute;left:50%;bottom:6px;width:70px;height:6px;margin-left:-35px;background:var(--chrom);opacity:.6}
+@keyframes fhin{0%,100%{transform:translate(-20%,-6px) rotate(-8deg)}45%,60%{transform:translate(-50%,14px) rotate(0)}}
+.f-maske{position:absolute;left:50%;top:6px;width:110px;height:78px;transform:translateX(-50%);border:1.5px solid var(--kreide);border-radius:6px;padding:10px}
+.f-maske i{display:block;height:8px;width:60%;background:var(--chrom);opacity:.5;margin-bottom:8px}
+.f-maske s{display:flex;gap:4px;text-decoration:none}
+.f-maske s u{width:13px;height:13px;background:#3a3c40;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:fstern 3s infinite}
+.f-maske s u:nth-child(2){animation-delay:.12s}.f-maske s u:nth-child(3){animation-delay:.24s}.f-maske s u:nth-child(4){animation-delay:.36s}.f-maske s u:nth-child(5){animation-delay:.48s}
+@keyframes fstern{0%,20%{background:#3a3c40}30%,85%{background:var(--kreide)}100%{background:#3a3c40}}
+.f-balken{position:absolute;left:50%;bottom:8px;display:flex;align-items:flex-end;gap:8px;transform:translateX(-50%);height:76px}
+.f-balken i{width:18px;background:var(--kreide);transform-origin:bottom;animation:fwachs 3s ease-in-out infinite}
+.f-balken i:nth-child(1){height:28%;opacity:.4}.f-balken i:nth-child(2){height:48%;opacity:.55;animation-delay:.2s}.f-balken i:nth-child(3){height:70%;opacity:.75;animation-delay:.4s}.f-balken i:nth-child(4){height:100%;animation-delay:.6s}
+@keyframes fwachs{0%{transform:scaleY(.2)}40%,85%{transform:scaleY(1)}100%{transform:scaleY(.2)}}
+
+.nfc-orte{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:clamp(60px,8vw,110px)}
+.nfc-orte-titel{grid-column:1/-1;margin-bottom:6px}
+.no{border-top:1.5px solid var(--kreide);padding-top:16px}
+.no svg{width:54px;height:54px;stroke:var(--kreide);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:12px}
+.no b{display:block;font-weight:700;font-size:16px;margin-bottom:6px}
+.no p{font-size:15px;color:var(--chrom)}
+
+.nfc-recht{margin-top:clamp(60px,8vw,110px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,4vw,64px);align-items:start}
+.nfc-recht ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.nfc-recht li{border:1px solid var(--rand);background:var(--glas);padding:18px 18px 20px}
+.nfc-recht li b{display:block;font-size:16px;margin-bottom:6px}
+.nfc-recht li p{font-size:15px;color:var(--chrom)}
+.nfc-recht .leise{font-size:15px;margin-top:14px}
+
+.nfc-schluss{padding:clamp(80px,12vw,160px) 0 clamp(80px,10vw,140px);text-align:center}
+.nfc-schluss .display{font-size:clamp(34px,5.6vw,84px)}
+.nfc-schluss .display em{font-style:italic;color:transparent;-webkit-text-stroke:1.5px var(--kreide)}
+.nfc-schluss p.lead{margin:22px auto 30px}
+
+/* Link im Leistungen-Kapitel 05 */
+.nfc-mehr{display:inline-block;margin-top:14px;font-size:13px;color:var(--kreide);text-decoration:none;border-bottom:1px solid rgba(243,242,239,.4);padding-bottom:2px}
+.nfc-mehr:hover{border-color:var(--kreide)}
+
+/* ---------- Tablet ---------- */
+@media (max-width:1100px){
+  .nfc-vier,.nfc-orte{grid-template-columns:1fr 1fr}
+  .nfc-recht{grid-template-columns:1fr}
+}
+/* ---------- Handy hochkant: eigene Komposition ---------- */
+@media (max-aspect-ratio:4/5){
+  .nfc-strecke{height:520vh}
+  .nfc-buehne{perspective:1100px;perspective-origin:50% 55%}
+  .nfc-theke{top:73%}
+  .nfc-auf{--h:min(38vh,330px);left:50%;top:72%;transform:translate(-50%,-100%) rotateY(-12deg) rotateX(8deg) rotateZ(-3deg)}
+  .nfc-handy{--ph:min(44vh,400px)}
+  .nfc-text{left:var(--gut);right:var(--gut);top:calc(72px + 4vh);transform:none;width:auto}
+  .nt{transform:none}
+  .nt h3{font-size:clamp(22px,6.4vw,30px);margin:6px 0 8px}
+  .nt p:not(.mono){font-size:15px;line-height:1.45}
+  .nfc-werte{top:auto;bottom:112px;right:var(--gut);left:var(--gut);transform:none;grid-template-columns:repeat(3,auto);justify-content:space-between;text-align:left;gap:8px}
+  .nfc-werte div:last-child{display:none}
+  .nfc-werte b{font-size:13px}
+  .nfc-liste{left:50%;top:52%;width:calc(100vw - 2 * var(--gut));padding:16px 14px 12px}
+  .nfc-schritte{bottom:76px;left:var(--gut);right:var(--gut);transform:none}
+  .nfc-schritte li{flex:1;width:auto}
+  .nfc-demo{bottom:auto;top:calc(100svh - 176px);right:var(--gut);opacity:.8}
+  .nfc-vier,.nfc-orte,.nfc-recht ul{grid-template-columns:1fr}
+}
+/* ---------- Querformat flach (Handy quer) ---------- */
+@media (max-height:500px) and (min-aspect-ratio:4/5){
+  .nfc-auf{--h:52vh;top:88%;left:47%}
+  .nfc-theke{top:86%}
+  .nfc-handy{--ph:58vh}
+  
+  .nfc-text{width:28vw;top:46%}
+  .nt h3{font-size:22px;margin:4px 0 6px}
+  .nt p:not(.mono){font-size:13px;line-height:1.4}
+  .nfc-werte{gap:6px;top:60%}.nfc-werte b{font-size:13px}.nfc-werte div:nth-child(2),.nfc-werte div:nth-child(3){display:none}
+  .nfc-liste{left:64%;width:min(320px,36vw);padding:10px 12px 6px;top:56%}.nl-zeit{margin-bottom:4px}
+  .nl-reihen{height:calc(4 * 35px)}.nl-r{height:31px}.nl-kopf b{font-size:14px}.nl-r .nm{font-size:13px}.nl-r .nm small{display:none}.nl-fuss{display:none}.nl-kopf{margin-bottom:6px}
+  .nfc-schritte{display:none}.nfc-demo{bottom:auto;top:84px}.nfc-text{top:58%}
+}
+@media (prefers-reduced-motion:reduce){.nfc-ringe.an i,.nfc-info .fig *{animation:none}}
+.bewerten .b-ort{font-size:12px;color:var(--chrom);margin-top:-2cqw}
+
+/* Leistungen-Kapitel 05: kleine NFC-Karte statt Aufsteller (wie die echte Karte, matt schwarz, 54 × 85,6 mm) */
+.aufsteller.nfc-minikarte{aspect-ratio:54/85.6;border-radius:12px;gap:7%;padding:12% 10%;justify-content:flex-start;background:radial-gradient(130% 80% at 25% 0%,#1d1e22,#0b0b0d 62%);border-color:#2c2e32}
+.nfc-minikarte .nfc-wellen{width:26%}
+.nfc-minikarte .mk-logo{font-family:"Archivo Wide",sans-serif;font-style:italic;font-weight:900;font-stretch:125%;font-size:18px;line-height:.95;text-align:center;margin-top:8%}
+.nfc-minikarte .mk-logo small{display:block;font-family:"Geist Mono",ui-monospace,monospace;font-style:normal;font-weight:500;font-stretch:100%;font-size:12px;letter-spacing:.14em;margin-top:5px;color:var(--chrom)}
+.nfc-minikarte .mk-sterne{margin-top:auto;font-size:16px;letter-spacing:.12em}
+.nfc-minikarte span:last-child{font-size:13px}

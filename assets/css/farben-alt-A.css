@@ -1,0 +1,31 @@
+/* ===== FARBEN – die EINZIGE Stelle, an der Farben festgelegt werden (26B1) =====
+   Palette 1 (Haupt): Indigo-Violett + Pistazie, nach der Formel aus "00 FARBEN-WISSEN MASTER" (OKLCH):
+   ein Farbton für alles Dunkle und allen Text, ein Licht in der Gegenfarbe, nie reines Schwarz/Weiß.
+   Wechsel der Palette = nur diesen :root-Block tauschen (Alternativen: farben-alt-A/B.css). Der Startfilm wird nicht eingefärbt. */
+:root{--abyss:#0C0919;--night:#150F27;--night-2:#1E1635;--ink:#F6F5FA;--mute:#D2D0DF;--licht:#C2E693;--licht-hell:#D5FBB4;--licht-2:#AC9CF0;--koerper:#683CC5;--abyss-rgb:12,9,25;--night-rgb:21,15,39;--licht-rgb:194,230,147;--gl-grund:0.224,0.164,0.395;--gl-licht:0.761,0.902,0.576;--gl-rand:0.571,0.329,1.000;--folie:var(--abyss);--kreide:var(--ink);--chrom:var(--mute);--graphit:var(--night);--stahl:#3A3C48;--glas:rgba(var(--night-rgb),.55);--rand:rgba(255,255,255,.18)}
+html{background:var(--abyss)}
+.bg{background-color:var(--abyss)}
+.schleier{background:radial-gradient(120% 90% at 50% 40%,rgba(var(--abyss-rgb),0) 30%,rgba(var(--abyss-rgb),.30) 100%)}
+main>section:not(.hero){background:linear-gradient(180deg,rgba(var(--abyss-rgb),.06),rgba(var(--abyss-rgb),.14) 18%,rgba(var(--abyss-rgb),.14) 82%,rgba(var(--abyss-rgb),.06))}
+.hero{background:linear-gradient(90deg,rgba(var(--abyss-rgb),.66) 0%,rgba(var(--abyss-rgb),.34) 55%,rgba(var(--abyss-rgb),0) 100%),linear-gradient(0deg,rgba(var(--abyss-rgb),.74),transparent 55%)}
+@media (max-width:760px){.hero{background:linear-gradient(0deg,rgba(var(--abyss-rgb),.88) 10%,rgba(var(--abyss-rgb),.35) 70%,rgba(var(--abyss-rgb),.2))}}
+.kopf.voll{background:rgba(var(--abyss-rgb),.78)}
+.fuss{background:rgba(var(--abyss-rgb),.7)}
+/* Licht: nur Taste, kursive Wörter, Beschriftungen, Linien (Regel: unter 2 % Fläche) */
+.knopf{background:var(--licht);color:var(--abyss)}
+.knopf:hover{background:var(--licht-hell)}
+.knopf.hohl{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--licht)}
+.knopf.hohl:hover{background:rgba(var(--licht-rgb),.12)}
+.hero h1 em,.kap h2 em,h2.display em,.display em{color:var(--licht)}
+.mono.kap-name b,.kap-name b{color:var(--licht)}
+.kopf nav a:hover,.fuss nav a:hover{color:var(--licht)}
+:focus-visible{outline-color:var(--licht)}
+.skip:focus{background:var(--licht);color:var(--abyss)}
+::selection{background:var(--licht);color:var(--abyss)}
+@media (pointer:coarse),(max-width:900px){
+  .kopf.voll{background:rgba(var(--abyss-rgb),.93)}
+  .feld,.schritt,form,.seite .karte-text,.zusammen,.kt-chef,.kitel-schritte li,.nv{background:rgba(var(--night-rgb),.88)}
+  .assi{background:rgba(var(--abyss-rgb),.96)}
+  .halten{background:rgba(var(--abyss-rgb),.92)}
+  .mini-mobil{background:rgba(var(--abyss-rgb),.97)}
+}

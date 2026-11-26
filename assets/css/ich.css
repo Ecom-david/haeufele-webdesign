@@ -1,0 +1,54 @@
+/* ICH – Chrom wird Mensch (erste Scroll-Szene nach dem Hero) */
+.ich{position:relative;height:250vh}
+.ich-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(24px,4vw,64px);max-width:var(--max);margin:0 auto;padding:84px var(--gut) 24px}
+.ich-text{position:relative;z-index:2}
+.ich-text .mono{color:var(--chrom);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.ich-text h2{font-family:"Archivo Wide";font-style:italic;font-weight:900;font-stretch:118%;font-size:clamp(40px,4.6vw,72px);line-height:1.02;margin:18px 0 22px;hyphens:manual}
+.ich-text h2 em{display:block;font-weight:300;font-stretch:100%;color:var(--chrom)}
+.ich-text h2 em b{font-weight:900;color:var(--kreide);font-stretch:118%;opacity:var(--ich-wort,0);transition:opacity .4s}
+.ich-text p.lead{max-width:440px;color:#d6d7d9;opacity:var(--ich-txt,0);transform:translateY(calc((1 - var(--ich-txt,0)) * 18px))}
+.ich-text .ich-link{display:inline-flex;gap:10px;align-items:center;margin-top:22px;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--rand);padding-bottom:4px;opacity:var(--ich-txt,0)}
+.ich-werte{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:4px 28px;margin-top:30px;padding-top:16px;border-top:1px solid var(--rand)}
+.ich-werte dt{font-family:inherit;font-size:10px;letter-spacing:.16em;color:rgba(174,178,183,.7)}
+.ich-werte dd{font-size:13px;color:var(--kreide);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+
+.ich-buehne{position:relative;height:min(84svh,760px);aspect-ratio:1228/1536;justify-self:center;perspective:1400px}
+.ich-figur{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg)) translateZ(0);will-change:transform;
+  clip-path:polygon(calc(50% - var(--auf,1) * 64%) 0,calc(50% + var(--auf,1) * 64% + 6%) 0,calc(50% + var(--auf,1) * 64%) 100%,calc(50% - var(--auf,1) * 64% - 6%) 100%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 20%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 9%,#000 78%,transparent 100%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 0,#000 20%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 9%,#000 78%,transparent 100%);mask-composite:intersect}
+.ich-figur::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 75% 70% at 50% 42%,transparent 55%,rgba(3,3,3,.85) 100%)}
+.ich-figur img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.ich-echt{clip-path:inset(0 0 calc((1 - var(--s,0)) * 100%) 0)}
+/* Glanz, der der Maus folgt – nur auf dem Chrom-Teil */
+.ich-glanz{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at var(--gx,60%) var(--gy,30%),rgba(255,255,255,.34),rgba(255,255,255,0) 26%),
+             linear-gradient(115deg,transparent calc(var(--sweep,0) * 140% - 30%),rgba(255,255,255,.22) calc(var(--sweep,0) * 140% - 20%),transparent calc(var(--sweep,0) * 140% - 10%));
+  clip-path:inset(calc(var(--s,0) * 100%) 0 0 0)}
+/* Scan-Linie */
+.ich-linie{position:absolute;left:6%;right:6%;top:calc(var(--s,0) * 100%);height:2px;margin-top:-1px;background:#fff;
+  box-shadow:0 0 14px 3px rgba(255,255,255,.7),0 0 70px 18px rgba(255,255,255,.18);opacity:var(--lin,0);pointer-events:none;z-index:3}
+.ich-linie::after{content:"";position:absolute;left:0;right:0;top:-60px;height:60px;background:radial-gradient(ellipse 50% 100% at 50% 100%,rgba(255,255,255,.14),transparent 100%)}
+.ich-marke{position:absolute;right:8%;top:calc(var(--s,0) * 100%);transform:translateY(-170%);font-size:11px;letter-spacing:.14em;color:#fff;opacity:var(--lin,0);white-space:nowrap;z-index:3;padding-left:10px}
+.ich-buehne .ki{right:12%;top:14px;z-index:4}
+.ich-buehne figcaption{position:absolute;left:12%;bottom:6%;z-index:4;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#cfd0d2;opacity:var(--ich-txt,0)}
+
+@media (max-width:860px){
+  .ich{height:230vh}
+  .ich-sticky{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;align-items:end;gap:10px;padding:72px var(--gut) 20px}
+  .ich-buehne{order:-1;height:100%;max-height:54svh;min-height:0;width:auto}
+  .ich-text h2{font-size:clamp(30px,8.4vw,42px);margin:10px 0 10px}
+  .ich-text p.lead{font-size:15px;line-height:1.5}
+  .ich-werte{margin-top:14px;padding-top:10px;gap:2px 18px}
+  .ich-text .ich-link{margin-top:10px}
+}
+@media (max-width:860px){.ich-werte{display:none}.ich-sticky{padding-bottom:96px}}
+@media (prefers-reduced-motion:reduce){.ich{height:auto}.ich-sticky{position:relative;height:auto;min-height:100vh}}
+
+/* Partikel-Verwandlung (11.11.) ersetzt die Scan-Linie */
+.ich-pk{position:absolute;left:-30%;top:-15%;width:160%;height:130%;pointer-events:none;opacity:0}
+.ich.pk .ich-linie,.ich.pk .ich-marke{display:none}
+.ich.pk .ich-echt{clip-path:none;opacity:0}
+.ich.pk.pk-ende .ich-echt{opacity:1}
+.ich.pk.pk-flug .ich-chrom,.ich.pk.pk-ende .ich-chrom{opacity:0}
+.ich.pk.pk-flug .ich-pk{opacity:1}

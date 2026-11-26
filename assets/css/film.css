@@ -1,0 +1,70 @@
+/* Scroll-Film „Feierabend 2“ (Chat W11-G, 05.11.2026) – nur dieser Block. Farblinie der Seite: schwarz / chrom / kreide. */
+.filmscroll{position:relative;height:1000vh;background:transparent;z-index:2;pointer-events:none;margin-bottom:-100vh;margin-bottom:-100svh}
+.filmscroll .fs-buehne{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#000;will-change:opacity;pointer-events:auto}
+.filmscroll.fs-weg .fs-buehne{visibility:hidden}
+.fs-canvas,.fs-poster,.fs-hg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fs-hg{display:none;transform:scale(1.18);filter:blur(28px) brightness(.42) saturate(1.05)}
+.fs-band .fs-hg{display:block}
+.fs-poster{object-fit:cover}
+.fs-poster[hidden]{display:none}
+.fs-hinweis{position:absolute;left:50%;bottom:clamp(26px,5vh,48px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--kreide,#F3F2EF);opacity:.9;transition:opacity .6s ease;text-shadow:0 1px 10px rgba(0,0,0,.8);pointer-events:none;margin:0}
+.fs-hinweis i{width:1px;height:34px;background:linear-gradient(var(--kreide,#F3F2EF),transparent);animation:fsHin 1.8s ease-in-out infinite}
+@keyframes fsHin{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.fs-laeuft .fs-hinweis{opacity:0}
+.fs-leiste{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(243,242,239,.12)}
+.fs-leiste i{position:absolute;inset:0;background:linear-gradient(90deg,rgba(174,178,183,.5),#F3F2EF);transform:scaleX(0);transform-origin:left;will-change:transform}
+.film-knopf{font:600 13px/1 Montserrat,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#F3F2EF;background:rgba(8,8,9,.55);border:1px solid rgba(243,242,239,.28);border-radius:999px;padding:11px 16px;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);white-space:nowrap}
+.film-knopf:hover,.film-knopf:focus-visible{border-color:rgba(243,242,239,.75);outline:none}
+.fs-weiter{position:absolute;right:clamp(16px,3vw,40px);bottom:clamp(22px,4.5vh,44px);z-index:3;transition:opacity .4s ease}
+.fs-ende .fs-weiter{opacity:0;pointer-events:none}
+.fs-ki{position:absolute;left:clamp(16px,3vw,40px);bottom:clamp(22px,4.5vh,44px);margin:0;font:500 12px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.12em;color:rgba(243,242,239,.62);text-shadow:0 1px 8px rgba(0,0,0,.8);pointer-events:none}
+
+/* Texte (HTML, synchron zur Bildnummer) – Desktop: oben links, Handy-Anfragen sind im Film lesbar */
+.fs-ut{position:absolute;left:clamp(24px,6vw,104px);top:clamp(84px,15vh,170px);width:min(40vw,620px);color:#F3F2EF;pointer-events:none;text-shadow:0 2px 18px rgba(0,0,0,.75),0 0 2px rgba(0,0,0,.6)}
+.fs-ut>*{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.fs-ut>.an{opacity:1;transform:none}
+.fs-ut .gross,.fs-ut .zwei{position:absolute;left:0;right:0;margin:0;font-family:"Archivo Wide",sans-serif;font-style:italic;font-stretch:118%;font-size:clamp(28px,3.3vw,54px);line-height:1.04;letter-spacing:-.01em}
+.fs-ut .gross{top:0;font-weight:900}
+.fs-ut .zwei{top:calc(2.08em + 10px);font-weight:500;color:#C9CCD0}
+.fs-ut ol{display:none}
+.fs-uhr{position:absolute;left:clamp(24px,6vw,104px);bottom:clamp(64px,11vh,120px);margin:0;color:#F3F2EF;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .7s cubic-bezier(.2,.8,.2,1);pointer-events:none;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.fs-uhr.an{opacity:1;transform:none}
+.fs-uhr small{display:block;font:500 12px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--chrom,#AEB2B7);margin-bottom:10px}
+.fs-uhr b{display:block;font:500 clamp(40px,4.6vw,76px)/1 "Geist Mono",ui-monospace,monospace;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+
+/* Hochformat: Film als Band oben, Texte darunter (Lage setzt film.js über --fs-ut) */
+@media (max-aspect-ratio:4/5){
+  .filmscroll{height:860vh}
+  .fs-ut{left:20px;right:20px;width:auto;top:var(--fs-ut,62%)}
+  .fs-ut .gross,.fs-ut .zwei{font-size:clamp(21px,6.2vw,28px)}
+  .fs-ut .zwei{top:calc(2.08em + 6px)}
+  .fs-ut ol{display:block;position:absolute;left:0;right:0;top:calc(clamp(21px,6.2vw,28px)*3.3 + 16px);list-style:none;margin:0;padding:0;opacity:1;transform:none}
+  .fs-ut li{display:flex;align-items:baseline;gap:10px;opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .6s cubic-bezier(.2,.8,.2,1);padding:6px 0;border-top:1px solid rgba(243,242,239,.14);font:400 13px/1.25 Montserrat,system-ui,sans-serif;color:#C9CCD0;white-space:nowrap;overflow:hidden}
+  .fs-ut li.an{opacity:1;transform:none}
+  .fs-ut li small{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.08em;color:var(--chrom,#AEB2B7);flex:none}
+  .fs-ut li b{font:700 14px/1.25 Montserrat,system-ui,sans-serif;color:#F3F2EF;flex:none}
+  .fs-ut li span{overflow:hidden;text-overflow:ellipsis}
+  .fs-uhr{left:20px;bottom:auto;top:calc(var(--fs-ut,62%) + clamp(21px,6.2vw,28px) * 2.3 + 14px)} /* 20N-FIX2: unter der Überschrift statt dahinter */
+  .fs-uhr b{font-size:44px}
+  .fs-weiter{padding:9px 13px;font-size:12px;bottom:20px}
+  .fs-ki{bottom:30px;left:20px}
+  .fs-hinweis{bottom:72px}
+}
+@media (max-aspect-ratio:4/5) and (max-height:700px){.fs-ut li:nth-child(n){padding:4px 0}}
+
+/* reduzierte Bewegung: Standbild (alle Anfragen sichtbar) + Film mit Bedienleiste auf Knopfdruck */
+.fs-still.filmscroll{height:100vh;height:100svh;margin-bottom:0}
+.fs-hinweis{display:none}.fs-start{position:absolute;left:0;right:0;top:46%;transform:translateY(-50%);z-index:2;text-align:center;color:#F3F2EF;pointer-events:none;padding:0 6vw;transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1);text-shadow:0 2px 24px rgba(0,0,0,.85),0 0 3px rgba(0,0,0,.7)}.fs-start h2{margin:0 0 .4em;font-family:"Archivo Wide",sans-serif;font-style:italic;font-stretch:118%;font-weight:900;font-size:clamp(34px,5.4vw,88px);line-height:1.03;letter-spacing:-.01em}.fs-start p{margin:0;font:500 clamp(15px,1.5vw,24px)/1.4 Montserrat,system-ui,sans-serif;color:#E4E6E9}.fs-scroll{margin-top:clamp(36px,7vh,76px);display:flex;flex-direction:column;align-items:center;gap:12px;font:500 clamp(12px,1vw,15px)/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;color:#F3F2EF}.fs-scroll i{width:22px;height:22px;border-right:2px solid #F3F2EF;border-bottom:2px solid #F3F2EF;transform:rotate(45deg);animation:fsPfeil 1.6s ease-in-out infinite}@keyframes fsPfeil{0%,100%{opacity:.35;transform:translateY(-6px) rotate(45deg)}50%{opacity:1;transform:translateY(6px) rotate(45deg)}}.fs-laeuft .fs-start{opacity:0;transform:translateY(-62%)}@media (max-aspect-ratio:4/5){.fs-start{top:var(--fs-ut,62%);transform:none;text-align:left;padding:0 20px}.fs-start h2{font-size:clamp(24px,7vw,34px)}.fs-start p{font-size:14px}.fs-scroll{margin-top:18px;align-items:flex-start}.fs-laeuft .fs-start{transform:translateY(-14px)}}.fs-still .fs-start{display:none}@media (prefers-reduced-motion:reduce){.fs-scroll i{animation:none}}.fs-still .fs-hinweis,.fs-still .fs-leiste,.fs-still .fs-canvas,.fs-still .fs-uhr{display:none}
+.fs-still .fs-ut>*,.fs-still .fs-ut li{transition:none}
+.fs-still .fs-poster{object-fit:cover}
+.film-ueber{position:fixed;inset:0;z-index:100;pointer-events:auto;background:#000;display:flex;align-items:center;justify-content:center}
+.film-ueber[hidden]{display:none}
+.film-ueber video{width:100%;height:100%;object-fit:contain;background:#000}
+.film-zu{position:absolute;top:16px;right:16px}
+/* während der Filmstrecke: Fragen-Assistent aus; ab der Fahrt in den Monitor auch die Kopfleiste (das letzte Filmbild IST die Startseite mit Kopfleiste) */
+html.film-aktiv #assi{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+.kopf{transition:background .3s,backdrop-filter .3s,opacity .5s ease}
+html.fs-kopf-weg .kopf{opacity:0;pointer-events:none}
+
+/* Film-Bühne klebt vom ersten bis zum letzten Scroll-Pixel: globales section-Padding hier aus (sonst rutscht die Bühne am Anfang und Ende 80–160 px) */
+.filmscroll{padding:0}

@@ -1,0 +1,14 @@
+/* 26B2 · Stabil am Handy: keine Unschärfe-Filter (backdrop-filter) über dem laufenden 3D-Hintergrund.
+   Gemessen (Chromium, Handy-Größe, 4× gedrosselt): Formular-Bereich Bildabstand 49 ms mit Filter → 26 ms ohne. Safari rechnet jede dieser Flächen bei jedem Bild neu und lädt bei Speicherdruck die Seite neu.
+   Aussehen bleibt: dieselben dunklen Flächen, nur etwas deckender statt unscharf. Desktop (Maus) bleibt unverändert. */
+@media (pointer:coarse), (max-width:900px) {
+  .kopf.voll, .feld, .schritt, form, .assi, .seite .karte-text, .zusammen, .halten, .mini-mobil,
+  .kt-chef, .kitel-schritte li, .nv, .nfc-liste, .appv-funk, .as-tabs, .as-push, .appv-probe-knopf {
+    -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  }
+  .kopf.voll { background: rgba(3,3,3,.92) }
+  .feld, .schritt, form, .seite .karte-text, .zusammen, .kt-chef, .kitel-schritte li, .nv { background: rgba(14,15,17,.86) }
+  .assi { background: rgba(10,10,11,.95) }
+  .halten { background: rgba(10,10,11,.9) }
+  .mini-mobil { background: rgba(10,10,11,.97) }
+}

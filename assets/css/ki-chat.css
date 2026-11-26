@@ -1,0 +1,108 @@
+/* ki-chat.css – KI-Assistent (Fenster unten rechts). Monochrom, Glas über der Folie, Archivo + Geist Mono.
+   Variablen mit Rückfall, damit das Modul auch auf Kunden-Websites läuft: --kc-grund, --kc-text, --kc-leise, --kc-rand, --kc-ak */
+.assi.kc{--kc-text:var(--kreide,#f3f2ef);--kc-leise:var(--chrom,#aeb2b7);--kc-rand:var(--rand,rgba(243,242,239,.14));--kc-ak:var(--kreide,#f3f2ef);--kc-ok:#7fd88f;
+  position:fixed;right:18px;bottom:18px;z-index:60;width:min(360px,calc(100vw - 36px));display:flex;flex-direction:column;
+  color:var(--kc-text);font:450 14px/1.5 Montserrat,system-ui,sans-serif;
+  background:linear-gradient(180deg,rgba(24,25,27,.86),rgba(8,8,9,.92));
+  border:1px solid var(--kc-rand);backdrop-filter:blur(18px) saturate(120%);-webkit-backdrop-filter:blur(18px) saturate(120%);
+  box-shadow:0 30px 80px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.07);
+  transform-origin:100% 100%;animation:kcEin .7s cubic-bezier(.2,.8,.2,1) .4s backwards}
+@keyframes kcEin{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.assi.kc::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;
+  background:radial-gradient(120% 60% at 0 0,rgba(255,255,255,.08),transparent 60%)}
+.assi.kc [hidden]{display:none!important}
+.assi.kc header{display:flex;align-items:center;gap:11px;padding:12px 12px 12px 14px;border-bottom:1px solid var(--kc-rand);cursor:pointer;user-select:none}
+.assi.kc .kc-kt{flex:1;min-width:0;display:grid;gap:1px}
+.assi.kc .kc-kt b{font-family:"Archivo Wide",Archivo,sans-serif;font-style:italic;font-weight:800;font-stretch:115%;font-size:14.5px;line-height:1.2}
+.assi.kc .kc-kt small{font:500 12px/1.3 "Geist Mono",ui-monospace,monospace;letter-spacing:.02em;color:var(--kc-leise);display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.assi.kc .kc-live{width:7px;height:7px;border-radius:50%;background:var(--kc-ok);box-shadow:0 0 0 0 rgba(127,216,143,.6);animation:kcPuls 2.4s infinite;flex:none}
+@keyframes kcPuls{0%{box-shadow:0 0 0 0 rgba(127,216,143,.55)}70%{box-shadow:0 0 0 7px rgba(127,216,143,0)}100%{box-shadow:0 0 0 0 rgba(127,216,143,0)}}
+.assi.kc .kc-ava{width:34px;height:34px;flex:none;display:flex;align-items:center;justify-content:center;gap:3px;border:1px solid var(--kc-rand);background:radial-gradient(circle at 30% 25%,#2b2c2f,#0b0b0c)}
+.assi.kc .kc-ava i{width:3px;height:12px;background:var(--kc-text);border-radius:2px;animation:kcBar 1.6s ease-in-out infinite}
+.assi.kc .kc-ava i:nth-child(2){height:18px;animation-delay:.2s}.assi.kc .kc-ava i:nth-child(3){animation-delay:.4s}
+@keyframes kcBar{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+.assi.kc header button{width:32px;height:32px;flex:none;background:none;border:1px solid transparent;color:var(--kc-leise);font-size:20px;line-height:1;cursor:pointer}
+.assi.kc header button:hover{border-color:var(--kc-rand);color:var(--kc-text)}
+.assi.kc .kc-log{max-height:min(330px,46vh);overflow:auto;padding:14px 14px 6px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:#333 transparent;overscroll-behavior:contain}
+.assi.kc .kc-m{max-width:90%;padding:10px 12px;line-height:1.5;animation:kcMsg .38s cubic-bezier(.2,.8,.2,1) both}
+@keyframes kcMsg{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.assi.kc .kc-m p{margin:0}
+.assi.kc .kc-bot{align-self:flex-start;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-left:2px solid var(--kc-ak)}
+.assi.kc .kc-ich{align-self:flex-end;background:var(--kc-text);color:#070707;font-weight:550}
+.assi.kc .kc-tippt p{display:flex;gap:5px;padding:4px 0}
+.assi.kc .kc-tippt i{width:6px;height:6px;border-radius:50%;background:var(--kc-leise);animation:kcDot 1s infinite}
+.assi.kc .kc-tippt i:nth-child(2){animation-delay:.15s}.assi.kc .kc-tippt i:nth-child(3){animation-delay:.3s}
+@keyframes kcDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.assi.kc .kc-cur{display:inline-block;width:7px;height:1em;margin-left:2px;vertical-align:-2px;background:var(--kc-text);animation:kcCur .8s steps(2) infinite}
+@keyframes kcCur{50%{opacity:0}}
+.assi.kc .kc-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.assi.kc .kc-links a{display:inline-flex;gap:6px;align-items:center;font:500 12px/1 "Geist Mono",monospace;letter-spacing:.04em;color:var(--kc-text);text-decoration:none;padding:7px 9px;border:1px solid var(--kc-rand);background:rgba(0,0,0,.25)}
+.assi.kc .kc-links a:hover{border-color:var(--kc-text)}
+.assi.kc .kc-karte{border-left-color:var(--kc-ok);display:grid;gap:6px;min-width:84%}
+.assi.kc .kc-karte small{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--kc-ok)}
+.assi.kc .kc-karte div:not(.kc-akt){display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed rgba(255,255,255,.09);padding-bottom:4px}
+.assi.kc .kc-karte span{color:var(--kc-leise);font-size:12.5px}.assi.kc .kc-karte b{text-align:right;font-weight:600;font-size:13px;overflow-wrap:anywhere}
+.assi.kc .kc-akt{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.assi.kc .kc-akt button{flex:1 1 auto;font:700 12.5px/1 Montserrat,sans-serif;padding:10px 10px;cursor:pointer;border:1px solid var(--kc-text);background:var(--kc-text);color:#060606}
+.assi.kc .kc-akt .kc-k2{background:transparent;color:var(--kc-text)}
+.assi.kc .kc-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 14px 10px}
+.assi.kc .kc-chips:empty{display:none}
+.assi.kc .kc-chips button{font:600 12.5px/1.25 Montserrat,sans-serif;text-align:left;color:var(--kc-text);background:rgba(255,255,255,.03);border:1px solid #3a3c40;padding:7px 10px;cursor:pointer;
+  animation:kcMsg .35s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*60ms);transition:border-color .2s,background .2s}
+.assi.kc .kc-chips button:hover{border-color:var(--kc-text);background:rgba(255,255,255,.07)}
+.assi.kc .kc-in{display:flex;margin:0 12px;border:1px solid #3a3c40;background:rgba(0,0,0,.45);padding:0;gap:0;backdrop-filter:none;transition:border-color .2s}
+.assi.kc .kc-in:focus-within{border-color:var(--kc-text)}
+.assi.kc .kc-in input{flex:1;min-width:0;font:500 16px/1.2 Montserrat,sans-serif;color:var(--kc-text);background:none;border:0;padding:12px 12px;outline:none}
+.assi.kc .kc-in input::placeholder{color:#7d8085}
+.assi.kc .kc-in button{width:46px;flex:none;border:0;background:var(--kc-text);color:#060606;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.assi.kc .kc-note{margin:0;padding:8px 14px 11px;font:500 12px/1.4 Montserrat,sans-serif;color:#8a8d92}
+.assi.kc .kc-note a{color:var(--kc-leise)}
+.assi.kc .kc-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.assi.kc.zu .kc-log,.assi.kc.zu .kc-chips,.assi.kc.zu .kc-in,.assi.kc.zu .kc-note{display:none}
+.assi.kc.zu header{border-bottom:0}
+.assi.kc.zu{width:min(330px,calc(100vw - 36px))}
+#kontaktform.kc-blitz{box-shadow:0 0 0 2px var(--kreide,#fff),0 0 60px rgba(255,255,255,.18);transition:box-shadow .4s}
+/* Handy: unten als Leiste, eingeklappt nur Kopfzeile */
+@media (max-width:700px){
+  .assi.kc{left:10px;right:10px;bottom:10px;width:auto}
+  .assi.kc.zu{width:auto}
+  .assi.kc .kc-log{max-height:42svh}
+  .assi.kc header{padding:9px 10px 9px 12px}
+  .assi.kc .kc-ava{width:30px;height:30px}
+}
+@media (max-height:520px){.assi.kc .kc-log{max-height:38vh}.assi.kc.zu{width:auto}.assi.kc.zu .kc-kt{display:none}}
+/* Telefon-Demo im Bild (Handy/Querformat): eingeklappte Leiste weicht aus */
+@media (max-width:980px){.assi.kc{transition:opacity .3s,transform .3s}html.kt-im-blick .assi.kc.zu{opacity:0;transform:translateY(120%);pointer-events:none}}
+@media (prefers-reduced-motion:reduce){.assi.kc,.assi.kc *{animation:none!important}}
+/* Chat W11-B: Mikro-Knopf (Spracheingabe per Antippen) */
+.assi.kc .kc-in .kc-mic{position:relative;width:42px;background:transparent;color:#9a9da2}
+.assi.kc .kc-in .kc-mic:hover{color:var(--kc-text)}
+.assi.kc .kc-mic i{position:absolute;inset:7px;border-radius:50%;border:1.5px solid #7fd88f;opacity:0}
+.assi.kc.kc-hoert .kc-mic{color:#7fd88f}
+.assi.kc.kc-hoert .kc-mic i{animation:kcMicP 1.5s cubic-bezier(.2,.6,.3,1) infinite}
+.assi.kc.kc-hoert .kc-in{border-color:#7fd88f}
+@keyframes kcMicP{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.assi.kc .kc-sys p{font-size:12.5px;color:#c9b98a}
+@media (prefers-reduced-motion:reduce){.assi.kc.kc-hoert .kc-mic i{animation:none;opacity:.6}}
+/* 20N-FIX (17.11.2026): Assistent startet immer eingeklappt als kleines Fenster, öffnet nie von selbst.
+   20N-FIX2: Liegt ein Bedien-/Textelement darunter, weicht er aus (ki-chat.js ausweichen(), per transform) – bleibt dabei ein kleines Fenster. */
+.assi.kc.zu{width:auto;max-width:min(330px,calc(100vw - 36px));transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.assi.kc.zu header{padding:9px 10px 9px 10px;gap:10px}
+.assi.kc.zu header button{width:26px;height:26px;font-size:18px}
+@media (max-width:700px){
+  .assi.kc.zu{left:auto;right:10px;width:auto;max-width:calc(100vw - 20px)}
+  .assi.kc.zu .kc-kt b{display:none}
+  .assi.kc.zu .kc-kt small{font-size:10.5px;letter-spacing:0}
+  .assi.kc.zu .kc-kt small .kc-live{display:none}
+  .assi.kc.zu header{padding:6px 6px 6px 6px;gap:8px}
+  .assi.kc.zu .kc-ava{width:26px;height:26px}
+}
+/* 20N-FIX2: schmale Fassung, nur wenn nirgends Platz ist – bleibt ein kleines Fenster mit „KI-Assistent · kein Mensch“ */
+.assi.kc.zu.kc-eng header{padding:6px 9px 6px 6px;gap:8px}
+.assi.kc.zu.kc-eng .kc-ava{width:26px;height:26px}
+.assi.kc.zu.kc-eng .kc-kt b{display:none}
+.assi.kc.zu.kc-eng header button{display:none}
+.assi.kc.zu.kc-eng .kc-kt small{font-size:11px;letter-spacing:0}
+@media (max-width:700px){
+  .assi.kc.zu.kc-eng .kc-kt small{white-space:normal;max-width:7.6em;line-height:1.2;font-size:10.5px}
+}

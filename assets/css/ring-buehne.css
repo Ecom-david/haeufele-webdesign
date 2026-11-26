@@ -1,0 +1,12 @@
+/* Template-Ring: hochwertige Bühne (Lichtkegel in Template-Farbe, glänzender Boden, Leuchtrand der vorderen Karte) */
+.ring-buehne::after{content:"";position:absolute;left:50%;top:-8vh;width:min(1100px,96vw);height:96vh;transform:translateX(-50%);pointer-events:none;z-index:0;
+  background:linear-gradient(180deg,var(--ra,#fff) 0%,transparent 78%);opacity:.075;
+  clip-path:polygon(44% 0,56% 0,92% 100%,8% 100%);transition:background .8s;animation:kegel 9s ease-in-out infinite alternate}
+@keyframes kegel{from{transform:translateX(-50%) skewX(-3deg)}to{transform:translateX(-50%) skewX(3deg)}}
+.ring-welt::before{content:"";position:absolute;left:50%;bottom:-16%;width:min(1300px,110vw);height:46%;transform:translateX(-50%) perspective(900px) rotateX(64deg);pointer-events:none;z-index:-1;
+  background:radial-gradient(50% 50% at 50% 40%,var(--ra,#fff),transparent 72%),
+             radial-gradient(60% 60% at 50% 40%,rgba(255,255,255,.06),transparent 70%);opacity:.22;transition:background .8s;
+  -webkit-mask-image:radial-gradient(50% 50% at 50% 50%,#000 40%,transparent 100%);mask-image:radial-gradient(50% 50% at 50% 50%,#000 40%,transparent 100%)}
+.rk.vorn{box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 0 1px var(--t-akzent),0 0 60px -10px var(--t-akzent)}
+.rk .rk-bsp{background:rgba(0,0,0,.55);padding:5px 8px;color:rgba(255,255,255,.85)}
+@media (prefers-reduced-motion:reduce){.ring-buehne::after{animation:none}}
