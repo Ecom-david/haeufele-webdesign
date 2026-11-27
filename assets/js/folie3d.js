@@ -121,9 +121,11 @@
   var frames = 0, sum = 0, last = 0, stufe = 0;
   var grob = !!(window.matchMedia && matchMedia('(pointer:coarse)').matches), scrollZ = 0, zeichZ = 0;
   if (grob) addEventListener('scroll', function () { scrollZ = performance.now(); }, { passive: true });
-  var wurz = document.documentElement;
+  var wurz = document.documentElement, gez3 = 0;
   function bild(n) {
-    if (wurz.classList.contains('film-aktiv')) return; /* 26B3: Scroll-Film deckt den ganzen Bildschirm (schwarze Bühne) – darunter nichts zeichnen: spart GPU/Hauptthread, der Film bekommt alles */
+    if (wurz.classList.contains('film-aktiv') && gez3 >= 3) { last = 0; return; } /* nach 3 Startbildern pausieren; last=0, damit die Auflösungs-Bremse nach dem Film nicht fälschlich runterschaltet */
+    gez3++;
+     
     if (grob && n - scrollZ < 140 && n - zeichZ < 30) return; /* 26B2: Handy, während des Scrollens nur ~30 Bilder/s zeichnen → Hauptthread/Speicher frei für das Scrollen (Hintergrund bewegt sich langsam, kein sichtbarer Unterschied) */
     zeichZ = n;
     var t = (n - t0) / 1000, ruhig = n - lastMove > 2500;

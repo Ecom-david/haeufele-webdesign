@@ -120,10 +120,10 @@
   var BLOB = !FD && typeof fetch === 'function' && typeof Blob === 'function' && window.URL && URL.createObjectURL && location.protocol !== 'file:' && !window.__filmOhneBlob;
   var verb = navigator.connection || {};
   var knapp = !!(verb.saveData || /^(slow-2g|2g|3g)$/.test(verb.effectiveType || ''));
-  var blobs = [], blobBusy, blobFehl, blobN = 0, blobPlan = [], blobPos = 0, BLOBPAR = 6, blobLaeuft = 0, blobGen = 0;
+  var blobs = [], blobBusy, blobFehl, blobN = 0, blobPlan = [], blobPos = 0, BLOBPAR = 12, blobLaeuft = 0, blobGen = 0;
   function blobReset() {
     blobGen++; blobs = new Array(M); blobBusy = new Uint8Array(M); blobFehl = new Uint8Array(M); blobN = 0; blobLaeuft = 0; blobPos = 0; blobPlan = [];
-    var seen = new Uint8Array(M), j, q, st = knapp ? [16] : [16, 8, 4, 2, 1];
+    var seen = new Uint8Array(M), j, q, st = knapp ? [32, 16] : [32, 16, 8, 4, 2, 1]; /* 26B3-2: 12 parallele Abrufe (am Mac gemessen 3,5 statt 2,2 MB/s); Raster zuerst 32 → Schnellscroller haben früh ein grobes Gesamtbild */
     function add(x) { if (x >= 0 && x < M && !seen[x]) { seen[x] = 1; blobPlan.push(x); } }
     for (j = 0; j < START; j++) add(j);
     for (q = 0; q < st.length; q++) for (j = 0; j < M; j += st[q]) add(j);
@@ -370,6 +370,8 @@
     auswerten: function () { this.an = false; var d = this.d.slice().sort(function (a, b) { return a - b; }), n = d.length; if (!n) return null;
       var sum = 0, o25 = 0, o50 = 0; for (var i = 0; i < n; i++) { sum += d[i]; if (d[i] > 25) o25++; if (d[i] > 50) o50++; }
       return { bilder: n, mittel: +(sum / n).toFixed(2), p95: +d[Math.floor(n * .95)].toFixed(1), p99: +d[Math.floor(n * .99)].toFixed(1), ueber25ms: o25, ueber50ms: o50, max: +d[n - 1].toFixed(1) }; } };
+  /* 26B3-2: Service Worker nur für Filmbilder → Wiederbesuch sofort (sw.js im Hauptordner) */
+  if (BLOB && !knapp && navigator.serviceWorker && /^https:/.test(location.protocol)) addEventListener('load', function () { setTimeout(function () { try { navigator.serviceWorker.register('sw.js').catch(function () { }); } catch (e) { } }, 2500); });
   if (!BLOB) addEventListener('load', function () { setTimeout(bgAn, 1500); });
   blobReset(); neuLaden(); messen(); groesse(); pumpe(); blobPumpe(); weck();
 })();
